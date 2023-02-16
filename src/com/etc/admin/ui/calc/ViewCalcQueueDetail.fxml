@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.calc.ViewCalcQueueDetailController">
+	<children>
+      <VBox style="-fx-background-color: #ddeeff; -fx-border-color: #999999; -fx-border-width: 2;">
+         <children>
+            <GridPane hgap="5.0" prefWidth="781.0" styleClass="container" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="LEFT" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" />
+                  <ColumnConstraints halignment="LEFT" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="30.0" />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+               </rowConstraints>
+               <children>
+                  <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdRequestDescription" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <TextField fx:id="cdRequestStatus" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Label layoutX="591.0" layoutY="52.0" text="Calculation Id" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdRequestCalculationId" editable="false" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+                  <Label layoutX="341.0" layoutY="52.0" text="Status" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="47.0" text="Process On" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdRequestProcessOn" layoutX="141.0" layoutY="46.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="cdRequestCompletedOn" layoutX="141.0" layoutY="79.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label layoutX="196.0" layoutY="47.0" text="Completed On" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Result" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdRequestResult" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+                  <Label text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdSpecificationName" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
+                  <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdSpecificationDescription" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
+                  <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdChannelDescription" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="11" />
+                  <Label text="Calc Class" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdChannelCalcClass" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="12" />
+                  <Label text="Calculation Queue Detail" textAlignment="RIGHT" textFill="#000000bf" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Calculation Request" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Calculation Specification" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Calculation Channel" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdChannelName" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" />
+                  <Label text="Interface Class" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="13">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Intergrator Class" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdChannelIntegratorClass" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="14" />
+                  <TextField fx:id="cdChannelInterfaceClass" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="13" />
+                  <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onExit" prefWidth="100.0" text="Exit" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+               </children>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </GridPane>
+            <Separator maxHeight="20.0" minHeight="20.0" orientation="VERTICAL" prefHeight="20.0" />
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+	</children>
+</AnchorPane>

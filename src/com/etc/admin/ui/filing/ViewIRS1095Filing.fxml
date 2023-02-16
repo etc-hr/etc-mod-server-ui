@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="803.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.filing.ViewIRS1095FilingController">
+	<children>
+		<ScrollPane fitToWidth="true" prefHeight="631.0" prefWidth="803.0" AnchorPane.bottomAnchor="-97.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox prefWidth="801.0" styleClass="container">
+					<children>
+                  <VBox styleClass="container">
+                     <children>
+                        <VBox>
+                           <children>
+                              <GridPane fx:id="secInputLabelGrid2" hgap="5.0" prefHeight="114.0" prefWidth="751.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Air Operation Type" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="flngTitleLabel" text="Name" GridPane.columnSpan="5">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="flngEditButton" mnemonicParsing="false" onAction="#onEdit" text="Edit" GridPane.columnIndex="6" />
+                                    <Label layoutX="40.0" layoutY="96.0" text="Ready to File" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="73.0" layoutY="61.0" text="Airform Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="flngAirformTypeLabel" editable="false" layoutX="105.0" layoutY="61.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                                    <Label layoutX="217.0" layoutY="96.0" text="Corrected" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="flngLastSubmittedLabel" editable="false" layoutX="284.0" layoutY="96.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                                    <CheckBox fx:id="flngCorrectedCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                                    <TextField fx:id="flngAirOpoerationTypeLabel" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label text="Air Status Type" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="flngAirStatusTypeLabel" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <CheckBox fx:id="flngReadyToFileCheckBox" disable="true" layoutX="314.0" layoutY="101.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                                    <Label text="Last Submitted" textFill="#00000080" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Tax Year" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="flngTaxYearLabel" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid1" hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="92.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="46.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="45.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="32.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="43.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="42.0" />
+                                    <ColumnConstraints percentWidth="66.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="64.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="flngCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="flngCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="flngCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="flngCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="border" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="emprEmployeesLabel1" text="Double click to select list items" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <GridPane fx:id="flng1095SubmissionsListGrid" layoutX="18.0" layoutY="732.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flng1095SubmissionsListLabel" text="IRS 1095 Submissions" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="flng1095SubmissionsListView" maxHeight="-Infinity" minHeight="-Infinity" prefWidth="760.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ListView>
+                     </children>
+                  </GridPane>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

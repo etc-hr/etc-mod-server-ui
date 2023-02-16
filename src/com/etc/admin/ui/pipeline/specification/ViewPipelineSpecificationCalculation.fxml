@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="@../../SmplDocs.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.pipeline.specification.ViewPipelineSpecificationCalculationController">
+	<children>
+      <VBox prefWidth="850.0" style="-fx-background-color: #ddeeff; -fx-border-color: #000000;" styleClass="container">
+         <children>
+            <GridPane fx:id="dsrefCurrentGridPane">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label layoutX="133.0" layoutY="32.0" text="Current Pay Conversion Calculations" textAlignment="RIGHT" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="136.0" layoutY="315.0" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onClose" prefWidth="60.0" text="Close" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Label layoutX="364.0" layoutY="165.0" text="Id" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label layoutX="337.0" layoutY="203.0" text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label layoutX="337.0" layoutY="243.0" text="Code" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="dsrefCurrentIdField" editable="false" layoutX="400.0" layoutY="194.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="dsrefCurrentDescriptionField" editable="false" layoutX="400.0" layoutY="232.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextArea fx:id="dsrefCurrentExpressionTextArea" editable="false" layoutX="400.0" layoutY="265.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                  <Button fx:id="dsrefEditCurrentButton" layoutX="773.0" layoutY="234.0" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onEditCurrent" prefWidth="60.0" text="Edit" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="dsrefSaveCurrentButton" layoutX="773.0" layoutY="272.0" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onSaveCurrent" prefWidth="60.0" text="Save" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <TextField fx:id="dsrefCurrentNameField" editable="false" layoutX="85.0" layoutY="49.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label layoutX="44.0" layoutY="55.0" text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane fx:id="dsrefAllGridPane" layoutX="19.0" layoutY="17.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="315.0" prefWidth="315.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Calculations" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="dsrefNameField" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <ListView fx:id="dsrefCalcsListView" layoutX="430.0" layoutY="180.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="4">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ListView>
+                  <Label layoutX="585.0" layoutY="53.0" text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="dsrefAddButton" layoutX="698.0" layoutY="147.0" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onAdd" prefWidth="60.0" text="+ Add" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="dsrefRemoveButton" layoutX="685.0" layoutY="222.0" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onRemove" prefWidth="75.0" text="- Remove" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <TextField fx:id="dsrefDescriptionField" layoutX="510.0" layoutY="74.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label layoutX="407.0" layoutY="135.0" text="Code" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextArea fx:id="dsrefExpressionTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <Label layoutX="79.0" layoutY="63.0" text="Selected Pay Conversion Calculation" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="dsrefSaveButton" layoutX="285.0" layoutY="57.0" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" prefWidth="60.0" text="Save" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="dsrefEditButton" layoutX="630.0" layoutY="57.0" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onEdit" prefWidth="60.0" text="Edit" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="dsrefAssignButton" layoutX="773.0" layoutY="229.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#onAssign" prefWidth="150.0" text="Assign As Current" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label layoutX="330.0" layoutY="18.0" text="All Pay Conversion Calculations" textAlignment="RIGHT" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+	</children>
+</AnchorPane>

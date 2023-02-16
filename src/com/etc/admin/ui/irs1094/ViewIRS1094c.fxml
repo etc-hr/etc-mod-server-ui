@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="803.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.irs1094.ViewIRS1094cController">
+	<children>
+		<ScrollPane fitToWidth="true" prefHeight="631.0" prefWidth="803.0" AnchorPane.bottomAnchor="-97.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox prefWidth="801.0" styleClass="container">
+					<children>
+                  <VBox styleClass="container">
+                     <children>
+                        <VBox>
+                           <children>
+                              <GridPane fx:id="secInputLabelGrid2" hgap="5.0" prefHeight="114.0" prefWidth="751.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="10.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="85.0" minWidth="85.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="FT Count" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="irsbTitleLabel" text="Name" GridPane.columnSpan="5">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="irsbEditButton" mnemonicParsing="false" onAction="#onEdit" text="Edit" GridPane.columnIndex="8" />
+                                    <Label layoutX="40.0" layoutY="96.0" text="Ann." textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="73.0" layoutY="61.0" text="MEC Offer" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="irsbYearLabel" editable="false" layoutX="105.0" layoutY="61.0" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <CheckBox fx:id="irsbClosedCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <Label text="Total Count" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Agg. Group" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="irsbClosedCheckBox1" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <TextField fx:id="irsbYearLabel1" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <Label text="Jan" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Feb" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Mar" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Apr" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="May" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Jun" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Jul" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Aug" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Sep" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Oct" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="12">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Nov" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="13">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Dec" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="14">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="irsbClosedCheckBox2" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                    <CheckBox fx:id="irsbClosedCheckBox3" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <CheckBox fx:id="irsbClosedCheckBox4" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <CheckBox fx:id="irsbClosedCheckBox5" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                    <CheckBox fx:id="irsbClosedCheckBox6" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                    <CheckBox fx:id="irsbClosedCheckBox7" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                                    <CheckBox fx:id="irsbClosedCheckBox8" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                                    <CheckBox fx:id="irsbClosedCheckBox9" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                    <CheckBox fx:id="irsbClosedCheckBox10" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                                    <CheckBox fx:id="irsbClosedCheckBox11" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+                                    <CheckBox fx:id="irsbClosedCheckBox12" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                                    <CheckBox fx:id="irsbClosedCheckBox13" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                                    <CheckBox fx:id="irsbClosedCheckBox14" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                    <CheckBox fx:id="irsbClosedCheckBox15" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <CheckBox fx:id="irsbClosedCheckBox16" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <CheckBox fx:id="irsbClosedCheckBox17" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                    <CheckBox fx:id="irsbClosedCheckBox18" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                    <CheckBox fx:id="irsbClosedCheckBox19" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                                    <CheckBox fx:id="irsbClosedCheckBox20" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                                    <CheckBox fx:id="irsbClosedCheckBox21" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                    <CheckBox fx:id="irsbClosedCheckBox22" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                                    <CheckBox fx:id="irsbClosedCheckBox23" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+                                    <CheckBox fx:id="irsbClosedCheckBox24" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                                    <CheckBox fx:id="irsbClosedCheckBox25" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                                    <TextField fx:id="irsbYearLabel11" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                    <TextField fx:id="irsbYearLabel12" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <TextField fx:id="irsbYearLabel13" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <TextField fx:id="irsbYearLabel14" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                    <TextField fx:id="irsbYearLabel15" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                    <TextField fx:id="irsbYearLabel16" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                                    <TextField fx:id="irsbYearLabel17" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                                    <TextField fx:id="irsbYearLabel19" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                    <TextField fx:id="irsbYearLabel110" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                                    <TextField fx:id="irsbYearLabel111" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+                                    <TextField fx:id="irsbYearLabel112" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                                    <TextField fx:id="irsbYearLabel113" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                                    <TextField fx:id="irsbYearLabel114" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                    <TextField fx:id="irsbYearLabel115" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <TextField fx:id="irsbYearLabel116" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <TextField fx:id="irsbYearLabel117" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                    <TextField fx:id="irsbYearLabel118" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                    <TextField fx:id="irsbYearLabel119" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                                    <TextField fx:id="irsbYearLabel120" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                                    <TextField fx:id="irsbYearLabel122" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                    <TextField fx:id="irsbYearLabel123" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                                    <TextField fx:id="irsbYearLabel124" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+                                    <TextField fx:id="irsbYearLabel125" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                                    <TextField fx:id="irsbYearLabel126" editable="false" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                                    <Label text="MEC Selected" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Agg Group Selected" textFill="#00000080" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="irsbClosedCheckBox110" disable="true" mnemonicParsing="false" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <CheckBox fx:id="irsbClosedCheckBox111" disable="true" mnemonicParsing="false" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid1" hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="92.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="46.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="45.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="32.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="43.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="42.0" />
+                                    <ColumnConstraints percentWidth="66.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="64.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="irsbCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="irsbCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="irsbCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="irsbCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="border" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="emprEmployeesLabel1" text="Double click to select list items" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <GridPane fx:id="irsb1095bListGrid">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="irsb1095bListLabel" text="IRS1095cs" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="irsbAdd1095bButton" disable="true" maxWidth="125.0" minWidth="125.0" mnemonicParsing="false" onAction="#onAdd1095b" prefWidth="125.0" text="+ IRS1095c" GridPane.columnIndex="1" />
+                        <ListView fx:id="irsb1095bListView" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="350.0" prefWidth="760.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ListView>
+                     </children>
+                  </GridPane>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.employee.ViewPayController">
+	<children>
+      <VBox style="-fx-background-color: #ddeeff; -fx-border-color: #000000;">
+         <children>
+            <GridPane hgap="5.0" maxWidth="1000.0" minWidth="950.0" prefWidth="950.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" percentWidth="7.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="16.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="16.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="1.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="1.0" prefWidth="100.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="5.0" prefHeight="5.0" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="10.0" />
+               </rowConstraints>
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff3f" height="91.0" stroke="BLACK" strokeType="INSIDE" width="900.0" GridPane.columnSpan="9" GridPane.rowIndex="5" GridPane.rowSpan="2" />
+                  <Button fx:id="paySaveButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onSave" prefWidth="100.0" text="Save" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                  <Button layoutX="1048.0" layoutY="81.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onCancel" prefWidth="100.0" text="Close" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                  <Label layoutX="79.0" layoutY="46.0" text="Pay Detail" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="payProcessedCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="14" />
+                  <TextField fx:id="payHoursField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Rate" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Hours" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Processed" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payRateField" layoutX="113.0" layoutY="60.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label layoutX="221.0" layoutY="65.0" text="Amount" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payAmountField" layoutX="254.0" layoutY="60.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <TextField fx:id="payHoursPerDayField" editable="false" layoutX="325.0" layoutY="60.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <Label layoutX="59.0" layoutY="105.0" text="PaycodeType" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="20.0" text="UnionType" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="payPayCodeTypeChoice" prefWidth="400.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="payUnionTypeChoice" layoutX="114.0" layoutY="140.0" prefWidth="400.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <CheckBox fx:id="payApprovedCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="14">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <Label text="Approved" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="3" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pay Id" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payIdField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="BornOn Date" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payBornOnField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Hours Per Day" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="PP Id" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pay Start" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pay End" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pay Date" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payPayStartField" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff9340" height="210.0" stroke="BLACK" strokeType="INSIDE" width="755.0" GridPane.columnIndex="1" GridPane.columnSpan="7" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.rowSpan="6" />
+                  <TextField fx:id="payPayEndField" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                  <TextField fx:id="payPayDateField" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                  <Label text="CF 1" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="CF 2" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="CF 3" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="CF 4" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="CF 5" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="CF 6" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="CF 7" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payCustomField1Field" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+                  <TextField fx:id="payCustomField2Field" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+                  <Label text="Custom Fields" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payCustomField3Field" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                  <TextField fx:id="payCustomField4Field" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                  <TextField fx:id="payCustomField5Field" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+                  <TextField fx:id="payCustomField6Field" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+                  <TextField fx:id="payCustomField7Field" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="12" />
+                  <Button maxWidth="110.0" minWidth="110.0" mnemonicParsing="false" onAction="#onChangePayPeriod" prefWidth="110.0" text="Change" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                  <Label text="Pay Period " textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payPayPeriodIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Button maxWidth="125.0" minWidth="125.0" mnemonicParsing="false" onAction="#onShowSystemInfo" prefWidth="125.0" style="-fx-background-color: #ffffcc; -fx-border-color: #aaaaaa;" text="System Data" GridPane.columnIndex="7" />
+                  <Label fx:id="inactiveLabel" text=" INACTIVE" textAlignment="RIGHT" textFill="#ff2205" GridPane.columnSpan="3" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="payTypeChangedCheck" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="payTypeChangeVerifiedCheck" mnemonicParsing="false" GridPane.columnIndex="7" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label text="Type Changed" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Type Change Verified" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="65.0" text="Edit History" textAlignment="RIGHT" textFill="#00000080" visible="false" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox layoutX="173.0" layoutY="140.0" prefWidth="400.0" visible="false" GridPane.columnIndex="5" GridPane.columnSpan="2" />
+               </children>
+            </GridPane>
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+	</children>
+</AnchorPane>

@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="flngAnchorPane" prefHeight="2500.0" prefWidth="900.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.filing.ViewFilingController">
+	<children>
+		<ScrollPane fitToWidth="true" prefWidth="803.0" AnchorPane.bottomAnchor="-97.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox prefWidth="801.0" style="-fx-background-color: #ddeeff; -fx-border-color: #000000;" styleClass="container">
+					<children>
+                  <GridPane fx:id="secInputLabelGrid2" hgap="5.0" prefHeight="114.0" prefWidth="751.0" styleClass="container" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="49.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="2.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="49.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" />
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                        <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" />
+                        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flngTitleLabel" text="IRS1094B" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="flng1094bListView" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="760.0" GridPane.rowIndex="2">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ListView>
+                        <ListView fx:id="flng1094cListView" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="760.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ListView>
+                        <Label fx:id="flngTitleLabel1" text="IRS1094C" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emprEmployeesLabel1" text="Select an IRS1094B or IRS1094C" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onClose" prefWidth="100.0" text="Close" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="flngIrs1094bGrid" layoutX="18.0" layoutY="321.0" maxHeight="145.0" minHeight="145.0" prefHeight="145.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flngAirFilingEventsListLabel1" text="Irs1094b" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel12" text="New Forms" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel13" text="File CI with SSN" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <CheckBox fx:id="flngIrs1094bNewFormsCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="flngIrs1094bFileCICheck" disable="true" layoutX="358.0" layoutY="55.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <Label fx:id="flngAirFilingEventsListLabel131" layoutX="10.0" layoutY="83.0" text="Scenario ID" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="flngIrs1094bScenarioIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="flngIrs1094cGrid" layoutX="18.0" layoutY="321.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="130.0" minWidth="130.0" percentWidth="0.0" prefWidth="130.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flngAirFilingEventsListLabel11" text="Irs1094c" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1311" text="Scenario ID" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="flngIrs1094cScenarioIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="flngAirFilingEventsListLabel132" text="Authoritative" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <CheckBox fx:id="flngIrs1094cAuthoritativeCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <Label fx:id="flngAirFilingEventsListLabel13111" text="MEC Offer" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel131111" text="FT Emp Count" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1311111" text="Total Emp Count" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel13111111" text="Agg Group" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel112" text="January" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1121" text="February" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1122" text="March" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1123" text="April" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1124" text="May" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1125" text="June" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1126" text="July" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1127" text="August" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="13">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1128" text="September" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="14">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1129" text="October" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="15">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel11210" text="November" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="16">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel11211" text="December" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="17">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="flngIrs1094cMecJanCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpJanCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <CheckBox fx:id="flngIrs1094cMecFebCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpFebCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <CheckBox fx:id="flngIrs1094cMecMarCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpMarCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <CheckBox fx:id="flngIrs1094cMecAprCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <CheckBox fx:id="flngIrs1094cMecMayCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <CheckBox fx:id="flngIrs1094cMecJunCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <CheckBox fx:id="flngIrs1094cMecJulCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpAprCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpMayCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpJunCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <CheckBox fx:id="flngIrs1094cMecAugCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <CheckBox fx:id="flngIrs1094cMecSepCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                        <CheckBox fx:id="flngIrs1094cMecOctCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <CheckBox fx:id="flngIrs1094cMecNovCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                        <CheckBox fx:id="flngIrs1094cMecDecCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpJulCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpAugCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpSepCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpOctCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpNovCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                        <CheckBox fx:id="flngIrs1094cAgGrpDecCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                        <TextField fx:id="flngIrs1094FtCntJanField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntJanField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <TextField fx:id="flngIrs1094FtCntFebField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntFebField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <TextField fx:id="flngIrs1094FtCntMarField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <TextField fx:id="flngIrs1094FtCntAprField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <TextField fx:id="flngIrs1094FtCntMayField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <TextField fx:id="flngIrs1094FtCntJunField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntMarField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntAprField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntMayField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntJunField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <TextField fx:id="flngIrs1094FtCntJulField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <TextField fx:id="flngIrs1094FtCntAugField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <TextField fx:id="flngIrs1094FtCntSepField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                        <TextField fx:id="flngIrs1094FtCntOctField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <TextField fx:id="flngIrs1094FtCntNovField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                        <TextField fx:id="flngIrs1094FtCntDecField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntJulField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntAugField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntSepField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntOctField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntNovField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                        <TextField fx:id="flngIrs1094TtlEmpCntDecField" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                        <Label fx:id="flngAirFilingEventsListLabel1321" text="File CI with SSN" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="flngAirFilingEventsListLabel1322" text="New Forms" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <CheckBox fx:id="flngIrs1094cFileCICheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="flngIrs1094cNewFormsCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <Label fx:id="flngAirFilingEventsListLabel131111111" text="Locked" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="flngIrs1094cLckJanCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <CheckBox fx:id="flngIrs1094cLckFebCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <CheckBox fx:id="flngIrs1094cLckMarCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <CheckBox fx:id="flngIrs1094cLckAprCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <CheckBox fx:id="flngIrs1094cLckJunCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <CheckBox fx:id="flngIrs1094cLckMayCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <CheckBox fx:id="flngIrs1094cLckJulCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <CheckBox fx:id="flngIrs1094cLckAugCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <CheckBox fx:id="flngIrs1094cLckSepCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                        <CheckBox fx:id="flngIrs1094cLckOctCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <CheckBox fx:id="flngIrs1094cLckNovCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
+                        <CheckBox fx:id="flngIrs1094cLckDecCheck" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="flngAirFilingEventsListGrid1111">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flngAirFilingEventsListLabel1111" text="IRS 1094 Filings" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="flng1094FilingsListView" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="760.0" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="15.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ListView>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="secInputLabelGrid21" hgap="5.0" prefHeight="114.0" prefWidth="751.0" styleClass="container" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="12.0" />
+                        <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" percentWidth="20.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" percentWidth="13.0" prefWidth="110.0" />
+                        <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" percentWidth="20.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" percentWidth="13.0" prefWidth="110.0" />
+                        <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" percentWidth="20.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Air Operation Type" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flngTitleLabel2" text="IRS 1094 Filing" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="96.0" text="Ready to File" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="73.0" layoutY="61.0" text="Airform Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngAirformTypeLabel" editable="false" layoutX="105.0" layoutY="61.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <Label layoutX="217.0" layoutY="96.0" text="Corrected" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngLastSubmittedLabel" editable="false" layoutX="284.0" layoutY="96.0" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="flngCorrectedCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                        <TextField fx:id="flngAirOpoerationTypeLabel" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label text="Air Status Type" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngAirStatusTypeLabel" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <CheckBox fx:id="flngReadyToFileCheckBox" disable="true" layoutX="314.0" layoutY="101.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                        <Label text="Last Submitted" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Total Forms" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Filed Forms" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngTotalFormsLabel" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="flngFiledFormsLabel" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label text="Scenario ID" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngTaxYearLabel" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label text="Filing Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Filing State" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngAirformTypeLabel1" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="flngAirformTypeLabel2" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="flngReadyToFileCheckBox1" disable="true" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                        <Label text="Remove Coverage" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Initial Acceptance" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flngInitialReceiptIdLabel" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <TextField fx:id="flngInitialAcceptanceLabel" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Initial Receipt Id" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="txyrInputLabelGrid" hgap="5.0" prefWidth="783.0" styleClass="container" vgap="10.0" visible="false">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="10.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="20.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="20.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="14.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="25.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                     </rowConstraints>
+                     <children>
+                        <TextField editable="false" layoutX="107.0" layoutY="61.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <Label layoutX="73.0" layoutY="61.0" text="PrintOption" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="290.0" layoutY="63.0" text="AirFormType" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="277.0" layoutY="23.0" text="SafeHarbor Code" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="103.0" text="Liason" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="143.0" text="jr Liason" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txyrTitleLabel" text="Tax Year" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txyrLiasonLabel11" />
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="txyrInputLabelGrid11" hgap="5.0" prefWidth="751.0" styleClass="container" vgap="10.0" visible="false">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="12.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="3.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="25.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="25.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                     </rowConstraints>
+                     <children>
+                        <TextField editable="false" layoutX="284.0" layoutY="96.0" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                        <Label text="Closed" textFill="#00000080" GridPane.halignment="RIGHT">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <CheckBox disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                        <Label text="Closed On" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Closed By" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField editable="false" GridPane.columnIndex="5" GridPane.halignment="LEFT" />
+                        <Label text="Filing Apprroved" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <CheckBox disable="true" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                        <Label text="Approved On" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Approved By" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker prefHeight="26.0" prefWidth="185.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                        <DatePicker prefHeight="26.0" prefWidth="185.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="txyrInputLabelGrid1" hgap="5.0" prefHeight="200.0" styleClass="container" vgap="10.0" visible="false">
+                     <columnConstraints>
+                        <ColumnConstraints minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+                        <ColumnConstraints percentWidth="12.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="6.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" />
+                        <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Description" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="96.0" text="Generate Codes" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField editable="false" layoutX="107.0" layoutY="61.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <Label layoutX="73.0" layoutY="61.0" text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField editable="false" layoutX="105.0" layoutY="61.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                        <CheckBox disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                        <Label layoutX="46.0" layoutY="103.0" text="Track Eligibility" textFill="#00000080" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <CheckBox disable="true" layoutX="136.0" layoutY="101.0" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                        <ListView maxHeight="-Infinity" minHeight="-Infinity" prefHeight="125.0" prefWidth="250.0" GridPane.rowIndex="1" GridPane.rowSpan="3" />
+                        <Label text="Associated Tax Year Service Level" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="402.0" layoutY="21.0" text="Tax Months" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="flngAirFilingEventsListGrid" layoutX="18.0" layoutY="284.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flngAirFilingEventsListLabel" text="Air Filing Events" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="flngAirFilingEventsListView" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="760.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ListView>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="flng1095FilingsListGrid">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="flng1095FilingsListLabel" text="IRS1095 Filings" textAlignment="RIGHT" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="flng1095FilingsListView" maxHeight="200.0" minHeight="200.0" prefHeight="200.0" prefWidth="760.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></ListView>
+                     </children>
+                  </GridPane>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

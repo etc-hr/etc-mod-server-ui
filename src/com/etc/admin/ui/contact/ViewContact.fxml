@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="803.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.contact.ViewContactController">
+	<children>
+      <VBox prefWidth="981.0" style="-fx-background-color: #ddeeff;">
+         <children>
+            <GridPane fx:id="secInputLabelGrid" hgap="5.0" prefHeight="167.0" prefWidth="1000.0" styleClass="container" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="9.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="15.0" />
+                  <ColumnConstraints percentWidth="11.0" />
+                  <ColumnConstraints minWidth="10.0" percentWidth="27.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="30.0" prefHeight="25.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="30.0" prefHeight="25.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="30.0" prefHeight="25.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="30.0" prefHeight="30.0" />
+               </rowConstraints>
+               <children>
+                  <StackPane prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: steelblue;" GridPane.columnSpan="7">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="68.0" prefWidth="957.0" text="Employer Contact" textAlignment="RIGHT" textFill="#fffbfb">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="closeButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onClose" prefHeight="31.0" prefWidth="100.0" text="Close">
+                           <StackPane.margin>
+                              <Insets left="832.0" right="-5.0" />
+                           </StackPane.margin>
+                        </Button>
+                        <Button maxHeight="35.0" minHeight="15.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowSystemInfo" prefHeight="15.0" prefWidth="150.0" style="-fx-background-color: #ffffcc; -fx-border-color: #aaaaaa;" text="System Data" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets bottom="2.0" left="10.0" />
+                           </StackPane.margin>
+                        </Button>
+                     </children>
+                  </StackPane>
+                  <Label text="First Name" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+										<TextField fx:id="conFirstNameLabel" editable="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label layoutX="341.0" layoutY="52.0" text="Middle" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="45.0" />
+                     </GridPane.margin>
+                  </Label>
+										<TextField fx:id="conMiddleNameLabel" editable="false" prefHeight="26.0" prefWidth="204.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin></TextField>
+                  <Label layoutX="591.0" layoutY="52.0" text="Last Name" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+										<TextField fx:id="conLastNameLabel" editable="false" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label text="Primary Phone" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+										<TextField fx:id="conPrimaryPhoneLabel" editable="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="303.0" layoutY="108.0" text="Pri. Phone Ext." textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="primPhnExt" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="Pri. Phone Type" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="conPrimaryPhoneTypeCombo" maxWidth="130.0" minWidth="130.0" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Label text="Sec. Phone" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="conSecondaryPhoneLabel" editable="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="304.0" layoutY="108.0" text="Sec. Phone Ext." textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="secPhnExt" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Label layoutX="791.0" layoutY="52.0" text="Sec. Phone Type" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="11.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="conSecondaryPhoneTypeCombo" maxWidth="130.0" minWidth="130.0" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Label layoutX="20.0" layoutY="108.0" text="Em. Phone" textFill="#00000080" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="22.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="emPhn" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="296.0" layoutY="148.0" text="Em. Phone Ext." textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emPhnExt" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label layoutX="530.0" layoutY="148.0" text="Em. Phone Type" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="12.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="emPhnTypeCombo" maxWidth="130.0" minWidth="130.0" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <Label prefHeight="18.0" prefWidth="31.0" text="Email" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="conEmailLabel" editable="false" prefHeight="25.0" prefWidth="423.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></TextField>
+                  <Label text="Email Type" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="26.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="conEmailTypeCombo" maxWidth="130.0" minWidth="130.0" prefHeight="26.0" prefWidth="130.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="216.0" right="7.0" />
+                     </GridPane.margin></ComboBox>
+                  <Label layoutX="811.0" layoutY="268.0" text="Job Title" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="26.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="jobTitle" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="216.0" right="7.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label layoutX="591.0" layoutY="52.0" text="Timezone" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="26.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="conTimezoneCombo" maxWidth="130.0" minWidth="130.0" prefHeight="26.0" prefWidth="130.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="216.0" right="7.0" />
+                     </GridPane.margin></ComboBox>
+                  <ComboBox fx:id="contactTypeCombo" onAction="#onContactTypeSelect" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <Button fx:id="editButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onEdit" prefWidth="100.0" text="Edit" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="7.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="saveButton" layoutX="867.0" layoutY="60.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onSave" prefWidth="100.0" text="Save" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="7.0" />
+                     </GridPane.margin></Button>
+                  <Label fx:id="contFillLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="999.0" GridPane.columnSpan="7" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="531.0" layoutY="188.0" text="Contact Type" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="12.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane fx:id="contAddrGrid" hgap="5.0" prefHeight="62.0" prefWidth="762.0" styleClass="container" vgap="8.0">
+               <columnConstraints>
+                  <ColumnConstraints minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints minWidth="10.0" percentWidth="55.0" prefWidth="100.0" />
+                  <ColumnConstraints minWidth="10.0" percentWidth="8.0" prefWidth="100.0" />
+                  <ColumnConstraints minWidth="10.0" percentWidth="36.0" prefWidth="100.0" />
+                  <ColumnConstraints percentWidth="6.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="24.0" />
+                  <ColumnConstraints percentWidth="10.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="24.0" />
+               </columnConstraints>
+               <children>
+                  <Label layoutX="18.0" layoutY="87.0" prefHeight="28.0" prefWidth="80.0" text="Address" textFill="#000000cc" GridPane.columnSpan="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+               </children>
+               <rowConstraints>
+                  <RowConstraints maxHeight="24.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="0.0" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane fx:id="secInputLabelGrid1" hgap="5.0" prefHeight="34.0" prefWidth="770.0" styleClass="container" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="92.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="46.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="45.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="32.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="43.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="42.0" />
+                  <ColumnConstraints percentWidth="66.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="64.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                  <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+               </rowConstraints>
+               <children>
+                  <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Parent Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="conCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                  <Label fx:id="conCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                  <Label fx:id="conCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                  <Label fx:id="conCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                  <Label layoutX="18.0" layoutY="21.0" text="Contact Core Data" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="191.0" layoutY="21.0" text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="conContactCoreIdLabel" layoutX="240.0" layoutY="21.0" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label layoutX="327.0" layoutY="21.0" text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="conContactCoreActiveLabel" layoutX="370.0" layoutY="21.0" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label layoutX="434.0" layoutY="21.0" text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="conContactCoreBODateLabel" layoutX="486.0" layoutY="21.0" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label layoutX="567.0" layoutY="21.0" text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="conContactCoreLastUpdatedLabel" layoutX="652.0" layoutY="21.0" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+	</children>
+</AnchorPane>

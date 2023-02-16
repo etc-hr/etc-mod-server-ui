@@ -1,0 +1,1566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="@../../SmplDocs.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.pipeline.coveragefile.ViewPipelineCoverageFileEditController">
+	<children>
+		<ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox styleClass="container">
+					<children>
+                  <VBox styleClass="container">
+                     <children>
+                        <VBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: #fff5f5;">
+                           <children>
+                              <GridPane hgap="5.0" prefWidth="781.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="210.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="210.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="125.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Employees Created" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="591.0" layoutY="52.0" text="No Change Count" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileNoChangeCountLabel" text="Label" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                                    <Label layoutX="341.0" layoutY="52.0" text="Employees Updated" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="47.0" text="Secondaries Created" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="80.0" text="Employee Cov. Periods  Created" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="120.0" text="Secondary Cov. Periods Created" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="196.0" layoutY="47.0" text="Secondaries Updated" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="196.0" layoutY="80.0" text="Employees Cov. Periods Updated" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="196.0" layoutY="120.0" text="Secondary Cov. Periods Updated" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileSecondariesCreatedField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="paypdfileemployeeCoveragePeriodsCreated" layoutX="233.0" layoutY="72.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="paypdfilesecondaryCoveragePeriodsCreated" layoutX="233.0" layoutY="108.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="paypdfileSecondariesUpdatedField" layoutX="233.0" layoutY="144.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <TextField fx:id="paypdfileemployeeCoveragePeriodsUpdated" layoutX="541.0" layoutY="72.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <TextField fx:id="paypdfilesecondaryCoveragePeriodsUpdated" layoutX="541.0" layoutY="108.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                    <TextField fx:id="paypdfileNoChangeCountField" layoutX="541.0" layoutY="144.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileEmployeesCreatedField" layoutX="233.0" layoutY="82.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileEmployeesUpdatedField" layoutX="516.0" layoutY="82.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <HBox alignment="TOP_RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="RIGHT">
+                                       <children>
+                                          <Separator layoutX="72.0" layoutY="10.0" prefWidth="50.0" visible="false" />
+                                          <Button mnemonicParsing="false" text="Save" />
+                                          <Separator prefWidth="30.0" visible="false" />
+                                          <Button alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Cancel" />
+                                       </children>
+                                    </HBox>
+                                    <TextField fx:id="paypdfileNameField" layoutX="233.0" layoutY="52.0" GridPane.columnSpan="4" />
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" minWidth="75.0" text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="5.0" layoutX="19.0" layoutY="51.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="LEFT" maxWidth="65.0" prefWidth="65.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="129.0" prefWidth="116.0" />
+                                    <ColumnConstraints maxWidth="120.0" prefWidth="120.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="75.0" prefWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="LEFT" maxWidth="125.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label layoutX="18.0" layoutY="17.0" text="PreProcessed" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="40.0" text="Validated" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="42.0" text="Last PreProcessed" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="251.0" layoutY="42.0" text="Parsed" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="487.0" layoutY="42.0" text="Last Parse" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="paypdfilePInfoPreProcessedCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <CheckBox fx:id="paypdfilePInfoParsedCheckBox" layoutX="153.0" layoutY="42.0" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                    <CheckBox fx:id="paypdfilePInfoValidatedCheckBox" layoutX="153.0" layoutY="42.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label layoutX="207.0" layoutY="44.0" text="Last Validation" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="79.0" layoutY="72.0" text="Converted" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="paypdfilePInfoConvertedCheckBox" layoutX="141.0" layoutY="70.0" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                    <Label layoutX="547.0" layoutY="44.0" text="Last Converted" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="79.0" layoutY="72.0" text="Post Processed" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="paypdfilePInfoPostProcessedCheckBox" layoutX="141.0" layoutY="70.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label layoutX="228.0" layoutY="72.0" text="Last PostProcess" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="425.0" layoutY="72.0" text="Completed" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="paypdfilePInfoCompletedCheckBox" layoutX="505.0" layoutY="70.0" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                    <CheckBox fx:id="paypdfilePInfoDiscardedCheckBox" layoutX="505.0" layoutY="98.0" mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                                    <Label layoutX="542.0" layoutY="72.0" text="Discarded" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="17.0" text="Pipeline Information" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="45.0" layoutY="132.0" text="Records" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="45.0" layoutY="162.0" text="Units" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="55.0" layoutY="91.0" text="Document" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfilePInfoDocumentField" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfilePInfoRecordsField" layoutX="114.0" layoutY="58.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="paypdfilePInfoUnitsField" layoutX="356.0" layoutY="160.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                    <DatePicker fx:id="paypdfilePInfoLastProcessedPicker" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <DatePicker fx:id="paypdfilePInfoLastValidationPicker" layoutX="338.0" layoutY="96.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <DatePicker fx:id="paypdfilePInfoLastPostProcessPicker" layoutX="338.0" layoutY="132.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                    <DatePicker fx:id="paypdfilePInfoLastParsePicker" layoutX="338.0" layoutY="96.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                    <DatePicker fx:id="paypdfilePInfoLastConvertedPicker" layoutX="663.0" layoutY="96.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="5.0" prefHeight="48.0" prefWidth="747.0" style="-fx-background-color: #ffffee; -fx-border-color: #000000;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints maxWidth="110.0" minWidth="100.0" prefWidth="110.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="90.0" minHeight="50.0" prefHeight="57.0" valignment="CENTER" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Actions" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="border" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paypdfilePipelineSpecificationsVBox" style="-fx-background-color: #fff5f5; -fx-border-color: #000000;">
+                     <children>
+                        <Label text="Pipeline Specifications" textFill="#00000081">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                        <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Description" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="paypdfilePipelineNameField" GridPane.columnIndex="1" />
+                              <TextField fx:id="paypdfilePipelineDescriptionField" layoutX="92.0" layoutY="16.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                           </rowConstraints>
+                           <children>
+                              <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Core Data" textFill="#00000080">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="paypdfileSpecificationCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                              <Label fx:id="paypdfileSpecificationCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                              <Label fx:id="paypdfileSpecificationCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                              <Label fx:id="paypdfileSpecificationCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <VBox style="-fx-border-color: #d0d0d0; -fx-border-width: 1;">
+                           <children>
+                              <Label text="Channel" textFill="#00000081">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <GridPane hgap="5.0" prefWidth="761.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="175.0" />
+                                    <ColumnConstraints />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Channel Name" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid2" GridPane.columnIndex="3" />
+                                    <Label text="Channel Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileChannelDescriptionField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileChannelNameField" layoutX="150.0" layoutY="42.0" GridPane.columnIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid121" hgap="5.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileChannelCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileChannelCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileChannelCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileChannelCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox style="-fx-border-width: 1; -fx-border-color: #d0d0d0;">
+                           <children>
+                              <Label text="Initializer" textFill="#00000081">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Handler Class" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid21" GridPane.columnIndex="3" />
+                                    <Label text="Interface Class" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pipeline Step Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileInitializerInterfaceClassField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileInitializerHandlerClassField" layoutX="454.0" layoutY="42.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileInitializerDescriptionField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                    <ComboBox fx:id="paypdfileInitializerPipelineStepTypeChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="5.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileInitializerCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileInitializerCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileInitializerCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileInitializerCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="19.0" layoutY="359.0" style="-fx-border-width: 1; -fx-border-color: #d0d0d0;">
+                           <children>
+                              <Label text="Parser" textFill="#00000081">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Handler Class" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid211" GridPane.columnIndex="3" />
+                                    <Label text="Interface Class" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pipeline Step Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileParserInterfaceClassField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileParserHandlerClassField" layoutX="454.0" layoutY="42.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileParserDescriptionField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                    <ComboBox fx:id="paypdfileParserPipelineStepTypeChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid141" hgap="5.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileParserCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileParserCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileParserCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileParserCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="19.0" layoutY="477.0" style="-fx-border-width: 1; -fx-border-color: #d0d0d0;">
+                           <children>
+                              <Label text="Validator" textFill="#00000081">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Handler Class" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid2111" GridPane.columnIndex="3" />
+                                    <Label text="Interface Class" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pipeline Step Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileValidatorInterfaceClassField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileValidatorHandlerClassField" layoutX="454.0" layoutY="42.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileValidatorDescriptionField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                    <ComboBox fx:id="paypdfileValidatorPipelineStepTypeChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="5.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileValidatorCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileValidatorCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileValidatorCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileValidatorCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="19.0" layoutY="595.0" style="-fx-border-width: 1; -fx-border-color: #d0d0d0;">
+                           <children>
+                              <Label text="Converter" textFill="#00000081">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Handler Class" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid21111" GridPane.columnIndex="3" />
+                                    <Label text="Interface Class" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pipeline Step Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileConverterInterfaceClassField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileConverterHandlerClassField" layoutX="454.0" layoutY="42.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileConverterDescriptionField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                    <ComboBox fx:id="paypdfileConverterPipelineStepTypeChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="5.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileConverterCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileConverterCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileConverterCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileConverterCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="19.0" layoutY="713.0" style="-fx-border-width: 1; -fx-border-color: #d0d0d0;">
+                           <children>
+                              <Label text="Finalizer" textFill="#00000081">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Handler Class" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid211111" GridPane.columnIndex="3" />
+                                    <Label text="Interface Class" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pipeline Step Type" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="paypdfileFinalizerInterfaceClassField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileFinalizerHandlerClassField" layoutX="319.0" layoutY="42.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <TextField fx:id="paypdfileFinalizerDescriptionField" layoutX="148.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                    <ComboBox fx:id="paypdfileFinalizerPipelineStepTypeChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid141111" hgap="5.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="paypdfileFinalizerCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileFinalizerCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileFinalizerCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="paypdfileFinalizerCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="container" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </VBox>
+                  <VBox fx:id="paypdfileDocumentVBox" layoutX="18.0" layoutY="485.0" style="-fx-background-color: #fff5f5; -fx-border-color: #000000;">
+                     <children>
+                        <Label text="Document" textFill="#00000081">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                        <GridPane hgap="5.0" prefWidth="795.0" styleClass="container" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="60.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="110.0" />
+                              <ColumnConstraints halignment="LEFT" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Description" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="51.0" layoutY="17.0" text="Filename" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="18.0" layoutY="76.0" text="Size in Bytes" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="18.0" layoutY="116.0" text="Value 3" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="18.0" layoutY="156.0" text="Sdx Id" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="18.0" layoutY="121.0" text="Value 0" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="18.0" layoutY="95.0" text="Value 1" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 2" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 4" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 5" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 7" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 8" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 9" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Value 6" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Document Type" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="paypdfileDocumentValue0Field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="paypdfileDocumentValue3Field" layoutX="92.0" layoutY="92.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="paypdfileDocumentValue6Field" layoutX="92.0" layoutY="128.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="paypdfileDocumentDescriptionField" layoutX="92.0" layoutY="92.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                              <TextField fx:id="paypdfileDocumentFilenameField" layoutX="92.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                              <TextField fx:id="paypdfileDocumentValue9Field" layoutX="92.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="paypdfileDocumentValue1Field" layoutX="92.0" layoutY="42.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="paypdfileDocumentValue4Field" layoutX="333.0" layoutY="114.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <TextField fx:id="paypdfileDocumentValue7Field" layoutX="333.0" layoutY="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <TextField fx:id="paypdfileDocumentSdxIdField" layoutX="333.0" layoutY="186.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <TextField fx:id="paypdfileDocumentValue2Field" layoutX="333.0" layoutY="114.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <TextField fx:id="paypdfileDocumentValue5Field" layoutX="624.0" layoutY="114.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <TextField fx:id="paypdfileDocumentValue8Field" layoutX="624.0" layoutY="150.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <TextField fx:id="paypdfileDocumentNameField" layoutX="92.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.columnSpan="3" />
+                              <TextField fx:id="paypdfileDocumentSizeField" layoutX="624.0" layoutY="124.0" GridPane.columnIndex="5" />
+                              <ComboBox fx:id="paypdfileDocumentDocTypeChoice" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="secInputLabelGrid12" hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="75.0" />
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                           </rowConstraints>
+                           <children>
+                              <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Core Data" textFill="#00000080">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="paypdfileDocumentCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                              <Label fx:id="paypdfileDocumentCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                              <Label fx:id="paypdfileDocumentCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                              <Label fx:id="paypdfileDocumentCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                     </children>
+                     <styleClass>
+                        <String fx:value="container" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </VBox>
+                  <VBox fx:id="paypdfileDynamicFileSpecificationsVBox" style="-fx-border-color: #000000; -fx-background-color: #fff5f5;">
+                     <children>
+                        <Label fx:id="paypdfileEmployeeFileListLabel1" alignment="CENTER" text="Dynamic Employee File Specification" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane hgap="5.0" prefWidth="795.0" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="125.0" />
+                              <ColumnConstraints />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="125.0" />
+                              <ColumnConstraints halignment="RIGHT" />
+                              <ColumnConstraints halignment="RIGHT" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label layoutX="591.0" layoutY="52.0" text="Header Row Index" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="341.0" layoutY="52.0" text="Tab index" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="185.0" layoutY="43.0" text="Create Employee" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="paypdfileDynFileCreateEmployeeCheckBox" mnemonicParsing="false" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <TextField fx:id="paypdfileDynFileTabIndexField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="paypdfileDynFileHeaderRowIndexField" layoutX="94.0" layoutY="36.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <TextField fx:id="paypdfileDynFileDescriptionField" layoutX="94.0" layoutY="35.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <TableView fx:id="paypdfileDynFileColumnFieldTable" prefHeight="600.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C2" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TableView>
+                        <GridPane prefHeight="48.0" prefWidth="813.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="empSecondariesLabel" alignment="CENTER" text="Employer References" textFill="#00000080">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="19.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <HBox />
+                        <ListView fx:id="empSecondariesListView" prefHeight="150.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ListView>
+                        <GridPane layoutX="11.0" layoutY="713.0" prefHeight="48.0" prefWidth="813.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="empSecondariesLabel1" alignment="CENTER" text="Department References" textFill="#00000080">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="19.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <ListView fx:id="empEmploymentPeriodsListView" prefHeight="150.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ListView>
+                        <GridPane layoutX="11.0" layoutY="911.0" prefHeight="48.0" prefWidth="813.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="empSecondariesLabel11" alignment="CENTER" text="Gender References" textFill="#00000080">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="19.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <ListView fx:id="empEmployeeCoveragePeriodsListView" prefHeight="150.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ListView>
+                     </children>
+                  </VBox>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileCoverageFilesListLabel" alignment="CENTER" text="Coverage Files" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfileCoverageFilesListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="3266.0" prefWidth="813.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfilePipelineNoticesListLabel" alignment="CENTER" text="Pipeline Notices" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesPipelineNoticesListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="3266.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileRecordRejectionsListLabel" alignment="CENTER" text="Record Rejections" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesRecordRejectionsListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="3266.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileRawCoverageEmployeesListLabel" alignment="CENTER" text="Raw Coverage Employees" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesRawCoverageEmployeesFilesListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="3266.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileRawEmployeeCoverageListLabel" alignment="CENTER" text="Raw Employee Coverage" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesRawEmployeeCoverageFilesListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="4234.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileRawCoverageSecondariesListLabel" alignment="CENTER" text="Raw Coverage Secondaries" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesRawCoverageSecondariesFilesListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="4246.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileRawSecondaryCoverageListLabel" alignment="CENTER" text="Raw Secondary Coverage" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesRawCoverageSecondariesFilesListView1" layoutX="18.0" layoutY="4280.0" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <GridPane layoutX="18.0" layoutY="4886.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="paypdfileGenderReferencesListLabel" alignment="CENTER" text="Gender References" textFill="#00000080">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" text="Add" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <ListView fx:id="paypdfilesRawSecondaryCoverageFilesListView" prefHeight="150.0" prefWidth="779.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ListView>
+                  <Separator maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="30.0" />
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

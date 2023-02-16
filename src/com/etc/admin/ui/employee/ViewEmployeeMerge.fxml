@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.employee.ViewEmployeeMergeController">
+   <children>
+      <VBox layoutY="-1.0" maxHeight="725.0" maxWidth="1360.0" minHeight="725.0" minWidth="1360.0" prefHeight="725.0" prefWidth="1360.0" style="-fx-background-color: paleturquoise; -fx-border-color: #999999; -fx-border-width: 3;">
+         <children>
+            <GridPane hgap="5.0" maxWidth="1350.0" minWidth="1350.0" prefHeight="786.0" prefWidth="1350.0" styleClass="container" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints halignment="LEFT" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+                  <ColumnConstraints maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints halignment="LEFT" />
+                  <ColumnConstraints halignment="LEFT" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" />
+                  <RowConstraints maxHeight="20.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints maxHeight="250.0" minHeight="250.0" prefHeight="250.0" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" />
+                  <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+               </rowConstraints>
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ceebf5" height="510.0" stroke="BLACK" strokeType="INSIDE" width="650.0" GridPane.columnSpan="6" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.rowSpan="9">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ceebf5" height="510.0" stroke="BLACK" strokeType="INSIDE" width="670.0" GridPane.columnIndex="6" GridPane.columnSpan="5" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.rowSpan="9">
+                     <GridPane.margin>
+                        <Insets left="-20.0" />
+                     </GridPane.margin>
+                  </Rectangle>
+                  <Button fx:id="exitButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onExit" prefWidth="100.0" text="Close" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" prefHeight="30.0" text="Employee 1 (winner)" textAlignment="RIGHT" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="725.0" text="Employee 2 (loser)" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="emp1Id" maxWidth="100.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="26.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="emp1DSSN" editable="false" prefHeight="25.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="ee1LstUpd" editable="false" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="empr1Name" editable="false" prefHeight="25.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" text="Core Id:" textAlignment="RIGHT" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="200.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="154.0" text="Employer:" textAlignment="RIGHT" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="141.0" text="Emp Info DSSN:" textAlignment="RIGHT" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="50.0" text="Prsn ID:" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="153.0" text="EE Lst Upd:" textAlignment="RIGHT" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="145.0" text="Name:" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="330.0" layoutY="163.0" prefHeight="20.0" text="Prsn Lst Upd:" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="prsn1LstUpd" editable="false" layoutX="459.0" layoutY="160.0" prefHeight="25.0" prefWidth="291.0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="person1Id" prefHeight="25.0" prefWidth="264.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="emp1Status" prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Button fx:id="updateSSN1Check" mnemonicParsing="false" onAction="#onUpdateSSN1Check" prefHeight="25.0" text="Upd SSN Check" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="163.0" prefHeight="20.0" prefWidth="141.0" text="Emp Info DSSN:" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="198.0" prefHeight="20.0" prefWidth="153.0" text="EE Last Updated:" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="235.0" prefHeight="20.0" prefWidth="154.0" text="Employer:" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="274.0" prefHeight="20.0" prefWidth="145.0" text="Name:" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="198.0" prefHeight="20.0" prefWidth="141.0" text="Prsn Lst Upd:" textAlignment="RIGHT" GridPane.columnIndex="9" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="430.0" layoutY="235.0" prefHeight="20.0" prefWidth="52.0" text="Prsn ID:" textAlignment="RIGHT" GridPane.columnIndex="9" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="430.0" layoutY="274.0" prefHeight="20.0" prefWidth="52.0" text="Status:" textAlignment="RIGHT" GridPane.columnIndex="9" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="ee2LstUpd" editable="false" layoutX="150.0" layoutY="195.0" prefHeight="25.0" prefWidth="110.0" GridPane.columnIndex="7" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="empr2Name" editable="false" layoutX="150.0" layoutY="232.0" prefHeight="25.0" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="emp2DSSN" editable="false" layoutX="430.0" layoutY="160.0" prefHeight="25.0" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="prsn2LstUpd" editable="false" layoutX="430.0" layoutY="195.0" prefHeight="25.0" prefWidth="291.0" GridPane.columnIndex="10" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="person2Id" layoutX="485.0" layoutY="232.0" prefHeight="25.0" prefWidth="264.0" GridPane.columnIndex="10" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="emp2Status" layoutX="485.0" layoutY="271.0" prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="10" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Button fx:id="updateSSN2Check" mnemonicParsing="false" onAction="#onUpdateSSN2Check" prefHeight="25.0" text="Upd SSN Check" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <StackPane prefHeight="30.0" prefWidth="333.0" style="-fx-background-color: steelblue; -fx-border-color: black;" GridPane.columnSpan="2147483647">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </GridPane.margin>
+                     <children>
+                        <Label alignment="CENTER" maxWidth="500.0" minWidth="500.0" prefHeight="27.0" prefWidth="500.0" text="Employee Merger" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Button fx:id="mrgEEtoEmpButton" maxHeight="60.0" minHeight="60.0" minWidth="200.0" mnemonicParsing="false" onAction="#onMrgEEtoEmp" prefHeight="60.0" prefWidth="200.0" style="-fx-border-color: navy;" text="Merge EE's To Emp ID" textAlignment="CENTER" wrapText="true" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="79.0" text="Prsn DOB:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prsn1DOB" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label alignment="CENTER_RIGHT" layoutX="490.0" layoutY="245.0" prefHeight="21.0" prefWidth="80.0" text="Prsn DOB:" GridPane.columnIndex="9" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="prsn2DOB" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="10" GridPane.halignment="LEFT" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label prefHeight="20.0" prefWidth="51.0" text="Status:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#onSearchEmployee1" prefHeight="25.0" prefWidth="95.0" text="Search" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="200.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TextField fx:id="ee2Name" editable="false" prefHeight="25.0" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                  <TextField fx:id="ee1Name" editable="false" prefHeight="25.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" text="Core Id:" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="200.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="emp2Id" maxWidth="100.0" minWidth="100.0" prefHeight="25.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#onSearchEmployee2" prefHeight="25.0" prefWidth="95.0" text="Search" GridPane.columnIndex="6" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="230.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TableView fx:id="emp1LstPdDtTableView" maxHeight="250.0" maxWidth="250.0" minWidth="250.0" prefHeight="200.0" prefWidth="250.0" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="10">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TableView>
+                  <TableView fx:id="emp1EmpPrdTableView" maxWidth="350.0" minWidth="350.0" prefHeight="200.0" prefWidth="350.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="emp2LstPdDtTableView" maxHeight="250.0" maxWidth="250.0" minWidth="250.0" prefHeight="200.0" prefWidth="250.0" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="10">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="emp2EmpPrdTableView" maxHeight="250.0" maxWidth="350.0" minWidth="350.0" prefHeight="200.0" prefWidth="350.0" GridPane.columnIndex="8" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" text="Pays" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" text="Employment Periods" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" text="Pays" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" text="Employment Periods" GridPane.columnIndex="8" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+   </children>
+</AnchorPane>

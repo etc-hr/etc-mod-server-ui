@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="800.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.payperiod.ViewPayPeriodController">
+	<children>
+				<VBox prefWidth="800.0" style="-fx-background-color: #ddeeff; -fx-border-color: #000000;" styleClass="container">
+					<children>
+            <GridPane fx:id="ppGridPane" hgap="5.0" prefWidth="777.0" styleClass="container" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="10.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="18.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="8.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="18.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="ppEditButton" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onEdit" prefWidth="75.0" text="Edit" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <Label layoutX="73.0" layoutY="61.0" text="Employer Ref." textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ppEmployerRefField" layoutX="105.0" layoutY="61.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                  <Label text="Start Date" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="End Date" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pay Date" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="393.0" layoutY="95.0" text="PayFrequency Type" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ppSaveButton" layoutX="913.0" layoutY="32.0" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onSave" prefWidth="75.0" text="Save" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="ppStartDatePicker" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="ppEndDatePicker" layoutX="132.0" layoutY="98.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="ppPayDatePicker" layoutX="447.0" layoutY="98.0" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <CheckBox fx:id="ppMarkInactiveCheck" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Mark Inactive" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="ppPayFreqTypeCombo" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <StackPane prefHeight="87.0" prefWidth="841.0" style="-fx-background-color: steelblue;" GridPane.columnSpan="2147483647">
+                     <children>
+                        <Label fx:id="ppHeaderLabel" alignment="CENTER" prefHeight="79.0" prefWidth="841.0" style="-fx-border-color: black;" text="Pay Period" textFill="WHITE">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Button maxWidth="125.0" minWidth="125.0" mnemonicParsing="false" onAction="#onClose" prefHeight="31.0" prefWidth="125.0" text="Close">
+                           <StackPane.margin>
+                              <Insets bottom="2.0" left="675.0" right="10.0" />
+                           </StackPane.margin>
+                        </Button>
+                        <Button maxHeight="35.0" minHeight="15.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowSystemInfo" prefHeight="15.0" prefWidth="150.0" style="-fx-background-color: #ffffcc; -fx-border-color: #aaaaaa;" text="System Data" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets bottom="2.0" left="10.0" />
+                           </StackPane.margin>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </GridPane>
+					</children>
+				</VBox>
+	</children>
+</AnchorPane>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="803.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.planyearoffering.ViewPlanYearOfferingController">
+	<children>
+		<ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox styleClass="container">
+					<children>
+                  <VBox styleClass="container">
+                     <children>
+                        <VBox>
+                           <children>
+                              <GridPane fx:id="secInputLabelGrid" hgap="5.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="60.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="59.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="87.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                                 <children>
+      										<Label fx:id="emrcvNameLabel" text="Name" GridPane.columnSpan="5">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#onEdit" text="Edit" GridPane.columnIndex="5" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid1" hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="92.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="46.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="45.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="32.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="43.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="42.0" />
+                                    <ColumnConstraints percentWidth="66.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="64.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid2" hgap="5.0" layoutX="19.0" layoutY="17.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="120.0" prefWidth="120.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="120.0" prefWidth="120.0" />
+                                    <ColumnConstraints halignment="LEFT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="25.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Start Date" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="End Date" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvStartDateLabel1" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                                    <Label fx:id="emrcvEndDateLabel1" text="Label" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                                    <Label text="Implemented" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Implemented On" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvEECDescriptionLabel1" layoutX="326.0" layoutY="60.0" text="Label" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                                    <Label layoutX="56.0" layoutY="56.0" text="Plan Year" textAlignment="RIGHT" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="228.0" layoutY="56.0" text="Employer" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="374.0" layoutY="56.0" text="Implemented By" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvEndDateLabel12" layoutX="289.0" layoutY="56.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <Label fx:id="emrcvEndDateLabel121" layoutX="519.0" layoutY="56.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                    <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid11" hgap="5.0" layoutX="19.0" layoutY="156.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="92.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="46.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="45.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="32.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="43.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="42.0" />
+                                    <ColumnConstraints percentWidth="66.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="64.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Plan Year Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvEECCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid21" hgap="5.0" layoutX="19.0" layoutY="122.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="60.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="59.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="87.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Member Share" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvStartDateLabel11" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                                    <Label layoutX="56.0" layoutY="56.0" text="Plan Year Offering Plan" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid111" hgap="5.0" layoutX="19.0" layoutY="182.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints maxWidth="151.0" minWidth="150.0" prefWidth="142.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Offering Plan Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvEECCoreIdLabel1" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreActiveLabel1" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreBODateLabel1" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreLastUpdatedLabel1" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid211" hgap="5.0" layoutX="19.0" layoutY="272.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="60.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="59.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="87.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="79.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Waived" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="56.0" layoutY="56.0" text="Plan" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2147483647">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="91.0" text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvStartDateLabel1111" layoutX="123.0" layoutY="91.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label layoutX="18.0" layoutY="56.0" text="Description" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvStartDateLabel11111" layoutX="220.0" layoutY="56.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label layoutX="27.0" layoutY="161.0" text="Insurance Type" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvStartDateLabel1112" layoutX="123.0" layoutY="161.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label layoutX="18.0" layoutY="126.0" text="Coverage Type" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="270.0" layoutY="126.0" text="Offer Code" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvStartDateLabel11121" layoutX="220.0" layoutY="126.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <Label fx:id="emrcvStartDateLabel111211" layoutX="429.0" layoutY="126.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                    <Label layoutX="27.0" layoutY="161.0" text="Ineligible" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="270.0" layoutY="161.0" text="Cobra" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <CheckBox layoutX="232.0" layoutY="160.0" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                    <CheckBox layoutX="441.0" layoutY="160.0" mnemonicParsing="false" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid1111" hgap="5.0" layoutX="19.0" layoutY="352.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints maxWidth="151.0" minWidth="150.0" prefWidth="142.0" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Offering Plan Core Data" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emrcvEECCoreIdLabel11" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreActiveLabel11" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreBODateLabel11" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="emrcvEECCoreLastUpdatedLabel11" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                              <Label text="Coverage Classes" textAlignment="RIGHT" textFill="#00000080">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <ListView prefHeight="200.0" prefWidth="200.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ListView>
+                              <Label layoutX="19.0" layoutY="451.0" text="Plan Year Offering Plans" textAlignment="RIGHT" textFill="#00000080">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <ListView layoutX="19.0" layoutY="474.0" prefHeight="200.0" prefWidth="200.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ListView>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="border" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </VBox>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

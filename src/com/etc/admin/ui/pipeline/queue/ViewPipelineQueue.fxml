@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.pipeline.queue.ViewPipelineQueueController">
+	<children>
+		<ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox minWidth="800.0" styleClass="container">
+					<children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <LineChart fx:id="pqueTimeChart">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </GridPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="13.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="pqueFilesListLabel1212" minHeight="40.0" text="Filetype" textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ComboBox fx:id="pqueFileType" minWidth="120.0" onAction="#onTimeZone" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                        <Button fx:id="pqueUploadBrowseButton" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Upload" GridPane.columnIndex="8" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.columnSpan="4">
+                           <children>
+                              <Label fx:id="pqueFilesListLabel1211" minHeight="40.0" text="Filter" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="pqueSearchFilter" maxWidth="324.0" minWidth="324.0" onKeyReleased="#onFilterKey" prefWidth="324.0" promptText="enter  terms, opt. use + or -">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#clearFilter" prefWidth="100.0" text="Clear Filter">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <CheckBox fx:id="pqueAutoRefreshCheckbox" mnemonicParsing="false" onAction="#onAutorefresh" selected="true" text="Autorefresh" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <ProgressBar fx:id="pqueUpdateCounter" prefWidth="100.0" progress="0.0" GridPane.columnIndex="1" />
+                        <Label fx:id="pqueFilesListLabel1" minHeight="40.0" text="Date Range (hrs) " textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ComboBox fx:id="pqueQueueRange" maxWidth="90.0" minWidth="90.0" onAction="#onQueueRange" prefWidth="90.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Button minWidth="80.0" mnemonicParsing="false" onAction="#onRefresh" prefWidth="80.0" text="Refresh" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                        <Button fx:id="pqueViewDetailButton" minWidth="100.0" mnemonicParsing="false" onAction="#onViewDetail" prefWidth="100.0" text="View  Detail" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <Label fx:id="pqueFilesListLabel12121" layoutX="63.0" layoutY="45.0" minHeight="40.0" text="Doubleclick Account, Employer, Spec Id or Mapper Id to view.  Doubleclick elsewhere for raw fields.  Bright Red Indicates file stuck in processing." textAlignment="RIGHT" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="pqueRejectButton" minWidth="100.0" mnemonicParsing="false" onAction="#onViewDetail" prefWidth="100.0" text="Reject File" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <Button fx:id="pqueViewMapperButton" maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#onViewMapper" prefWidth="120.0" text="View Mapper" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin></Button>
+                        <Button minWidth="80.0" mnemonicParsing="false" onAction="#onResync" prefWidth="80.0" text="ReSync" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                        <Button maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#onCopyFilename" prefWidth="120.0" text="Download File" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="pqueFilesListGrid" minWidth="800.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="650.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TableView fx:id="pqueFilesListView" prefHeight="585.0" GridPane.columnSpan="2147483647">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TableView>
+                     </children>
+                  </GridPane>
+					</children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="850.0" maxWidth="1000.0" minWidth="980.0" prefHeight="850.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.employee.ViewIRS1095cController">
+	<children>
+      <VBox maxHeight="850.0" maxWidth="1000.0" minHeight="850.0" minWidth="979.0" prefHeight="850.0" prefWidth="980.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #000000;">
+         <children>
+            <Label fx:id="topLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="1197.0" text="IRS1095c" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <GridPane hgap="1.0" maxWidth="1000.0" minWidth="974.0" prefHeight="785.0" prefWidth="974.0" vgap="1.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="68.0" minWidth="68.0" prefWidth="68.0" />
+                  <ColumnConstraints halignment="RIGHT" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" />
+                  <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" />
+                  <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="55.0" minHeight="50.0" prefHeight="50.0" />
+                  <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="5.0" prefHeight="5.0" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="5.0" prefHeight="5.0" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="25.0" prefHeight="25.0" />
+                  <RowConstraints minHeight="25.0" prefHeight="25.0" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="10.0" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="prevButton" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#onPrevButton" prefHeight="31.0" prefWidth="90.0" text="&lt;&lt; Prev" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="nextButton" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#onNextButton" prefHeight="31.0" prefWidth="90.0" text="Next &gt;&gt;" GridPane.columnIndex="9" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <CheckBox fx:id="fileCIWithSSNCheck" mnemonicParsing="false" onAction="#onFileSsn" prefHeight="21.0" text="File With SSN" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="activeFlag1095" mnemonicParsing="false" onAction="#onActiveSelect" prefHeight="21.0" text="1095 Active" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                  <Button maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onShowSystemInfo" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: #ffffcc; -fx-border-color: #aaaaaa;" text="System Data" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+                  <Button fx:id="dataCheckButton" ellipsisString="" maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onGetDatacheck" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: purple;" text="Get Datacheck" textAlignment="CENTER" textFill="#fcfcfc" wrapText="true" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="lockCodesButton" ellipsisString="" maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onLockCodes" prefHeight="0.0" prefWidth="110.0" style="-fx-background-color: red;" text="Lock 1095c Codes" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="viewCalcButton" ellipsisString="" layoutX="1368.0" layoutY="13.0" maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onViewCalc" prefHeight="0.0" prefWidth="110.0" style="-fx-background-color: #ffef8d;" text="View Calc" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="9" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="filingStatusButton" ellipsisString="" maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onFilingStatus" prefHeight="0.0" prefWidth="110.0" style="-fx-background-color: #ffba6b;" text="Filing Status" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="unlockCodesButton" contentDisplay="CENTER" ellipsisString="" layoutX="1232.0" layoutY="15.0" maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onUnlockCodes" prefHeight="0.0" prefWidth="110.0" style="-fx-background-color: #0f7500;" text="Unlock 1095c Codes" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="viewAuditTrailButton" contentDisplay="CENTER" ellipsisString="" layoutX="1368.0" layoutY="69.0" maxHeight="50.0" maxWidth="110.0" minHeight="50.0" minWidth="110.0" mnemonicParsing="false" onAction="#onViewAuditTrail" prefHeight="0.0" prefWidth="110.0" style="-fx-background-color: blue;" text="View Audit Trail" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="9" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <ComboBox fx:id="offerCodeJanField" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeFebField" prefHeight="33.0" prefWidth="139.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeMarField" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeAprField" prefHeight="33.0" prefWidth="142.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeMayField" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeJunField" prefHeight="33.0" prefWidth="115.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeJulField" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeAugField" prefHeight="33.0" prefWidth="118.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeSepField" prefHeight="33.0" prefWidth="116.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeOctField" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="11" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeNovField" prefHeight="33.0" prefWidth="137.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="12" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="offerCodeDecField" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #ffecbe; -fx-border-color: grey;" GridPane.columnIndex="13" GridPane.rowIndex="8" />
+                  <TextField fx:id="eeShareJanField" onAction="#onEeShareJan" prefHeight="60.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareFebField" onAction="#onEeShareFeb" prefHeight="49.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareMarField" onAction="#onEeShareMar" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareAprField" onAction="#onEeShareApr" prefHeight="87.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareMayField" onAction="#onEeShareMay" prefHeight="54.0" prefWidth="64.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareJunField" onAction="#onEeShareJun" prefHeight="65.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareJulField" onAction="#onEeShareJul" prefHeight="65.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareAugField" onAction="#onEeShareAug" prefHeight="68.0" prefWidth="64.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareSepField" onAction="#onEeShareSep" prefHeight="76.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareOctField" onAction="#onEeShareOct" prefHeight="45.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="11" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareNovField" onAction="#onEeShareNov" prefHeight="71.0" prefWidth="64.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="12" GridPane.rowIndex="10" />
+                  <TextField fx:id="eeShareDecField" onAction="#onEeShareDec" prefHeight="47.0" prefWidth="63.0" style="-fx-background-color: #7FB3D5; -fx-border-color: grey;" GridPane.columnIndex="13" GridPane.rowIndex="10" />
+                  <ComboBox fx:id="shcJanField" prefHeight="33.0" prefWidth="92.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcFebField" prefHeight="33.0" prefWidth="89.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcMarField" prefHeight="33.0" prefWidth="106.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcAprField" prefHeight="33.0" prefWidth="94.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcMayField" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcJunField" prefHeight="33.0" prefWidth="101.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcJulField" prefHeight="33.0" prefWidth="94.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="8" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcAugField" prefHeight="33.0" prefWidth="96.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="9" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcSepField" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="10" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcOctField" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="11" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcNovField" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="12" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="shcDecField" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: #E59866; -fx-border-color: grey;" GridPane.columnIndex="13" GridPane.rowIndex="12" />
+                  <CheckBox fx:id="coverageJanCheck" mnemonicParsing="false" onAction="#onCovJanCheck" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageFebCheck" mnemonicParsing="false" onAction="#onCovFebCheck" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageMarCheck" mnemonicParsing="false" onAction="#onCovMarCheck" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageAprCheck" mnemonicParsing="false" onAction="#onCovAprCheck" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageMayCheck" mnemonicParsing="false" onAction="#onCovMayCheck" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageJunCheck" mnemonicParsing="false" onAction="#onCovJunCheck" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageJulCheck" mnemonicParsing="false" onAction="#onCovJulCheck" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageAugCheck" mnemonicParsing="false" onAction="#onCovAugCheck" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageSepCheck" mnemonicParsing="false" onAction="#onCovSepCheck" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageOctCheck" mnemonicParsing="false" onAction="#onCovOctCheck" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageNovCheck" mnemonicParsing="false" onAction="#onCovNovCheck" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="coverageDecCheck" mnemonicParsing="false" onAction="#onCovDecCheck" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="lockedJanCheck" mnemonicParsing="false" onAction="#onLockJan" prefHeight="21.0" prefWidth="0.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedFebCheck" mnemonicParsing="false" onAction="#onLockFeb" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedMarCheck" mnemonicParsing="false" onAction="#onLockMar" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedAprCheck" mnemonicParsing="false" onAction="#onLockApr" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedMayCheck" mnemonicParsing="false" onAction="#onLockMay" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedJunCheck" mnemonicParsing="false" onAction="#onLockJun" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedJulCheck" mnemonicParsing="false" onAction="#onLockJul" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedAugCheck" mnemonicParsing="false" onAction="#onLockAug" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedSepCheck" mnemonicParsing="false" onAction="#onLockSep" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedOctCheck" mnemonicParsing="false" onAction="#onLockOct" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedNovCheck" mnemonicParsing="false" onAction="#onLockNov" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="lockedDecCheck" mnemonicParsing="false" onAction="#onLockDec" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <Button fx:id="ocJanButton" mnemonicParsing="false" onAction="#onOcJanButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: F2EFD4; -fx-border-color: light grey;" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="8" />
+                  <Button fx:id="saveButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onSave" prefWidth="100.0" text="Save" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="19" />
+                  <Button layoutX="1048.0" layoutY="81.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onCancel" prefWidth="100.0" text="Close" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="19" />
+                  <Button fx:id="covJanButton" layoutX="142.0" layoutY="437.0" mnemonicParsing="false" onAction="#onCovJanButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <Button fx:id="covFebButton" layoutX="142.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovFebButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+                  <Button fx:id="covMarButton" layoutX="211.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovMarButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="4" GridPane.rowIndex="14" />
+                  <Button fx:id="covAprButton" layoutX="280.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovAprButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="5" GridPane.rowIndex="14" />
+                  <Button fx:id="covMayButton" layoutX="349.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovMayButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="6" GridPane.rowIndex="14" />
+                  <Button fx:id="covJunButton" layoutX="418.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovJunButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+                  <Button fx:id="covJulButton" layoutX="487.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovJulButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="8" GridPane.rowIndex="14" />
+                  <Button fx:id="covAugButton" layoutX="556.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovAugButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="9" GridPane.rowIndex="14" />
+                  <Button fx:id="covSepButton" layoutX="625.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovSepButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="10" GridPane.rowIndex="14" />
+                  <Button fx:id="covOctButton" layoutX="694.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovOctButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="11" GridPane.rowIndex="14" />
+                  <Button fx:id="covNovButton" layoutX="763.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovNovButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="12" GridPane.rowIndex="14" />
+                  <Button fx:id="covDecButton" layoutX="832.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCovDecButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="13" GridPane.rowIndex="14" />
+                  <Label layoutX="59.0" layoutY="105.0" text="Jan" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Feb" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Mar" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Apr" textAlignment="RIGHT" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="May" textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Jun" textAlignment="RIGHT" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Jul" textAlignment="RIGHT" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Aug" textAlignment="RIGHT" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Sep" textAlignment="RIGHT" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Oct" textAlignment="RIGHT" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Nov" textAlignment="RIGHT" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Dec" textAlignment="RIGHT" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Cov Ind (part 3)" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Locked" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="empNamelbl" alignment="CENTER" prefHeight="62.0" prefWidth="740.0" style="-fx-border-color: grey;" text="Label" textFill="#0f7500" GridPane.columnIndex="1" GridPane.columnSpan="13" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emprNamelbl" alignment="CENTER" prefHeight="40.0" prefWidth="740.0" style="-fx-border-color: grey;" text="Label" textFill="#0f7500" GridPane.columnIndex="1" GridPane.columnSpan="13" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="22.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="144.0" style="-fx-background-color: #ffecbe;" text="Offer Code (1)" textFill="#000000bf" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #e59866;" text="Safe Harbor (2)" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="35.0" prefWidth="161.0" text="TAX YEAR:" textFill="#0f7500" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="yearLabel" alignment="CENTER" prefHeight="55.0" prefWidth="110.0" style="-fx-border-color: lightgrey;" text="Label" textFill="#0f7500" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="129.0" style="-fx-background-color: #7FB3D5;" text="Emp Share" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" text="Offer Code Selections are only available if month is not locked" GridPane.columnIndex="1" GridPane.columnSpan="13" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label fx:id="inactiveLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="1033.0" text="INACTIVE" textFill="BLUE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Covered Individuals" textAlignment="RIGHT" textFill="#000000bf" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="16">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ocFebButton" layoutX="142.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcFebButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: EEEBD0; -fx-border-color: light grey;" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <Button fx:id="ocMarButton" layoutX="211.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcMarButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: EEEBD0; -fx-border-color: light grey;" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                  <Button fx:id="ocAprButton" layoutX="280.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcAprButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: EEEBD0; -fx-border-color: light grey;" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                  <Button fx:id="ocMayButton" layoutX="349.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcMayButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: F2EFD4; -fx-border-color: light grey;" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                  <Button fx:id="ocJunButton" layoutX="418.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcJunButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                  <Button fx:id="ocJulButton" layoutX="487.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcJulButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                  <Button fx:id="ocAugButton" layoutX="556.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcAugButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                  <Button fx:id="ocSepButton" layoutX="625.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcSepButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+                  <Button fx:id="ocOctButton" layoutX="694.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcOctButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="11" GridPane.rowIndex="8" />
+                  <Button fx:id="ocNovButton" layoutX="763.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcNovButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="12" GridPane.rowIndex="8" />
+                  <Button fx:id="ocDecButton" layoutX="832.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOcDecButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="13" GridPane.rowIndex="8" />
+                  <Button fx:id="eeJanButton" layoutX="901.0" layoutY="363.0" mnemonicParsing="false" onAction="#onEeJanButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Button fx:id="eeFebButton" layoutX="142.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeFebButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                  <Button fx:id="eeMarButton" layoutX="211.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeMarButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                  <Button fx:id="eeAprButton" layoutX="280.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeAprButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                  <Button fx:id="eeMayButton" layoutX="349.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeMayButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                  <Button fx:id="eeJunButton" layoutX="418.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeJunButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                  <Button fx:id="eeJulButton" layoutX="487.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeJulButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+                  <Button fx:id="eeAugButton" layoutX="556.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeAugButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+                  <Button fx:id="eeSepButton" layoutX="625.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeSepButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+                  <Button fx:id="eeOctButton" layoutX="694.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeOctButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="11" GridPane.rowIndex="10" />
+                  <Button fx:id="eeNovButton" layoutX="763.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeNovButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="12" GridPane.rowIndex="10" />
+                  <Button fx:id="eeDecButton" layoutX="832.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEeDecButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="13" GridPane.rowIndex="10" />
+                  <Button fx:id="shJanButton" layoutX="901.0" layoutY="400.0" mnemonicParsing="false" onAction="#onShJanButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Button fx:id="shFebButton" layoutX="142.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShFebButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                  <Button fx:id="shMarButton" layoutX="211.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShMarButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                  <Button fx:id="shAprButton" layoutX="280.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShAprButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+                  <Button fx:id="shMayButton" layoutX="349.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShMayButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                  <Button fx:id="shJunButton" layoutX="418.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShJunButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                  <Button fx:id="shJulButton" layoutX="487.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShJulButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="8" GridPane.rowIndex="12" />
+                  <Button fx:id="shAugButton" layoutX="556.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShAugButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="9" GridPane.rowIndex="12" />
+                  <Button fx:id="shSepButton" layoutX="625.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShSepButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="10" GridPane.rowIndex="12" />
+                  <Button fx:id="shOctButton" layoutX="694.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShOctButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="11" GridPane.rowIndex="12" />
+                  <Button fx:id="shNovButton" layoutX="763.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShNovButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="12" GridPane.rowIndex="12" />
+                  <Button fx:id="shDecButton" layoutX="832.0" layoutY="437.0" mnemonicParsing="false" onAction="#onShDecButton" opacity="0.0" prefHeight="31.0" prefWidth="76.0" GridPane.columnIndex="13" GridPane.rowIndex="12" />
+                  <TableView fx:id="dependentList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="13" GridPane.rowIndex="17">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="junOffLbl" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="7" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="aprOffLbl" prefHeight="55.0" prefWidth="68.0" GridPane.columnIndex="5" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="marOffLbl" layoutX="349.0" layoutY="363.0" prefHeight="55.0" prefWidth="68.0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="febOffLbl" layoutX="280.0" layoutY="363.0" prefHeight="55.0" prefWidth="68.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="janOffLbl" layoutX="211.0" layoutY="363.0" prefHeight="55.0" prefWidth="68.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="mayOffLbl" prefHeight="38.0" prefWidth="68.0" GridPane.columnIndex="6" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="julOffLbl" layoutX="418.0" layoutY="363.0" prefHeight="38.0" prefWidth="68.0" GridPane.columnIndex="8" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="augOffLbl" layoutX="497.0" layoutY="363.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="9" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="sepOffLbl" layoutX="625.0" layoutY="363.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="10" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="octOffLbl" layoutX="694.0" layoutY="363.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="11" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="novOffLbl" layoutX="763.0" layoutY="363.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="12" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="decOffLbl" layoutX="832.0" layoutY="363.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="13" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="janEmpLbl" layoutX="901.0" layoutY="363.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="febEmpLbl" layoutX="142.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="3" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="marEmpLbl" layoutX="211.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="aprEmpLbl" layoutX="280.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="5" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="mayEmpLbl" layoutX="349.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="6" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="junEmpLbl" layoutX="418.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="7" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="julEmpLbl" layoutX="487.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="8" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="augEmpLbl" layoutX="556.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="9" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="sepEmpLbl" layoutX="625.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="10" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="octEmpLbl" layoutX="694.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="11" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="novEmpLbl" layoutX="763.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="12" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="decEmpLbl" layoutX="832.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="13" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="janSHbLbl" layoutX="901.0" layoutY="400.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="febSHbLbl" layoutX="142.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="3" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="marSHbLbl" layoutX="211.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="4" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="aprSHbLbl" layoutX="280.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="5" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="maySHbLbl" layoutX="349.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="6" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="junSHbLbl" layoutX="418.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="7" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="julSHbLbl" layoutX="487.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="8" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="augSHbLbl" layoutX="556.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="9" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="sepSHbLbl" layoutX="625.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="10" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="octSHbLbl" layoutX="694.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="11" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="novSHbLbl" layoutX="763.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="12" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="decSHbLbl" layoutX="832.0" layoutY="437.0" prefHeight="43.0" prefWidth="68.0" GridPane.columnIndex="13" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </GridPane>
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+	</children>
+</AnchorPane>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.employer.ViewEmployerController">
+   <content>
+      <AnchorPane stylesheets="@../SmplDocs.css">
+      	<children>
+            <VBox maxHeight="850.0" maxWidth="1650.0" minHeight="850.0" minWidth="1650.0" prefHeight="850.0" prefWidth="1650.0" styleClass="container">
+               <children>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="49.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="2.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="49.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="105.0" minHeight="105.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="280.0" minHeight="280.0" prefHeight="280.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="400.0" minHeight="400.0" prefHeight="400.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="5.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <GridPane fx:id="emprNameGrid" hgap="5.0" maxHeight="275.0" minHeight="275.0" prefHeight="275.0" styleClass="container" vgap="15.0" GridPane.rowIndex="2">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="12.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="22.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="24.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="24.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Phone Type" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Email" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Phone" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Email Type" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Timezone" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+      										<TextField fx:id="emprPhoneLabel" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      										<TextField fx:id="emprEmailLabel" editable="false" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+      										<TextField fx:id="emprTINLabel" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="591.0" layoutY="52.0" text="Inc On" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="791.0" layoutY="52.0" text="Dslvd On" textFill="#00000080" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="341.0" layoutY="52.0" text="TIN" textFill="#00000080" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="emprNameLabel" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="1" />
+                              <Label text="Name" textAlignment="RIGHT" textFill="#00000080" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="emprIncorporatedOnPicker" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="emprDissolvedOnPicker" layoutX="266.0" layoutY="106.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <ChoiceBox fx:id="emprPhoneTypeChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="emprTimezoneChoice" disable="true" layoutX="87.0" layoutY="146.0" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="emprEmailTypeChoice" layoutX="87.0" layoutY="146.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="emprHeaderLabel" text="Hand Icon denotes clickable list items" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <GridPane fx:id="emprMailGrid" hgap="5.0" maxHeight="150.0" minHeight="150.0" prefHeight="150.0" style="-fx-border-color: #cccccc; -fx-border-width: 2;" styleClass="container" vgap="8.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="TOP">
+                           <columnConstraints>
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                           </columnConstraints>
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="49.0" text="Street" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Zip4" textFill="#00000080" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Unit" textFill="#00000080" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailZip" editable="false" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                              <Label text="Mail Address" textFill="#00000080" GridPane.columnSpan="3" GridPane.halignment="LEFT" />
+                              <TextField id="txtacctMailStreet" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="7" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <TextField id="txtacctMailCity" editable="false" GridPane.columnIndex="9" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <TextField id="txtacctMailStreet" editable="false" layoutX="118.0" layoutY="130.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="2" />
+                              <TextField id="txtacctMailStreet" editable="false" layoutX="396.0" layoutY="168.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                              <TextField id="txtacctMailStreet" editable="false" layoutX="396.0" layoutY="168.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                              <Label fx:id="acctMAddrStateLabel" layoutX="569.0" layoutY="137.0" text="St" textFill="#00000080" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="643.0" layoutY="137.0" text="Zip" textFill="#00000080" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="18.0" layoutY="251.0" prefWidth="49.0" text="City" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane fx:id="acctPropertiesGrid" style="-fx-background-color: #ddeeff;" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="400.0" minHeight="400.0" prefHeight="400.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="emprTaxYearsLabel" text="Tax Years" textAlignment="RIGHT" textFill="#00000080" GridPane.columnSpan="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Button fx:id="emprAddTaxYearButton" maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#onAddTaxYear" prefHeight="30.0" prefWidth="100.0" text="+ Tax Year" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <TableView fx:id="emprTaxYearsTableView" maxHeight="390.0" minHeight="390.0" prefHeight="390.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TableView>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="emprBillGrid" hgap="5.0" maxHeight="150.0" minHeight="150.0" prefHeight="150.0" style="-fx-border-color: #cccccc; -fx-border-width: 2;" styleClass="container" vgap="8.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                           <columnConstraints>
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="8.0" />
+                              <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="10.0" />
+                           </columnConstraints>
+                           <children>
+                              <Label text="Bill Address" textFill="#00000080" GridPane.columnSpan="3" GridPane.halignment="LEFT" />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="49.0" text="Street" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailStreet" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="7" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <Label text="Unit" textFill="#00000080" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailCity" editable="false" GridPane.columnIndex="9" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="49.0" text="City" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailStreet" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="2" />
+                              <Label text="St" textFill="#00000080" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailStreet" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                              <Label text="Zip" textFill="#00000080" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailStreet" editable="false" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                              <Label text="Zip4" textFill="#00000080" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtacctMailZip" editable="false" GridPane.columnIndex="11" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                           </children>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Button maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowCoverageClass" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffffee; -fx-border-color: #aaaaaa;" text="Coverage Class" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="530.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Label prefHeight="35.0" prefWidth="194.0" text="Employer Tools" textAlignment="RIGHT" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="emprEditButton" maxHeight="40.0" minHeight="40.0" minWidth="85.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="40.0" text="Edit" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="emprSaveButton" maxHeight="40.0" minHeight="40.0" minWidth="85.0" mnemonicParsing="false" onAction="#onSave" prefHeight="40.0" text="Save" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="100.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="empDeleteButton" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowPlanYears" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #99cccc; -fx-border-color: #aaaaaa;" text="Plan Years" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="530.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="tbPayPeriodsButton" maxHeight="40.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowPayPeriods" prefHeight="40.0" style="-fx-background-color: #ddeeff; -fx-border-color: #aaaaaa;" text="Pay Periods" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="200.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowContacts" prefHeight="40.0" style="-fx-background-color: #ddffee; -fx-border-color: #aaaaaa;" text="Contacts" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="365.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowSystemInfo" prefHeight="40.0" style="-fx-background-color: #ffffcc; -fx-border-color: #aaaaaa;" text="System Data" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="200.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowUsers" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffd5a5; -fx-border-color: #aaaaaa;" text="Users" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="695.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowEligibilityPeriods" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #aaffaa; -fx-border-color: #aaaaaa;" text="Eligibility Periods" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="365.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowProperties" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #dddddd; -fx-border-color: #aaaaaa;" text="Properties" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="695.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowLocations" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffeeff; -fx-border-color: #aaaaaa;" text="Locations" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="860.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button layoutX="870.0" layoutY="15.0" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowDepartments" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffe0e0; -fx-border-color: #aaaaaa;" text="Departments" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="860.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowCodeCallHistory" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #eeffee; -fx-border-color: #aaaaaa;" text="Code Call History" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="1030.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button maxHeight="40.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onAction="#onShowNotes" prefHeight="40.0" style="-fx-background-color: #eeffcc; -fx-border-color: #aaaaaa;" text="Notes" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="1030.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" />
+               </children>
+            </VBox>
+      	</children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

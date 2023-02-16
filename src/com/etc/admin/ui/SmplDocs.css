@@ -1,0 +1,320 @@
+
+.header {
+	-fx-background-color: -fx-color;
+	-fx-spacing: 8.0px;
+	-fx-padding: 6.0px 8.0px 6.0px 8.0px;
+	-fx-font-weight: BOLD;
+	-fx-font-size: 18.0px;
+}
+
+.parent {
+	-fx-background-color: -fx-background;
+	-fx-spacing: 8.0px;
+	-fx-padding: 6.0px 8.0px 6.0px 8.0px;
+}
+
+.container {
+	-fx-background-color: transparent;
+	-fx-spacing: 8.0px;
+	-fx-padding: 6.0px 8.0px 6.0px 8.0px;
+}
+
+.custom-menu {
+	-fx-background-color: transparent;
+}
+
+.border {
+	-fx-border-color: -fx-box-border;
+	-fx-border-width: 1.0px;
+}
+
+.popup {
+	-fx-background-color: -fx-background;
+	-fx-spacing: 8.0px;
+	-fx-padding: 6.0px 8.0px 6.0px 8.0px;
+	-fx-border-color: -fx-box-border;
+	-fx-border-width: 1.0px;
+}
+
+.clickable {
+	-fx-cursor: hand;
+	
+}
+
+.clickable .label {
+	-fx-text-fill: -fx-text-base-color;
+}
+
+.clickable:hover {
+	-fx-color: -fx-accent;
+	-fx-background-color: -fx-accent;
+}
+
+* :disabled {
+    -fx-opacity: 1;
+}
+
+.text-area .scroll-bar:vertical {
+	-fx-pref-width: 1;
+	-fx-opacity: 0;
+}
+
+.text-area .scroll-bar:horizontal {
+	-fx-pref-height: 1;
+	-fx-opacity: 0;
+}
+
+.text-area::-webkit-scrollbar {
+	display: none;
+	width: 0 !important;
+}
+/*
+ * START
+ * Makes TreeTableView look like a normal TableView
+ */
+ 
+/*  .text-area {
+ 	text-area-background: #ffffcc;
+ }
+ .text-area .content {
+ 	-fx-background-color: text-area-background ; 
+ }
+ */
+.tree-table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, -fx-control-inner-background;
+    -fx-background-insets: 0.0, 0.0 0.0 1.0 0.0;
+    -fx-padding: 0.0em;
+    -fx-text-fill: -fx-text-inner-color;
+}
+.tree-table-row-cell:selected {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-focus-color;
+    -fx-background-insets: 0.0, 1.0, 2.0;
+}
+
+.tree-table-row-cell:odd {
+    -fx-background-color: -fx-table-cell-border-color, derive(-fx-control-inner-background,-5.0%);
+    -fx-background-insets: 0.0, 0.0 0.0 1.0 0.0;
+}
+
+.tree-table-row-cell:selected:odd {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-focus-color;
+    -fx-background-insets: 0.0, 1.0, 2.0;
+}
+
+.RawCellEven{
+    -fx-background-color: LemonChiffon;
+}
+
+.RawCellEvenMarked {
+    -fx-background-color: LightCoral;
+}
+
+.RawCellOdd {
+    -fx-background-color: White;
+}
+
+.RawCellOddMarked {
+    -fx-background-color: Salmon;
+}
+
+.RawCellEvenFixed {
+    -fx-background-color: Gainsboro;
+}
+
+.RawCellEvenFixedMarked {
+    -fx-background-color: LightCoral;
+}
+
+.RawCellOddFixed {
+    -fx-background-color: LightGray;
+}
+
+.RawCellOddFixedMarked {
+    -fx-background-color: Salmon;
+}
+
+.RawCellEvenIgnored{
+    -fx-background-color: SlateGray;
+    -fx-text-fill: LightGray
+}
+
+.RawCellOddIgnored {
+    -fx-background-color: LightSlateGray;
+    -fx-text-fill: LightGray
+}
+
+.DynFileSpec0 {
+    -fx-background-color: LightGreen;
+}
+
+.DynFileSpec1 {
+    -fx-background-color: LightYellow;
+}
+
+.DynFileSpecMarked1 {
+    -fx-background-color: Moccasin;
+}
+
+.BackColor0 {
+    -fx-background-color: #d58580;
+    -fx-text-fill: #000000;
+}
+
+.BackColor1 {
+    -fx-background-color: #d98880;
+    -fx-text-fill: #000000;
+}
+
+.BackColor2 {
+    -fx-background-color: #f5b7b1;
+}
+
+.BackColor3 {
+    -fx-background-color: #c39bd3;
+}
+
+.BackColor4 {
+    -fx-background-color: #d2b4de;
+}
+
+.BackColor5 {
+    -fx-background-color: #7fb3d5;
+}
+
+.BackColor6 {
+    -fx-background-color: #aed6f1;
+}
+
+.BackColor7 {
+    -fx-background-color: #76d7c4;
+}
+
+.BackColor8 {
+    -fx-background-color: #a2d9ce;
+}
+
+.BackColor9 {
+    -fx-background-color: #7dcea0;
+}
+
+.BackColor10 {
+    -fx-background-color: #abebc6;
+}
+
+.BackColor11 {
+    -fx-background-color: #f7dc6f;
+}
+
+.BackColor12 {
+    -fx-background-color: #fad7a0;
+}
+
+.BackColor13 {
+    -fx-background-color: #f0b27a;
+}
+
+.BackColor14 {
+    -fx-background-color: #edbb99;
+}
+
+.BackColor15 {
+    -fx-background-color: #6666ff;
+   -fx-text-fill: #ffffff;
+}
+
+.BackColor16 {
+    -fx-background-color: #6699ff;
+}
+
+.BackColor17 {
+    -fx-background-color: #66ccff;
+}
+
+.BackColor18 {
+    -fx-background-color: #66ffff;
+}
+
+.BackColor19 {
+    -fx-background-color: #9900ff;
+    -fx-text-fill: #ffffff;
+}
+
+.BackColor20 {
+    -fx-background-color: #9933ff;
+    -fx-text-fill: #ffffff;
+}
+
+.BackColor21 {
+    -fx-background-color: #9966ff;
+}
+
+.BackColor22 {
+    -fx-background-color: #9999ff;
+}
+
+.BackColor23 {
+    -fx-background-color: #99ffff;
+}
+
+.BackColor24 {
+    -fx-background-color: #cc00ff;
+    -fx-text-fill: #ffffff;
+}
+
+.BackColor25 {
+    -fx-background-color: #cc66ff;
+}
+
+.BackColor26 {
+    -fx-background-color: #cc99ff;
+}
+
+.BackColor27 {
+    -fx-background-color: #ccccff;
+}
+
+.BackColor28 {
+    -fx-background-color: #ccffff;
+}
+
+.BackColor29 {
+    -fx-background-color: #ff00ff;
+    -fx-text-fill: #ffffff;
+}
+
+.BackColor30 {
+    -fx-background-color: #ff33ff;
+}
+
+.AdditionalHoursCell {
+    -fx-background-color: LightGreen;
+}
+
+
+.Invalidation {
+    -fx-background-color: #ffdddd;
+    -fx-text-fill: #000000;
+}
+
+.combo-box:disabled, .combo-box:disabled > * {
+  -fx-opacity: 1.0 ;
+}
+
+.date-picker:disabled, .date-picker:disabled > * {
+  -fx-opacity: 1.0 ;
+}
+
+.text-field:disabled, .text-field:disabled > * {
+  -fx-opacity: 1.0 ;
+}
+
+/*
+ * Makes TreeTableView look like a normal TableView
+ * END
+ */
+ /* 
+ .choice-box {
+ 	-fx-min-width: 100;
+ }
+ */
+ 

@@ -3,7 +3,6 @@ bin/
 tmp/
 target
 *.tmp
-*.class
 *.bak
 *.swp
 *~.nib
@@ -11,7 +10,6 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-.classpath
 
 # External tool builders
 .externalToolBuilders/
@@ -61,14 +59,3 @@ local.properties
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
-/Temp1
-/Temp2
-/Test
-
-hs_err_pid32912.log
-
-replay_pid32912.log
-
-hs_err_pid20848.log
-
-replay_pid20848.log

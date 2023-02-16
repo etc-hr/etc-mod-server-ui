@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.nav.NavigationController">
+	<children>
+		<ScrollPane fx:id="navScrollPane" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox fx:id="navVBox">
+               <children>
+                  <HBox fx:id="navOrgHBox" onMouseClicked="#navOrgMouseEvent">
+                     <styleClass>
+                        <String fx:value="clickable" />
+                        <String fx:value="container" />
+                     </styleClass>
+                     <children>
+                        <Label text="Core" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="navAccountHBox" onMouseClicked="#navAccountMouseEvent">
+                     <styleClass>
+                        <String fx:value="clickable" />
+                        <String fx:value="container" />
+                     </styleClass>
+                     <children>
+                        <Label text="Simple Docs" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="navEmployerHBox" onMouseClicked="#navEmployerMouseEvent">
+                     <styleClass>
+                        <String fx:value="clickable" />
+                        <String fx:value="container" />
+                     </styleClass>
+                     <children>
+                        <Label text="Hub" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+		</ScrollPane>
+	</children>
+</VBox>

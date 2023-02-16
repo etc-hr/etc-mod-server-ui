@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="parentBox" alignment="CENTER_RIGHT" styleClass="container, border" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.menu.MenuController">
+	<children>
+		<MenuBar fx:id="accountMenuBar" styleClass="custom-menu" HBox.hgrow="NEVER">
+			<menus>
+				<Menu fx:id="accountMenu" mnemonicParsing="false" text="Account">
+					<items>
+						<MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" onAction="#logoutMenuAction" text="Logout" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</children>
+</HBox>

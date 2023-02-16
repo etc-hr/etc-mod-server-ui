@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+	version="2.2">
+	<persistence-unit name="adminapp_corvetto" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+	    <mapping-file>META-INF/CoreData.xml</mapping-file>
+	    <mapping-file>META-INF/mappings.xml</mapping-file>
+
+		<!-- COMMON CORE ENTITIES -->
+		<class>com.etc.embeds.SSN</class>
+		<class>com.etc.entities.CoreData</class>
+		<class>com.etc.entities.CoreEvent</class>
+		<class>com.etc.entities.CoreEventType</class>
+		<class>com.etc.entities.CoreSystem</class>
+		<class>com.etc.entities.CoreSystemInstance</class>
+		<class>com.etc.entities.CoreSystemKeyPair</class>
+		<class>com.etc.entities.CoreSystemRelease</class>
+		<class>com.etc.entities.CoreUser</class>
+		<class>com.etc.entities.DataProperty</class>
+		<class>com.etc.entities.DataPropertyType</class>
+		<class>com.etc.entities.Endpoint</class>
+
+		<!-- CORVETTO ENTITIES -->
+		<class>com.etc.corvetto.entities.Account</class>
+		<class>com.etc.corvetto.entities.AccountContact</class>
+		<class>com.etc.corvetto.entities.AccountEligibilitySpecification</class>
+		<class>com.etc.corvetto.entities.AccountLock</class>
+		<class>com.etc.corvetto.entities.AccountSnapshot</class>
+		<class>com.etc.corvetto.entities.AggregateGroup</class>
+		<class>com.etc.corvetto.entities.AggregateGroupTaxYear</class>
+		<class>com.etc.corvetto.entities.AirError</class>
+		<class>com.etc.corvetto.entities.AirFilingEvent</class>
+		<class>com.etc.corvetto.entities.AirTransmission</class>
+		<class>com.etc.corvetto.entities.ASID</class>
+		<class>com.etc.corvetto.entities.Benefit</class>
+		<class>com.etc.corvetto.entities.BenefitSponsor</class>
+		<class>com.etc.corvetto.entities.Carrier</class>
+		<class>com.etc.corvetto.entities.Contact</class>
+		<class>com.etc.corvetto.entities.CorvettoData</class>
+		<class>com.etc.corvetto.entities.Coverage</class>
+		<class>com.etc.corvetto.entities.CoverageGroup</class>
+		<class>com.etc.corvetto.entities.CoverageGroupMembership</class>
+		<class>com.etc.corvetto.entities.CoverageSnapshot</class>
+		<class>com.etc.corvetto.entities.Department</class>
+		<class>com.etc.corvetto.entities.Dependent</class>
+		<class>com.etc.corvetto.entities.DependentSnapshot</class>
+		<class>com.etc.corvetto.entities.Document</class>
+		<class>com.etc.corvetto.entities.DocumentActivity</class>
+		<class>com.etc.corvetto.entities.DocumentType</class>
+		<class>com.etc.corvetto.entities.DocumentQueue</class>
+		<class>com.etc.corvetto.entities.EligibilityPeriod</class>
+		<class>com.etc.corvetto.entities.EligibilityMeasurement</class>
+		<class>com.etc.corvetto.entities.Employee</class>
+		<class>com.etc.corvetto.entities.EmployeeBatch</class>
+		<class>com.etc.corvetto.entities.EmployeeBatchTemplate</class>
+		<class>com.etc.corvetto.entities.EmployeeCoveragePayment</class>
+		<class>com.etc.corvetto.entities.EmployeeCoveragePremium</class>
+		<class>com.etc.corvetto.entities.EmployeeInformation</class>
+		<class>com.etc.corvetto.entities.EmployeeLeave</class>
+		<class>com.etc.corvetto.entities.EmployeeSnapshot</class>
+		<class>com.etc.corvetto.entities.EmployeeTaxYearInformation</class>
+		<class>com.etc.corvetto.entities.Employer</class>
+		<class>com.etc.corvetto.entities.EmployerContact</class>
+		<class>com.etc.corvetto.entities.EmployerInformation</class>
+		<class>com.etc.corvetto.entities.EmployerIntegrationInformation</class>
+		<class>com.etc.corvetto.entities.EmployerPaySettingsPeriod</class>
+		<class>com.etc.corvetto.entities.EmployerSnapshot</class>
+		<class>com.etc.corvetto.entities.EmploymentPeriod</class>
+		<class>com.etc.corvetto.entities.EmploymentPeriodSnapshot</class>
+		<class>com.etc.corvetto.entities.ErqProfile</class>
+		<class>com.etc.corvetto.entities.ErqRequest</class>
+		<class>com.etc.corvetto.entities.ErqRequestFieldValue</class>
+		<class>com.etc.corvetto.entities.ErqRequestFieldValueDocument</class>
+		<class>com.etc.corvetto.entities.ErqRequestStep</class>
+		<class>com.etc.corvetto.entities.ErqTemplate</class>
+		<class>com.etc.corvetto.entities.ErqTemplateField</class>
+		<class>com.etc.corvetto.entities.ErqTemplateFieldSelection</class>
+		<class>com.etc.corvetto.entities.ErqTemplateOperation</class>
+		<class>com.etc.corvetto.entities.FilingAuthority</class>
+		<class>com.etc.corvetto.entities.FilingNamespace</class>
+		<class>com.etc.corvetto.entities.FilingPeriod</class>
+		<class>com.etc.corvetto.entities.InsuranceProduct</class>
+		<class>com.etc.corvetto.entities.Irs1094b</class>
+		<class>com.etc.corvetto.entities.Irs1094bSnapshot</class>
+		<class>com.etc.corvetto.entities.Irs1094c</class>
+		<class>com.etc.corvetto.entities.Irs1094cSnapshot</class>
+		<class>com.etc.corvetto.entities.Irs1094Filing</class>
+		<class>com.etc.corvetto.entities.Irs1094FilingCorrection</class>
+		<class>com.etc.corvetto.entities.Irs1095FilingCorrection</class>
+		<class>com.etc.corvetto.entities.Irs1095FilingCICorrection</class>
+		<class>com.etc.corvetto.entities.Irs1094Submission</class>
+		<class>com.etc.corvetto.entities.Irs1095b</class>
+		<class>com.etc.corvetto.entities.Irs1095bCI</class>
+		<class>com.etc.corvetto.entities.Irs1095bCISnapshot</class>
+		<class>com.etc.corvetto.entities.Irs1095bNotice</class>
+		<class>com.etc.corvetto.entities.Irs1095bSnapshot</class>
+		<class>com.etc.corvetto.entities.Irs1095c</class>
+		<class>com.etc.corvetto.entities.Irs1095Correction</class>
+		<class>com.etc.corvetto.entities.Irs1095cCI</class>
+		<class>com.etc.corvetto.entities.Irs1095cCISnapshot</class>
+		<class>com.etc.corvetto.entities.Irs1095cNotice</class>
+		<class>com.etc.corvetto.entities.Irs1095cSnapshot</class>
+		<class>com.etc.corvetto.entities.Irs1095Filing</class>
+		<class>com.etc.corvetto.entities.Irs1095Submission</class>
+		<class>com.etc.corvetto.entities.Location</class>
+		<class>com.etc.corvetto.entities.Ma1099Hc</class>
+		<class>com.etc.corvetto.entities.MEWA</class>
+		<class>com.etc.corvetto.entities.Note</class>
+		<class>com.etc.corvetto.entities.NoteType</class>
+		<class>com.etc.corvetto.entities.Operation</class>
+		<class>com.etc.corvetto.entities.OperationHandler</class>
+		<class>com.etc.corvetto.entities.Organization</class>
+		<class>com.etc.corvetto.entities.OrganizationSdxAccountInformation</class>
+		<class>com.etc.corvetto.entities.Pay</class>
+		<class>com.etc.corvetto.entities.PayClass</class>
+		<class>com.etc.corvetto.entities.PayDeduction</class>
+		<class>com.etc.corvetto.entities.PayGap</class>
+		<class>com.etc.corvetto.entities.PayPeriod</class>
+		<class>com.etc.corvetto.entities.PayPeriodSchedule</class>
+		<class>com.etc.corvetto.entities.PayrollSystem</class>
+		<class>com.etc.corvetto.entities.PaySnapshot</class>
+		<class>com.etc.corvetto.entities.Person</class>
+		<class>com.etc.corvetto.entities.PersonSnapshot</class>
+		<class>com.etc.corvetto.entities.PlanYear</class>
+		<class>com.etc.corvetto.entities.PlanYearOffering</class>
+		<class>com.etc.corvetto.entities.PlanYearOfferingBenefit</class>
+		<class>com.etc.corvetto.entities.PostalAddress</class>
+		<class>com.etc.corvetto.entities.PostalAddressSnapshot</class>
+		<class>com.etc.corvetto.entities.Process</class>
+		<class>com.etc.corvetto.entities.ProcessType</class>
+		<class>com.etc.corvetto.entities.RecurringProcess</class>
+		<class>com.etc.corvetto.entities.RecurringProcessExecutionWindow</class>
+		<class>com.etc.corvetto.entities.ProcessTypeOperation</class>
+		<class>com.etc.corvetto.entities.ResponsibleIndividualCompany</class>
+		<class>com.etc.corvetto.entities.RetirementPeriod</class>
+		<class>com.etc.corvetto.entities.Role</class>
+		<class>com.etc.corvetto.entities.ScheduledProcess</class>
+		<class>com.etc.corvetto.entities.Session</class>
+		<class>com.etc.corvetto.entities.SnapshotData</class>
+		<class>com.etc.corvetto.entities.StandardMeasurementPeriod</class>
+		<class>com.etc.corvetto.entities.Step</class>
+		<class>com.etc.corvetto.entities.Tag</class>
+		<class>com.etc.corvetto.entities.TaxMonth</class>
+		<class>com.etc.corvetto.entities.TaxPeriod</class>
+		<class>com.etc.corvetto.entities.TaxYear</class>
+		<class>com.etc.corvetto.entities.TaxYearFilingHandler</class>
+		<class>com.etc.corvetto.entities.TaxYearServiceLevel</class>
+		<class>com.etc.corvetto.entities.TaxYearSnapshot</class>
+		<class>com.etc.corvetto.entities.TypeMaster</class>
+		<class>com.etc.corvetto.entities.UnmeasurablePeriod</class>
+		<class>com.etc.corvetto.entities.Upload</class>
+		<class>com.etc.corvetto.entities.UploadHandler</class>
+		<class>com.etc.corvetto.entities.UploadType</class>
+		<class>com.etc.corvetto.entities.UploadTypeTemplate</class>
+		<class>com.etc.corvetto.entities.User</class>
+		<class>com.etc.corvetto.entities.V2MeasuredFinal</class>
+		<class>com.etc.corvetto.entities.Folder</class>
+		<class>com.etc.corvetto.entities.PersonTaxYearInformation</class>
+
+		<!-- CALCULATOR ENTITIES -->
+		<class>com.etc.corvetto.ems.calc.embeds.CalculatedInformation</class>
+		<class>com.etc.corvetto.ems.calc.embeds.CalculationInformation</class>
+		<class>com.etc.corvetto.ems.calc.entities.CalculatedNotice</class>
+		<class>com.etc.corvetto.ems.calc.entities.CalculationChannel</class>
+		<class>com.etc.corvetto.ems.calc.entities.CalculationNotice</class>
+		<class>com.etc.corvetto.ems.calc.entities.CalculationRequest</class>
+		<class>com.etc.corvetto.ems.calc.entities.CalculationSpecification</class>
+		<class>com.etc.corvetto.ems.calc.entities.CalculationStepHandler</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedIrs1094b</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedIrs1094c</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedIrs1095b</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedIrs1095bCI</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedIrs1095c</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedIrs1095cCI</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.CalculatedMa1099Hc</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.Irs10945bCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.Irs10945cCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.Ma1099HcCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.air.CalculatedAirTransmission</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.air.CalculatedIrs1094Filing</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.air.CalculatedIrs1094Submission</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.air.CalculatedIrs1095Filing</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.air.CalculatedIrs1095Submission</class>
+		<class>com.etc.corvetto.ems.calc.entities.aca.air.Irs10945FilingCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.elig.CalculatedMeasurement</class>
+		<class>com.etc.corvetto.ems.calc.entities.elig.CalculatedMeasurementEmployee</class>
+		<class>com.etc.corvetto.ems.calc.entities.elig.CalculatedMeasurementPeriod</class>
+		<class>com.etc.corvetto.ems.calc.entities.elig.EligibilityMeasurementCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.CalculatedCoverageSnapback</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.CalculatedDependentCoverageSnapback</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.CalculatedDependentSnapback</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.CalculatedEmployeeSnapback</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.CalculatedEmploymentPeriodSnapback</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.CalculatedPaySnapback</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.cov.CoverageFileSnapbackCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.emp.EmployeeFileSnapbackCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.pipeline.pay.PayFileSnapbackCalculation</class>
+		<class>com.etc.corvetto.ems.calc.entities.utils.emp.EmployeeMergerCalculation</class>
+	
+		<!-- EXPORTER ENTITIES -->
+		<class>com.etc.corvetto.ems.exp.embeds.ExportInformation</class>
+		<class>com.etc.corvetto.ems.exp.entities.ExportChannel</class>
+		<class>com.etc.corvetto.ems.exp.entities.ExportNotice</class>
+		<class>com.etc.corvetto.ems.exp.entities.ExportRequest</class>
+		<class>com.etc.corvetto.ems.exp.entities.ExportSpecification</class>
+		<class>com.etc.corvetto.ems.exp.entities.ExportStepHandler</class>
+		<class>com.etc.corvetto.ems.exp.entities.aca.IrsAirCorrectionsExport</class>
+		<class>com.etc.corvetto.ems.exp.entities.aca.IrsAirFilingExport</class>
+		<class>com.etc.corvetto.ems.exp.entities.aca.IrsAirFilingStatusExport</class>
+
+		<!-- IMPORTER ENTITIES -->
+
+		<!-- PIPELINE ENTITIES -->
+		<class>com.etc.corvetto.ems.pipeline.embeds.PipelineInformation</class>
+		<class>com.etc.corvetto.ems.pipeline.embeds.RecordInformation</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.DynamicFileStateAbbreviationReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineChannel</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineFileNotice</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineFileRecordRejection</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineFileStepHandler</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineParseDateFormat</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineParsePattern</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineRequest</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.PipelineSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawBenefit</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawConversionFailure</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawCoverage</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawCustomFieldNames</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawDeduction</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawDependent</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawDependentCoverage</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawEmployee</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawInvalidation</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawIrs1094c</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawIrs1095c</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawIrs1095cCI</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawNotice</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawPay</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawPayPeriod</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.RawPremium</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.airerr.AirTranErrorFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.airerr.RawAirTranError</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.airrct.AirTranReceiptFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.airrct.RawAirTranReceipt</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ben.BenefitFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ben.DynamicBenefitFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ben.DynamicBenefitFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ben.DynamicBenefitFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.c95.DynamicIrs1095cFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.c95.DynamicIrs1095cFileGenderReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.c94.Irs1094cFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.c95.Irs1095cFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.CoverageFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.DynamicCoverageFileCoverageGroupReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.DynamicCoverageFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.DynamicCoverageFileGenderReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.DynamicCoverageFileIgnoreRowSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.DynamicCoverageFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.cov.DynamicCoverageFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ded.DeductionFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ded.DynamicDeductionFileDeductionSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ded.DynamicDeductionFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ded.DynamicDeductionFileIgnoreRowSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ded.DynamicDeductionFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ded.DynamicDeductionFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileCoverageGroupReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileDepartmentReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileGenderReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileIgnoreRowSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileLocationReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFilePayCodeReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.DynamicEmployeeFileUnionTypeReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.emp.EmployeeFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ins.DynamicInsuranceFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ins.DynamicInsuranceFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ins.DynamicInsuranceFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ins.InsuranceFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.c95.DynamicIrs1095cFileSpecification</class><class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileAdditionalHoursSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileCoverageGroupReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileDepartmentReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileEmployerReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileGenderReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileIgnoreRowSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileLocationReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFilePayClassReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFilePayCodeReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFilePayFrequencyReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFilePayPeriodRule</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileUnionTypeReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.PayConversionCalculation</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.PayConversionCalculationReference</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.PayFile</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ppd.DynamicPayPeriodFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ppd.DynamicPayPeriodFileSpecificationSnapshot</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.ppd.PayPeriodFile</class>
+
+		<!-- NEED TO BRING OVER COVERAGE/BENEFIT ENTITIES -->
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	    <shared-cache-mode>NONE</shared-cache-mode>
+	    <properties>
+
+			<!-- HIBERNATE-DATABASE CONFIGURATION -->
+			<property name="hibernate.connection.provider_class"	value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" />
+			<property name="hibernate.connection.driver_class"		value="org.h2.Driver" />
+			<!-- 
+			<property name="hibernate.connection.url"				value="jdbc:h2:file:" />
+			<property name="hibernate.connection.username"			value="sa" />
+			<property name="hibernate.connection.password"			value="" />
+			<property name="hibernate.hbm2ddl.auto"					value="update" />
+	 		-->
+			<!-- HIBERNATE CONFIGURATION -->
+			<property name="hibernate.dialect"						value="org.hibernate.dialect.H2Dialect" />
+			<property name="hibernate.flushMode"					value="AUTO" />
+			<property name="hibernate.order_updates"				value="true" />
+			<property name="hibernate.show_sql"						value="false" />
+	        <property name="hibernate.format_sql"					value="true" />
+	        <property name="hibernate.use_sql_comments"				value="true" />
+	    	<property name="hibernate.generate_statistics"			value="false" />
+	    	<property name="hibernate.enhancer.enableDirtyTracking"	value="true" />
+	    	
+	    	<property name="hibernate.cache.use_second_level_cache"					value="false" />
+	        <!-- <property name="hibernate.cache.region.factory_class"					value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory" />
+	        <property name="hibernate.cache.default_cache_concurrency_strategy"		value="read-write" />
+	    	<property name="hibernate.cache.use_query_cache"						value="false" />
+	    	 -->
+
+			<property name="hibernate.hikari.connectionTimeout"		value="30000" />
+			<property name="hibernate.hikari.minimumIdle"			value="2" />
+			<property name="hibernate.hikari.maximumPoolSize"		value="25" />
+
+	    </properties>
+	</persistence-unit>
+        
+</persistence>

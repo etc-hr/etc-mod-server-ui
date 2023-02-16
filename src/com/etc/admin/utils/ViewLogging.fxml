@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.utils.ViewLoggingController">
+	<children>
+      <VBox style="-fx-background-color: #ddeeff; -fx-border-color: #000000;">
+         <children>
+            <GridPane hgap="5.0" maxWidth="1200.0" minWidth="1200.0" prefWidth="1200.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" percentWidth="1.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="49.0" />
+                  <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="49.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" percentWidth="1.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" />
+                  <RowConstraints minHeight="500.0" prefHeight="500.0" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="covCancelButton" layoutX="1048.0" layoutY="81.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onClose" prefWidth="100.0" text="Close" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Button>
+                  <Label layoutX="79.0" layoutY="46.0" text="Admin App Log Entries" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="covRemoveButton" layoutX="331.0" layoutY="394.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onClear" prefWidth="100.0" text="Clear" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Button>
+                  <ListView fx:id="logListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+	</children>
+</AnchorPane>

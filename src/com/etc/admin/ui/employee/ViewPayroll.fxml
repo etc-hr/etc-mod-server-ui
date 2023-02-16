@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="1400.0" minWidth="1400.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.employee.ViewPayrollController">
+   <children>
+      <VBox maxWidth="1400.0" minWidth="1400.0" prefWidth="1400.0" style="-fx-background-color: #ddeeff; -fx-border-color: #000000; -fx-border-width: 3;">
+         <children>
+            <GridPane fx:id="empEmployeeCoveragePeriodsListGrid1" maxWidth="1360.0" minWidth="1360.0" prefWidth="1360.0" style="-fx-background-color: #ddeeff;">
+               <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="245.0" minWidth="245.0" prefWidth="245.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="700.0" minHeight="700.0" prefHeight="700.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="empPayLabel" text="Employee Payroll" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <CheckBox fx:id="empInactivePaysCheck" mnemonicParsing="false" onAction="#onPayInactivesClick" selected="true" text="Inactive" GridPane.columnIndex="4" GridPane.halignment="LEFT">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="empUnprocessedPaysCheck" layoutX="309.0" layoutY="20.0" mnemonicParsing="false" onAction="#onPayUnprocessedOnlyClick" text="Unprocessed only" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <TableView fx:id="empPayTableView" maxWidth="1800.0" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                     </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <ComboBox fx:id="empPayCompTypeReplace" prefWidth="130.0" promptText="Comp Type" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="80.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Button maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onPayReplaceComp" prefWidth="75.0" text="Replace" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                  <TextField fx:id="empPayHoursReplace" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" promptText="Hours" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="80.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Button layoutX="411.0" layoutY="15.0" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onPayReplaceHours" prefWidth="75.0" text="Replace" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+                  <Button fx:id="empPaySave" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onPaySave" prefWidth="75.0" text="Save" GridPane.columnIndex="6" GridPane.halignment="LEFT">
+                     <GridPane.margin>
+                        <Insets left="85.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="empPayReset" layoutX="1007.0" layoutY="15.0" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#onPayReset" prefWidth="75.0" text="Reset" GridPane.columnIndex="6" GridPane.halignment="LEFT">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="empPaySaving" layoutX="1090.0" layoutY="15.0" maxWidth="85.0" minWidth="85.0" mnemonicParsing="false" prefWidth="85.0" style="-fx-background-color: #77ff77; -fx-border-color: #aaaaaa;" text="Saving" GridPane.columnIndex="6" GridPane.halignment="LEFT">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="85.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button maxWidth="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#onClose" prefWidth="85.0" text="Close" GridPane.columnIndex="6" GridPane.halignment="RIGHT" />
+                  <Label fx:id="empPayLabel1" text="Typechange entries highlighted in Teal Font (Select as needed using control, shift click. Then right click to toggle activation.)" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="empAllEmployersCheck" mnemonicParsing="false" onAction="#onShowAllEmployersClick" text="Show across all Employers" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="empDeletedPaysCheck" mnemonicParsing="false" onAction="#onPayInactivesClick" text="Deleted" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+               </children>
+            </GridPane>
+         </children>
+         <styleClass>
+            <String fx:value="container" />
+            <String fx:value="border" />
+         </styleClass>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="485.0" prefWidth="800.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.user.ViewUserController">
+	<children>
+		<ScrollPane fitToWidth="true" prefHeight="408.0" prefWidth="800.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<content>
+				<VBox prefHeight="395.0" prefWidth="798.0" styleClass="container">
+					<children>
+                  <VBox prefWidth="795.0" styleClass="container">
+                     <children>
+                        <HBox alignment="TOP_CENTER" minHeight="50.0" prefHeight="60.0" prefWidth="781.0" style="-fx-background-color: #dfdfdf;">
+                           <children>
+                              <Label fx:id="usrUsersLabel" text="Search Users:  " textFill="#00000080">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ComboBox fx:id="usrUsersComboBox" editable="true" onAction="#onSearchUsers" onHiding="#onSearchHide" prefHeight="26.0" prefWidth="503.0">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <Separator prefWidth="20.0" visible="false" />
+                              <Button fx:id="usrAddUserButton" mnemonicParsing="false" onAction="#onAddUser" text="+ User">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Separator maxHeight="50.0" minHeight="50.0" orientation="VERTICAL" prefHeight="50.0" visible="false" />
+                        <VBox prefWidth="981.0">
+                           <children>
+                              <GridPane fx:id="secInputLabelGrid2" hgap="5.0" prefHeight="150.0" prefWidth="747.0" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="100.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints halignment="RIGHT" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="27.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Last Name" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Email Type" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="txtacctETCCoID" fx:id="acctEtccoid1" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <Label layoutX="791.0" layoutY="52.0" text="Last Login" textFill="#00000080" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="591.0" layoutY="52.0" text="Phone" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="usrEditButton" mnemonicParsing="false" onAction="#onEdit" prefHeight="26.0" prefWidth="90.0" text="Edit" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <Label layoutX="65.0" layoutY="102.0" text="Phone Type" textFill="#00000080" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="18.0" layoutY="166.0" text="Security Level" textFill="#00000080" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="usrLastNameLabel" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="usrFirstNameLabel" editable="false" layoutX="113.0" layoutY="43.0" GridPane.columnIndex="1" />
+                                    <Label layoutX="42.0" layoutY="49.0" text="First Name" textAlignment="RIGHT" textFill="#00000080" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="usrEmailLabel" editable="false" layoutX="113.0" layoutY="43.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                                    <TextField fx:id="usrPhoneLabel" editable="false" layoutX="113.0" layoutY="69.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="usrSecurityLevelLabel" editable="false" layoutX="113.0" layoutY="15.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="usrPhoneTypeLabel" editable="false" layoutX="113.0" layoutY="129.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <TextField fx:id="usrLastLoginLabel" editable="false" layoutX="291.0" layoutY="97.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                    <TextField fx:id="lusrEmailTypeLabel" editable="false" layoutX="291.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label layoutX="74.0" layoutY="94.0" text="Email" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="43.0" layoutY="78.0" text="Middle Name" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="43.0" layoutY="58.0" text="User Name" textAlignment="RIGHT" textFill="#00000080" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="usrMiddleNameLabel" editable="false" layoutX="113.0" layoutY="16.0" GridPane.columnIndex="3" />
+                                    <TextField fx:id="usrUserNameLabel" editable="false" layoutX="291.0" layoutY="16.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="secInputLabelGrid1" hgap="5.0" prefHeight="34.0" prefWidth="770.0" style="-fx-background-color: #eeeeee;" styleClass="container" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints percentWidth="49.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="41.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="49.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="55.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="48.0" />
+                                    <ColumnConstraints percentWidth="83.0" />
+                                    <ColumnConstraints halignment="RIGHT" percentWidth="67.0" />
+                                    <ColumnConstraints halignment="RIGHT" minWidth="10.0" percentWidth="83.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="24.0" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="BODate" textFill="#00000080" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Id" textFill="#00000080" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Last Updated" textFill="#00000080" GridPane.columnIndex="7">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Core Data" textFill="#00000080">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Active" textFill="#00000080" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="usrCoreIdLabel" text="Label" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                                    <Label fx:id="usrCoreActiveLabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                                    <Label fx:id="usrCoreBODateLabel" text="Label" GridPane.columnIndex="6" GridPane.halignment="LEFT" />
+                                    <Label fx:id="usrCoreLastUpdatedLabel" text="Label" GridPane.columnIndex="8" GridPane.halignment="LEFT" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="border" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </VBox>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>
