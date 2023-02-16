@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -501,7 +501,7 @@ public class ViewEmployeeMergeController
 		    	DataManager.i().log(Level.SEVERE,task.getException()); 
 		    	showEmp1Data(); 
 		    });  
-			AdminApp.getInstance().getFxQueue().put(task); 
+			EmsApp.getInstance().getFxQueue().put(task); 
 			 
 		} catch (InterruptedException e1) { e1.printStackTrace(); } 
 	    catch (Exception e) { DataManager.i().logGenericException(e); } 
@@ -538,7 +538,7 @@ public class ViewEmployeeMergeController
 		    	DataManager.i().log(Level.SEVERE,task.getException()); 
 	    		showEmp2Data();  
 	    	});  
-			AdminApp.getInstance().getFxQueue().put(task); 
+			EmsApp.getInstance().getFxQueue().put(task); 
 			 
 		} catch (InterruptedException e1) { e1.printStackTrace(); } 
 	    catch (Exception e) { DataManager.i().logGenericException(e); } 

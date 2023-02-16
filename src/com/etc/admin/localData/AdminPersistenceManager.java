@@ -23,7 +23,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.LocalDataManager;
 import com.etc.admin.data.queue.QueuedDatabaseOptionalUpdate;
 import com.etc.admin.data.queue.QueuedDatabaseRequiredUpdate;
@@ -42,17 +42,16 @@ public class AdminPersistenceManager implements Serializable
 	
 	private static AdminPersistenceManager instance = null;
 	private static Logger logr = null;
+
 	static 
 	{ 
 		instance = new AdminPersistenceManager(); 
 		logr = Logger.getLogger(instance.getClass().getCanonicalName());
 	}
+
 	public static AdminPersistenceManager getInstance() { return instance; }
 	
-	public AdminPersistenceManager() 
-	{
-		super();
-	}
+	public AdminPersistenceManager() { super(); }
 	
 	/**
 	 * <p>
@@ -80,10 +79,10 @@ public class AdminPersistenceManager implements Serializable
 		Method setter = null;
 		Method getter = null;
 		Object embed = null;
-		
+
 		if(clazz != null && (id != null && id > 0l))
 		{
-			try(LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+			try(LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 			{
 				if((entity = mgr.get(clazz, id)) != null)
 				{
@@ -92,7 +91,6 @@ public class AdminPersistenceManager implements Serializable
 						//create list of triples for any optionals that do not exist in db
 						optionals = getDependencyList(entity, false);
 						requireds = getDependencyList(entity, true);
-						
 						
 						if(requireds != null && !requireds.isEmpty())
 						{
@@ -213,7 +211,7 @@ public class AdminPersistenceManager implements Serializable
 		}else
 			throw new CoreException("Invalid Class or Id provided.");
 	}
-	
+
 	/**
 	 * <p>
 	 * get is used to retrieve a singular entity, with its relationships attached. <br>
@@ -240,10 +238,10 @@ public class AdminPersistenceManager implements Serializable
 		LinkedHashMap<T,Pair<List<Triple<Class<X>,Long,String>>,List<Triple<Class<X>,Long,String>>>> entityMapping = new LinkedHashMap<T,Pair<List<Triple<Class<X>,Long,String>>,List<Triple<Class<X>,Long,String>>>>();
 		Method setter = null;
 		Method getter = null;
-		
+
 		if(rqs != null && rqs.getId() != null && rqs.getId().longValue() > 0l)
 		{
-			try(LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+			try(LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 			{
 				if((entity = mgr.get(rqs)) != null)
 				{
@@ -377,7 +375,7 @@ public class AdminPersistenceManager implements Serializable
 		}else
 			throw new CoreException("Invalid Class or Id provided.");
 	}
-	
+
 	/**
 	 * <p>getAll is responsible for using the provided CoreRequest to first search the local Db<br>
 	 * for any corresponding records, and if they are found to have updates on the server and/or<br>
@@ -418,7 +416,7 @@ public class AdminPersistenceManager implements Serializable
 		
 		if(rqs != null)
 		{
-			try (LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+			try (LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 			{
 				if((entities = mgr.getAll(rqs)) != null && !entities.isEmpty())
 				{
@@ -460,7 +458,6 @@ public class AdminPersistenceManager implements Serializable
 							//this is a local copy, no need to clone.
 							cleanList.add(entity);
 						}
-							
 					}
 					//PULL LISTS OF REQUIREMENTS AND ADD THEM TO HASHMAP
 					if(!requiredMap.isEmpty())
@@ -643,7 +640,6 @@ public class AdminPersistenceManager implements Serializable
 			throw new CoreException("Invalid CoreRequest.");
 	}
 	
-	
 	public <T extends CoreData, U extends CoreData, X extends CoreRequest<T,X>> List<T> getAllAutoPaginated(final CoreRequest<T,X> rqs) throws CoreException
 	{
 		List<T> entities = null;
@@ -689,7 +685,6 @@ public class AdminPersistenceManager implements Serializable
 		}
 	}
 	
-	
 	/**
 	 * <p>
 	 * addOrUpdate will use the provided CoreRequest to update the underlying type via the <br>
@@ -719,25 +714,24 @@ public class AdminPersistenceManager implements Serializable
 		//validate request
 		if(rqs != null && rqs.getEntityClass().isAnnotationPresent(javax.persistence.Entity.class))
 		{
-			try (LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+			try (LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 			{
 				if(rqs.getId() != null && rqs.getId().longValue() > 0l)
 				{
 					//update with server
-					if((entity = AdminApp.getInstance().getApiManager().update(rqs)) == null)
+					if((entity = EmsApp.getInstance().getApiManager().update(rqs)) == null)
 						throw new CoreException("Unable to update Type " + rqs.getEntityClass().getName());
 				}else 
 				{
 					if(rqs.getEntity() == null)
 						throw new CoreException("Unable to add Type " + rqs.getEntityClass().getName() + ". Entity was null.");
-					if((entity = AdminApp.getInstance().getApiManager().add(rqs)) == null)
+					if((entity = EmsApp.getInstance().getApiManager().add(rqs)) == null)
 						throw new CoreException("Unable to add Type " + rqs.getEntityClass().getName());
 				}
 				
 				//create list of triples for any optionals that do not exist in db
 				optionals = getDependencyList(entity, false);
 				requireds = getDependencyList(entity, true);
-				
 				
 				if(requireds != null && !requireds.isEmpty())
 				{
@@ -832,7 +826,7 @@ public class AdminPersistenceManager implements Serializable
 						}
 					}
 				}
-				
+
 				_entity = (T)entity.clone();
 				logr.config("Creating [SINGLE] QueuedDatabaseRequiredUpdate for type : " + rqs.getEntityClass().getName());
 				entityMapping.put(entity, Pair.of(requireds, optionals));
@@ -862,7 +856,6 @@ public class AdminPersistenceManager implements Serializable
 			throw new CoreException("Invalid CoreRequest for add or update.");
 	}
 	
-	
 	/**
 	 * <p>
 	 * remove uses the provided CoreRequest to mark the corresponding entity as inactive<br>
@@ -881,9 +874,9 @@ public class AdminPersistenceManager implements Serializable
 		
 		if(rqs != null && rqs.getId() != null && rqs.getId().longValue() > 0l)
 		{
-			try (LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+			try (LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 			{
-				if((removed = AdminApp.getInstance().getApiManager().remove(rqs)))
+				if((removed = EmsApp.getInstance().getApiManager().remove(rqs)))
 					if((entity = mgr.getLocal(rqs.getEntityClass(), rqs.getId())) == null)
 						mgr.get(rqs.getEntityClass(), rqs.getId());
 					else
@@ -896,7 +889,6 @@ public class AdminPersistenceManager implements Serializable
 		}else
 			throw new CoreException("Invalid Request for removal.");
 	}
-	
 	
 	/**
 	 * <p>
@@ -923,6 +915,7 @@ public class AdminPersistenceManager implements Serializable
 		Long lookupId = null;
 		X getterObj = null;
 		Object embed = null;
+
 		try
 		{
 			if(entity == null)
@@ -1007,7 +1000,7 @@ public class AdminPersistenceManager implements Serializable
 			embed = null;
 		}
 	}
-	
+
 //	/**
 //	 * <p>
 //	 * createQueuedDependencyDatabaseUpdate is used to finish building a singular instance.<br>
@@ -1025,7 +1018,7 @@ public class AdminPersistenceManager implements Serializable
 //	{
 //		if(clazz != null && id != null && id > 0l && optionals != null && !optionals.isEmpty())
 //			try {
-//				AdminApp.getInstance().getQueue().put(new QueuedDependencyDatabaseUpdate<T>(clazz, id, optionals));
+//				EmsApp.getInstance().getQueue().put(new QueuedDependencyDatabaseUpdate<T>(clazz, id, optionals));
 //			} catch (InterruptedException e) { throw new CoreException("Exception. ", e); }
 //		else
 //			throw new CoreException("Invalid Map.Entry. Unable to create QueuedDependencyDatabaseUpdate.");
@@ -1047,7 +1040,7 @@ public class AdminPersistenceManager implements Serializable
 		if(entityMappings == null || entityMappings.isEmpty())
 			throw new CoreException("Invalid Mapping Set.");
 		try {
-			AdminApp.getInstance().getQueue().put(new QueuedDatabaseRequiredUpdate<T>(entityMappings, clazz));
+			EmsApp.getInstance().getQueue().put(new QueuedDatabaseRequiredUpdate<T>(entityMappings, clazz));
 		} catch (InterruptedException e) { throw new CoreException("Exception. ", e); }
 	}
 	
@@ -1067,8 +1060,7 @@ public class AdminPersistenceManager implements Serializable
 		if(entityMappings == null || entityMappings.isEmpty())
 			throw new CoreException("Invalid Mapping set for QueuedDatabaseOptionalUpdate.");
 		try {
-			AdminApp.getInstance().getQueue().put(new QueuedDatabaseOptionalUpdate<T>(entityMappings, clazz));
+			EmsApp.getInstance().getQueue().put(new QueuedDatabaseOptionalUpdate<T>(entityMappings, clazz));
 		} catch (InterruptedException e) { throw new CoreException("Exception. ", e); }
 	}
-	
 }

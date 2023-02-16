@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -52,7 +52,7 @@ public class LoginTask extends Task<Boolean> {
 			
 			Logger.getLogger(this.getClass().getCanonicalName()).info("Creating Corvetto API Connection.");
 			//LOGIN/CREATE CORVETTOCONNECTION
-			if(!AdminApp.getInstance().enableCorvettoApi(AdminManager.getEmail(), AdminManager.getPassword()))
+			if(!EmsApp.getInstance().enableCorvettoApi(AdminManager.getEmail(), AdminManager.getPassword()))
 				throw new CoreException("Failed Corvetto Login.");
 			
 			// SET ANY PROPERTIES
@@ -61,7 +61,7 @@ public class LoginTask extends Task<Boolean> {
 			EtcAdmin.mLoginController.setProgress(0.2);
 			//CREATE CONNECTION TO LOCAL DB
 			Logger.getLogger(this.getClass().getName()).info("Creating local Persistence Context.");
-			AdminApp.getInstance().createLocalPersistenceContext();
+			EmsApp.getInstance().createLocalPersistenceContext();
 //			CorvettoConnection corvettoConnection = new CorvettoConnection(ident,properties);
 //			DataManager.i().mCorvettoManager = corvettoConnection.getManager();
 			EtcAdmin.mLoginController.setProgress(0.3);
@@ -85,7 +85,7 @@ public class LoginTask extends Task<Boolean> {
 				EtcAdmin.mLoginController.setProgress(0.7);
 				DataManager.i().updateCache();
 				EtcAdmin.mLoginController.setProgress(0.8);
-				AdminApp.getInstance().getFxQueue().put(updateCacheTask);
+				EmsApp.getInstance().getFxQueue().put(updateCacheTask);
 				EtcAdmin.mLoginController.setProgress(0.9);
 				
 			} else {

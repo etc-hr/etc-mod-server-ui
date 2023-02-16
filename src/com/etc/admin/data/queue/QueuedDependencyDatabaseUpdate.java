@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import org.apache.commons.lang3.tuple.Triple;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.LocalDataManager;
 import com.etc.entities.CoreData;
 
@@ -31,14 +31,14 @@ import com.etc.entities.CoreData;
 public class QueuedDependencyDatabaseUpdate<T extends CoreData> implements Runnable, Serializable 
 {
 	private static final long serialVersionUID = -8073888716006735907L;
-	
+
 	private Class<T> entityClass;
 	private Long entityId;
 	private Logger logr;
-	
+
 	@SuppressWarnings("rawtypes")
 	private List optionals;
-	
+
 	public <X extends CoreData> QueuedDependencyDatabaseUpdate(Class<T> entityClass, Long entityId, List<Triple<Class<X>,Long,String>> optionals)
 	{
 		super();
@@ -47,11 +47,10 @@ public class QueuedDependencyDatabaseUpdate<T extends CoreData> implements Runna
 		setOptionals(optionals);
 		logr = Logger.getLogger(this.getClass().getCanonicalName());
 	}
-	
+
 	public <X extends CoreData> void setOptionals(List<Triple<Class<X>,Long,String>> optionals) { this.optionals = optionals; }
 	@SuppressWarnings("unchecked")
 	public <X extends CoreData> List<Triple<Class<X>,Long,String>> getOptionals() { return optionals; }
- 
 	
 	@Override
 	public void run() 
@@ -65,7 +64,7 @@ public class QueuedDependencyDatabaseUpdate<T extends CoreData> implements Runna
 		{
 			if(entityClass != null  && (entityId != null && entityId > 0l))
 			{
-				try (LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+				try (LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 				{
 					if((entity = mgr.getLocal(entityClass, entityId)) != null && !getOptionals().isEmpty())
 					{

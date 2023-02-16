@@ -17,7 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import org.apache.commons.lang3.StringUtils;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.corvetto.ServerPagination;
 import com.etc.corvetto.rqs.CorvettoRequest;
 import com.etc.entities.CoreData;
@@ -72,14 +72,14 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 	private <T extends CoreData> Calendar getServerLastUpdated(Class<T> clazz, Long id) throws CoreException
 	{
 		CorvettoRequest<T> rqs;
-		
+
 		try
 		{
 			if(clazz != null && (id != null && id.longValue() > 0l))
 			{
 				rqs = new CorvettoRequest<T>(clazz);
 				rqs.setId(id);
-				return AdminApp.getInstance().getApiManager().getLastUpdated(rqs);
+				return EmsApp.getInstance().getApiManager().getLastUpdated(rqs);
 			}else
 				throw new CoreException("Invalid Parameters.");
 		}catch(InterruptedException e)
@@ -112,7 +112,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 			{
 				rqs = new CorvettoRequest<T>(clazz);
 				rqs.setId(id);
-				return AdminApp.getInstance().getApiManager().get(rqs);
+				return EmsApp.getInstance().getApiManager().get(rqs);
 			}else
 				throw new CoreException("Either the Class<T> or the Id was invalid.");
 		}catch(InterruptedException e)
@@ -134,7 +134,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 	{ 
 		try 
 		{ 
-			return AdminApp.getInstance().getApiManager().getAll(request); 
+			return EmsApp.getInstance().getApiManager().getAll(request); 
 		}catch (Exception e) { 
 			throw new CoreException("Exception. ", e);
 		}
@@ -154,6 +154,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 	{
 		CriteriaBuilder bldr = null;
 		CriteriaQuery<T> qry = null;
+
 		try
 		{
 			if((bldr = getEntityManager().getCriteriaBuilder()) != null)
@@ -272,6 +273,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 	{
 		T entity = null;
 		CorvettoRequest<T> rqs = null;
+
 		try
 		{
 			rqs = new CorvettoRequest<T>(clazz);
@@ -285,7 +287,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 					if((entity = getEntityManager().find(clazz, id)) == null)
 					{
 						logr.finest("Local copy not found, searching on server.");
-						if((entity = AdminApp.getInstance().getApiManager().get(rqs)) == null)
+						if((entity = EmsApp.getInstance().getApiManager().get(rqs)) == null)
 							throw new CoreException("No entity found by the provided id.");
 					}else
 					{
@@ -302,7 +304,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 				{
 					rqs = new CorvettoRequest<T>(clazz);
 					rqs.setId(id);
-					entity = AdminApp.getInstance().getApiManager().get(rqs);
+					entity = EmsApp.getInstance().getApiManager().get(rqs);
 				}
 				
 				return entity;
@@ -341,17 +343,17 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 				{
 					if((entity = getEntityManager().find(rqs.getEntityClass(), rqs.getId())) == null)
 					{
-						if((entity = AdminApp.getInstance().getApiManager().get(rqs)) == null)
+						if((entity = EmsApp.getInstance().getApiManager().get(rqs)) == null)
 							throw new CoreException("No entity found by the provided id.");
 					}else
 					{
 						if(getServerLastUpdated(rqs.getEntityClass(), rqs.getId()).after(entity.getLastUpdated()) || entity.isPartialLoad())
 						{
-							entity = AdminApp.getInstance().getApiManager().get(rqs);
+							entity = EmsApp.getInstance().getApiManager().get(rqs);
 						}
 					}
 				}else
-					entity = AdminApp.getInstance().getApiManager().get(rqs);
+					entity = EmsApp.getInstance().getApiManager().get(rqs);
 				
 				return entity;
 			}else
@@ -468,6 +470,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 		X managedEntity = null;
 //		X getterObj = null;
 		boolean optional = true;
+
 		try
 		{
 			if(entity != null)
@@ -545,7 +548,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 			setterArgTypes = null;
 		}
 	}
-	
+
 	/**
 	 * <p>
 	 * updateRequiredRelationships parses the annotations on the CoreData relationships<br>
@@ -570,6 +573,7 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 		Method setterMethod = null;
 		X dependent = null;
 		boolean optional = true;
+
 		try
 		{
 			if(newEntity != null)
@@ -654,7 +658,6 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 		}
 	}
 	
-	
 	/**
 	 * <p>
 	 * updateEntity takes the provided entity, validates for an <br>
@@ -709,7 +712,6 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 		}
 	}
 	
-	
 	public void validateEntity(CoreData data) throws CoreException
 	{
 		if(data != null)
@@ -721,5 +723,4 @@ public class LocalDataManager extends PersistenceTransaction implements Serializ
 		}else
 			throw new CoreException("Invalid Entity.");
 	}
-
 }

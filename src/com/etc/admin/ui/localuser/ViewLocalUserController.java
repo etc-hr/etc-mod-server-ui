@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -215,7 +215,7 @@ public class ViewLocalUserController {
 		
 		try
 		{
-			AdminApp.getInstance().getFxQueue().put(new Task<Void>() {
+			EmsApp.getInstance().getFxQueue().put(new Task<Void>() {
 				@Override
 				protected Void call() throws Exception {
 					if(DataManager.i().ResetLocalDatabase())

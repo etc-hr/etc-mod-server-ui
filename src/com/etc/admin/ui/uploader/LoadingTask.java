@@ -8,7 +8,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.DataManager;
 import com.etc.corvetto.UploadException;
 import com.etc.utils.EndpointFactory;
@@ -92,7 +92,7 @@ public class LoadingTask extends Task<Boolean>
 //			UploadDataManager.setHomeFolder(new HomeFolder(UploadDataManager.HOMEFOLDER_NAME));
 
 			//STEP 4: CREATE CONFIG FILE
-			cfgfile = new File(AdminApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.CFGFILE_NAME));
+			cfgfile = new File(EmsApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.CFGFILE_NAME));
 			cfgfile.setReadable(true, false);
 			cfgfile.setWritable(true, false);
 			if(!cfgfile.exists())
@@ -107,7 +107,7 @@ public class LoadingTask extends Task<Boolean>
 				//CREATE NEW CONFIGURATION FILE WITH DEFAULTS
 				cfgprops.setProperty(DataManager.CFG_LDIR_KEY, System.getProperty("user.home"));
 				cfgprops.setProperty(DataManager.CFG_LEML_KEY, "");	//NOTE: INTENTIONALLY BLANK.
-				cfgprops.setProperty(KeyStore.KEY_STORE_LOCATION, AdminApp.getInstance().getHomeFolder().getSubFolder("keys", false).getAbsolutePath());
+				cfgprops.setProperty(KeyStore.KEY_STORE_LOCATION, EmsApp.getInstance().getHomeFolder().getSubFolder("keys", false).getAbsolutePath());
 				cfgprops.setProperty(KeyStore.ENABLE_CACHING, Boolean.TRUE.toString());
 //				cfgprops.setProperty(UploadDataManager.CFG_VSN_KEY, UploadDataManager.VERSION);
 
@@ -131,7 +131,7 @@ public class LoadingTask extends Task<Boolean>
 			Thread.sleep(DataManager.i().mWaitTime);
 
 			//STEP 5: LOAD CONFIGURATION FILE
-			cfgfile = new File(AdminApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.CFGFILE_NAME));
+			cfgfile = new File(EmsApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.CFGFILE_NAME));
 
 			//LOAD CONFIGURATION FILE PROPERTIES
 			fis = new FileInputStream(cfgfile);
@@ -147,7 +147,7 @@ public class LoadingTask extends Task<Boolean>
 													System.getProperty(DataManager.CFG_LEML_KEY, DataManager.i().mProperty.getProperty(DataManager.CFG_LEML_KEY, ""))));
 			DataManager.i().mProperty.setProperty(KeyStore.KEY_STORE_LOCATION, DataManager.i().mProperty.getProperty(KeyStore.KEY_STORE_LOCATION,
 													System.getProperty(KeyStore.KEY_STORE_LOCATION, DataManager.i().mProperty.getProperty(KeyStore.KEY_STORE_LOCATION,
-													AdminApp.getInstance().getHomeFolder().getSubFolder("keys", false).getAbsolutePath()))));
+													EmsApp.getInstance().getHomeFolder().getSubFolder("keys", false).getAbsolutePath()))));
 			DataManager.i().mProperty.setProperty(KeyStore.ENABLE_CACHING, DataManager.i().mProperty.getProperty(KeyStore.ENABLE_CACHING,
 													System.getProperty(KeyStore.ENABLE_CACHING, DataManager.i().mProperty.getProperty(KeyStore.ENABLE_CACHING, Boolean.TRUE.toString()))));
 
@@ -183,7 +183,7 @@ public class LoadingTask extends Task<Boolean>
 			Thread.sleep(DataManager.i().mWaitTime);
 
 			//STEP 8: CREATE DEFAULT LOGGING CONFIGURATION FILE
-			cfgfile = new File(AdminApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.LOGCFGFILE_NAME));
+			cfgfile = new File(EmsApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.LOGCFGFILE_NAME));
 			cfgfile.setReadable(true, false);
 			cfgfile.setWritable(true, false);
 			if(!cfgfile.exists())
@@ -216,7 +216,7 @@ public class LoadingTask extends Task<Boolean>
 
 				//FILEHANDLER SETTINGS - ON BY DEFAULT
 				cfgprops.setProperty("java.util.logging.FileHandler.level", "INFO");
-				cfgprops.setProperty("java.util.logging.FileHandler.pattern", AdminApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat(DataManager.LOGFILE_NAME));
+				cfgprops.setProperty("java.util.logging.FileHandler.pattern", EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat(DataManager.LOGFILE_NAME));
 				cfgprops.setProperty("java.util.logging.FileHandler.limit", "10000000");
 				cfgprops.setProperty("java.util.logging.FileHandler.count", "2");
 				cfgprops.setProperty("java.util.logging.FileHandler.formatter", "java.util.logging.SimpleFormatter");
@@ -238,7 +238,7 @@ public class LoadingTask extends Task<Boolean>
 			cfgfile = null;
 
 			//STEP 9: LOAD LOGMANAGER CONFIGURATION
-			cfgfile = new File(AdminApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.LOGCFGFILE_NAME));
+			cfgfile = new File(EmsApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.LOGCFGFILE_NAME));
 
 			//LOAD LOGMANAGER CONFIGURATION
 			fis = new FileInputStream(cfgfile);

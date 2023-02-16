@@ -120,7 +120,7 @@ public class UpdateApp extends Application implements Serializable {
 	}
 	public void exitApp() {
         Platform.exit();
-        AdminApp.getInstance().destroyApplication();
+        EmsApp.getInstance().destroyApplication();
 	}
 	
 	@Override

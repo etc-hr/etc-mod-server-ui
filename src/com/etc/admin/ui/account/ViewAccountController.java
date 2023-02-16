@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -439,7 +439,7 @@ public class ViewAccountController
 	    		showAccount();
 	    	});
 	    	
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 	    	
 		}catch(InterruptedException e)
 		{
@@ -481,7 +481,7 @@ public class ViewAccountController
 	    		showEmployers();
 	    	});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			logr.log(Level.SEVERE, "Exception.", e);

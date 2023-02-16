@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -594,7 +594,7 @@ public class PipelineQueueUploaderController
         };
 
         try {
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 
 		} catch (InterruptedException e) {  DataManager.i().log(Level.SEVERE, e); }
 
@@ -643,7 +643,7 @@ public class PipelineQueueUploaderController
 	    	try
 	    	{
 	    		//CREATE NEW FILE FROM SOURCE
-	    		nfile = new File(AdminApp.getInstance().getHomeFolder().getSubFolder("tmp", false).getAbsolutePath().concat(File.separator).concat(file.getName()));
+	    		nfile = new File(EmsApp.getInstance().getHomeFolder().getSubFolder("tmp", false).getAbsolutePath().concat(File.separator).concat(file.getName()));
 	    		nfile.setReadable(true, false);
 	    		nfile.setWritable(true, false);
 

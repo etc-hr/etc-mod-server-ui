@@ -15,7 +15,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.LocalDataManager;
 import com.etc.corvetto.ems.pipeline.entities.cov.CoverageFile;
 import com.etc.entities.CoreData;
@@ -74,7 +74,7 @@ public class QueuedDatabaseOptionalUpdate<T extends CoreData> implements Runnabl
 		if(entityMappings != null && !entityMappings.isEmpty())
 		{
 			logr.config("Starting QueuedDatabaseOptionalUpdate for Type " + clazz.getName() + ". Size=[" + entityMappings.size() + "].");
-			try (LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+			try (LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 			{
 				
 				for(Entry<Pair<Class<T>,Long>,List<Triple<Class<CoreData>,Long,String>>> item : getEntityMappings().entrySet())
@@ -159,5 +159,4 @@ public class QueuedDatabaseOptionalUpdate<T extends CoreData> implements Runnabl
 		}else
 			logr.severe("The entityMapping list was empty or null.");
 	}
-
 }

@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -235,7 +235,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer."); 
 	    		});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { logr.log(Level.SEVERE, "Exception.",e); }
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	}
@@ -274,7 +274,7 @@ public class ViewEmployerController
 				EtcAdmin.i().setStatusMessage("Unable to Load Employer Coverage Groups."); 
 				});
 			
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 			
 		}catch(InterruptedException e) { logr.log(Level.SEVERE, "Exception.",e); }
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
@@ -310,7 +310,7 @@ public class ViewEmployerController
 				EtcAdmin.i().setStatusMessage("Unable to Load Employer Plan Years."); 
 			});
 			
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { logr.log(Level.SEVERE, "Exception.",e); }
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	}
@@ -343,7 +343,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer Contacts."); 
 	    		});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			
@@ -407,7 +407,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer TaxYears."); 
 	    		});
 	       
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { logr.log(Level.SEVERE, "Exception.",e); }
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	}
@@ -442,7 +442,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer Pay Period."); 
 	    	});
 	    	
-	        AdminApp.getInstance().getFxQueue().put(task);
+	        EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { 
 			logr.log(Level.SEVERE, "Exception.",e); 
 		}
@@ -500,7 +500,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer Locations."); 
 	    		});
 	    	
-	        AdminApp.getInstance().getFxQueue().put(task);
+	        EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { logr.log(Level.SEVERE, "Exception.",e); }
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	}
@@ -532,7 +532,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer Departments."); 
 	    		});
 	    	
-	        AdminApp.getInstance().getFxQueue().put(task);
+	        EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { logr.log(Level.SEVERE, "Exception.",e); }
 	}
 	
@@ -569,7 +569,7 @@ public class ViewEmployerController
 	    		EtcAdmin.i().setStatusMessage("Unable to Load Employer PlanYears."); 
 	    	});
 	    	
-	        AdminApp.getInstance().getFxQueue().put(task);
+	        EmsApp.getInstance().getFxQueue().put(task);
 		}catch(Exception e) { 
 			logr.log(Level.SEVERE, "Exception.",e); 
 		}

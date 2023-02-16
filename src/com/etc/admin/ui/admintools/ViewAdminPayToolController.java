@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -665,7 +665,7 @@ public class ViewAdminPayToolController
 	    		showPayPeriods(); 
 	    	});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			DataManager.i().log(Level.SEVERE, e);
@@ -736,7 +736,7 @@ public class ViewAdminPayToolController
 	    		showPays(); 
 	    	});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			DataManager.i().log(Level.SEVERE, e);
@@ -813,7 +813,7 @@ public class ViewAdminPayToolController
 			task.setOnSucceeded(e ->  finishPaySave());
 			task.setOnFailed(e ->  finishPaySave());
 		    
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			DataManager.i().log(Level.SEVERE, e);

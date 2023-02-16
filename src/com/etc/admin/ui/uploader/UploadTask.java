@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.data.DataManager;
 import com.etc.api.ActiveTransfer;
@@ -79,7 +79,7 @@ public class UploadTask extends Task<Boolean>
 				{
 					logr.log(Level.INFO, "PRE-UPLOAD :: FILE :: " + file.getName() + " CHKSUM :: " + Cryptographer.calculateMD5Checksum(file));
 	    			//SAVE LAST UPLOAD DIRECTORY TO PROPERTIES
-					File configFile = new File(AdminApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.CFGFILE_NAME));
+					File configFile = new File(EmsApp.getInstance().getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(DataManager.CFGFILE_NAME));
 					Properties properties = new Properties();
 					if(configFile.isFile())
 					{

@@ -21,8 +21,6 @@ public class QueuedRecordType<X> implements Serializable
 	private Class<X> queueClass = null;
 	private Long classId = null;
 	private boolean queued = false;
-	
-	
 
 	private QueuedRecordType() { super(); }
 	

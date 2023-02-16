@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.logging.Level;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -85,7 +85,7 @@ public class ViewPayPeriodSelectController
 	    		ppdLabel.setText("Pay Periods"); 
 	    	});
 	    	
-	        AdminApp.getInstance().getFxQueue().put(task);
+	        EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { 
 			DataManager.i().log(Level.SEVERE, e); 
 			ppdLabel.setText("Pay Periods"); 

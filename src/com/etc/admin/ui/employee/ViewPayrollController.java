@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -539,7 +539,7 @@ public class ViewPayrollController
 	    		showPays(); 
 	    	});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(Exception e)
 		{
 			DataManager.i().log(Level.SEVERE, e);
@@ -617,7 +617,7 @@ public class ViewPayrollController
 	        		}
 	        		
 	        		// need to analyze the employee's pays now
-	        		//DataAnalyzer.analyzeEmployeePay(AdminApp.getInstance().getEntityManager(), DataManager.i().mEmployee, DataManager.i().mEmployee.getBatchId());
+	        		//DataAnalyzer.analyzeEmployeePay(EmsApp.getInstance().getEntityManager(), DataManager.i().mEmployee, DataManager.i().mEmployee.getBatchId());
 	        		return null;
 	 	        }
 		    };
@@ -628,7 +628,7 @@ public class ViewPayrollController
 			task.setOnSucceeded(e ->  finishPaySave());
 			task.setOnFailed(e ->  finishPaySave());
 		    
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			DataManager.i().log(Level.SEVERE, e);

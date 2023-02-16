@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -68,10 +68,10 @@ public class LoginController {
 		EtcAdmin.i().setLoginController(this);
 		
 		// update the version
-		versionLabel.setText("Version " + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
+		versionLabel.setText("Version " + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
 		
 		String username = null;
-		try { username = AdminApp.getInstance().getProperties().getProperty(AdminApp.CFG_LEML); } 
+		try { username = EmsApp.getInstance().getProperties().getProperty(EmsApp.CFG_LEML); } 
 		catch (CoreException e) { logr.log(Level.SEVERE, "Exception.", e); }
 
 		if (username != null && username.isEmpty() == false) {

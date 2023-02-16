@@ -16,7 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.LocalDataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
 import com.etc.corvetto.rqs.CorvettoRequest;
@@ -92,7 +92,7 @@ public class QueuedDatabaseRequiredUpdate<T extends CoreData> implements Runnabl
 			
 			try
 			{
-				try (LocalDataManager mgr = new LocalDataManager(AdminApp.getInstance().getEntityManager()))
+				try (LocalDataManager mgr = new LocalDataManager(EmsApp.getInstance().getEntityManager()))
 				{
 					for(Entry<T,Pair<List<Triple<Class<CoreData>,Long,String>>,List<Triple<Class<CoreData>,Long,String>>>> item : getEntityMappings().entrySet())
 					{
@@ -231,7 +231,7 @@ public class QueuedDatabaseRequiredUpdate<T extends CoreData> implements Runnabl
 						}
 					}
 				}
-				
+
 				//iterate over optional types and create pulls for those types by id lists
 				for(Entry<Class<CoreData>,List<Long>> optional : getOptionalMap().entrySet())
 				{
@@ -244,14 +244,14 @@ public class QueuedDatabaseRequiredUpdate<T extends CoreData> implements Runnabl
 						AdminPersistenceManager.getInstance().getAll(rqs);
 					}
 				}
-				
+
 				//re-queue this list to attach the optionals.
 				if(!getOptionalEntityMappings().isEmpty())
 				{
 					logr.config("Creating queuedDatabaseOptionalUpdate for Type " + clazz.getName());
 					AdminPersistenceManager.getInstance().createQueuedDatabaseOptionalUpdate(getOptionalEntityMappings(), clazz);
 				}
-				
+
 				logr.config("Completed QueuedDatabaseRequiredUpdate for type " + clazz.getName());
 			}catch(Exception e)
 			{
@@ -260,5 +260,4 @@ public class QueuedDatabaseRequiredUpdate<T extends CoreData> implements Runnabl
 		}else
 			logr.severe("The entityMapping list was empty or null.");
 	}
-
 }

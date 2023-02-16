@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -436,7 +436,7 @@ public class ViewFileHistoryController
     	task.setOnFailed(e ->  showFileHistory());
         //new Thread(task).start();
     	try {
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 		} catch (InterruptedException e) {
 			logr.log(Level.SEVERE, "Exception.", e);
 		}

@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.utils.Utils;
@@ -726,7 +726,7 @@ public class ViewPipelineQueueController {
 	    	
 	    	Thread queueRefresh = new Thread(task);
 	    	queueRefresh.setUncaughtExceptionHandler(h);
-    		AdminApp.getInstance().getFxQueue().put(queueRefresh);
+    		EmsApp.getInstance().getFxQueue().put(queueRefresh);
 		}catch(InterruptedException e)
 		{
 			EtcAdmin.i().setProgress(0);

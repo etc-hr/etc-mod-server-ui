@@ -146,7 +146,7 @@ public class EtcAdmin extends Application implements Serializable {
 	
 	private boolean checkForRunningApp() {
 		try {
-			File dbFile = new File(AdminApp.getInstance().getDbPath());
+			File dbFile = new File(EmsApp.getInstance().getDbPath());
 			if(dbFile.exists() == true &&  dbFile.renameTo(dbFile) == false)
 			{
 		      	Alert alert = new Alert(AlertType.NONE, "The Admin App is already running or the local db file is locked. Please exit any other instances of the app before continuing. If problems persist, contact systems.", ButtonType.OK);
@@ -177,14 +177,14 @@ public class EtcAdmin extends Application implements Serializable {
 		try {
 			if(Boolean.valueOf(Xarriot.getInstance().getProperties().getProperty(Xarriot.PROD_ENV, Boolean.TRUE.toString())))
 				if (mbDebug == true)
-					primaryStage.setTitle("Admin App v." + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***"); // + Test Only Version 20220919.1");
+					primaryStage.setTitle("Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***"); // + Test Only Version 20220919.1");
 				else
-					primaryStage.setTitle("Admin App v." + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); // + " Test Only Version 20220929.1");
+					primaryStage.setTitle("Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); // + " Test Only Version 20220929.1");
 			else
 				if (mbDebug == true)
-					primaryStage.setTitle("DEV Admin App v." + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***");
+					primaryStage.setTitle("DEV Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***");
 				else
-					primaryStage.setTitle("DEV Admin App v." + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
+					primaryStage.setTitle("DEV Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
 		} catch (Exception e) {
 			//DataManager.i().log(Level.SEVERE, e); 
 		}
@@ -340,12 +340,12 @@ public class EtcAdmin extends Application implements Serializable {
 			if (mbDebug == true) {
 				props.setProperty("com.etc.utils.ws.level", "FINER");
 				props.setProperty("java.util.logging.FileHandler.level", "FINER");
-				Utils.alertUser("WARNING", "Debug Mode can write very large log files. Please use only as needed and turn off accordingly. Debug mode will reset to off when restarting the AdminApp.");
+				Utils.alertUser("WARNING", "Debug Mode can write very large log files. Please use only as needed and turn off accordingly. Debug mode will reset to off when restarting the EmsApp.");
 			}else {
 				props.setProperty("com.etc.utils.ws.level", "INFO");
 				props.setProperty("java.util.logging.FileHandler.level", "INFO");
 			}
-			AdminApp.getInstance().updateAppLoggingProperties(props);
+			EmsApp.getInstance().updateAppLoggingProperties(props);
 			setTitle();
 		} catch (Exception e) { DataManager.i().log(Level.SEVERE, e);  } 
 	}
@@ -411,7 +411,7 @@ public class EtcAdmin extends Application implements Serializable {
 	
 	public void exitApp() {
         Platform.exit();
-        AdminApp.getInstance().destroyApplication();
+        EmsApp.getInstance().destroyApplication();
 	}
 	
 	@Override

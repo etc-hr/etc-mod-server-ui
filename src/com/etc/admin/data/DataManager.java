@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.localData.AdminPersistenceManager;
 import com.etc.admin.ui.calc.CalcQueue;
@@ -186,8 +186,8 @@ import javafx.concurrent.Task;
 //import com.etc.utils.crypto.Cryptographer; 
 //import com.etc.utils.crypto.CryptographyException; 
 //import com.etc.utils.crypto.EncryptedSSN; 
-public class DataManager { 
- 
+public class DataManager 
+{ 
 	///////////////////////////////////////////// 
 	// Index tracking members 
 	///////////////////////////////////////////// 
@@ -600,15 +600,20 @@ public class DataManager {
 	///////////////////////////////////////////// 
     private static DataManager mInstance; 
     static { mInstance = new DataManager(); } 
-    public static DataManager i() { 
+
+    public static DataManager i() 
+    { 
         return mInstance; 
     }	 
-    private DataManager(){ 
+
+	private DataManager()
+    { 
     	init(); 
     } 
      
 	// Clear all of the  data elements for the account 
-	public void clearAccountMemberElements() { 
+	public void clearAccountMemberElements() 
+	{ 
 		// object members 
 		mAccount = null; 
 		mEmployer = null; 
@@ -652,7 +657,8 @@ public class DataManager {
 	public void setAddMode(boolean addMode) { this.m_AddMode = addMode; } 
 	public boolean isAddMode() { return m_AddMode; } 
 	 
-	public void init() { 
+	public void init() 
+	{ 
 		if(System.getProperty("os.name").toString().toUpperCase().contains("WINDOWS")) 
 			windowsOS = true; 
  
@@ -660,16 +666,17 @@ public class DataManager {
 		logr = Logger.getLogger(this.getClass().getCanonicalName());
 	} 
  
-	public boolean ResetLocalDatabase() { 
+	public boolean ResetLocalDatabase() 
+	{ 
 		try
 		{
 			logr.severe("RESETTING LOCAL DATABASE.");
 			EtcAdmin.i().showAppStatus("Resetting Local Database", "Disabling local DB", 0.1, true);
 
 			//set create, so when we re-load the persistence context it drops the db.
-			AdminApp.getInstance().getProperties().put(AdminApp.JPA_HBM2DDL, "create");
+			EmsApp.getInstance().getProperties().put(EmsApp.JPA_HBM2DDL, "create");
 			//close the connection to the db
-			AdminApp.getInstance().enableJpa(false, null);
+			EmsApp.getInstance().enableJpa(false, null);
 			// delete the existing db files
 			String userDir = System.getProperty("user.home");
 			String pathSeparator = System.getProperty("file.separator");
@@ -677,14 +684,15 @@ public class DataManager {
 															   .concat(pathSeparator)
 															   .concat("apps")
 															   .concat(pathSeparator)
-															   .concat(AdminApp.getInstance().getApplicationHomeFolderName())
+															   .concat(EmsApp.getInstance().getApplicationHomeFolderName())
 															   .concat(pathSeparator)
 															   .concat("db")
 															   .concat(pathSeparator);
-		
+
 			File dbFiles = new File(dbPathString);
 			Thread.sleep(1000);
 			EtcAdmin.i().showAppStatus("Resetting Local Database", "Cleaning Up Files", 0.3, true);
+
 			try {
 				FileUtils.cleanDirectory(dbFiles);
 			} catch (Exception e) {
@@ -692,7 +700,7 @@ public class DataManager {
 				Thread.sleep(1000);
 			}
 			//reset the connection to the db using the updated params.
-			AdminApp.getInstance().createLocalPersistenceContext();
+			EmsApp.getInstance().createLocalPersistenceContext();
 			//reload the accounts 
 			EtcAdmin.i().showAppStatus("Resetting Local Database", "Updating Cache", 0.6, true);
 			updateCache(); 
@@ -710,20 +718,22 @@ public class DataManager {
 		return true;
 	} 
 	 
-	public WsManager getCorvettoManager() { 
-		try {  return AdminApp.getInstance().getApiManager(); }
+	public WsManager getCorvettoManager() 
+	{ 
+		try {  return EmsApp.getInstance().getApiManager(); }
 		catch (CoreException e) { DataManager.i().log(Level.SEVERE, e);  } 
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 		return null; 
 	} 
 	
-	public void reconnectCorvetto() {
+	public void reconnectCorvetto() 
+	{
 		try {
 
 			EtcAdmin.i().updateStatus(.5, "Reconnecting Corvetto Server");
 			
-			if(!AdminApp.getInstance().enableApi(false))
-				if(AdminApp.getInstance().enableApi(true))
+			if(!EmsApp.getInstance().enableApi(false))
+				if(EmsApp.getInstance().enableApi(true))
 					EtcAdmin.i().updateStatus(0, "Reconnect Complete, Ready");
 				else
 					EtcAdmin.i().updateStatus(0, "Reconnect failed. Please restart.");
@@ -733,7 +743,6 @@ public class DataManager {
 		}
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	}
-	 
 	
 	public  HashMap<CacheType<?,?>,Calendar> getCacheMap() { return this.cacheMap; }
 	
@@ -831,7 +840,8 @@ public class DataManager {
 	} 
 	 
 	// gets the accounts from the database 
-	public void updateCache() { 
+	public void updateCache()
+	{ 
 		try { 		
 			logr.info("CACHING ORGS");
 			AdminPersistenceManager.getInstance().getAll(new CorvettoRequest<Organization>(Organization.class, true));
@@ -873,7 +883,8 @@ public class DataManager {
 	/**
 	 * 
 	 */
-	public void updateSecondTierCache() {
+	public void updateSecondTierCache() 
+	{
 		try
 		{
 			logr.info("CACHING PIPELINE CHANNELS");
@@ -903,7 +914,8 @@ public class DataManager {
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	}
 	
-	public void updateAccountsAndEmployersByTask() {
+	public void updateAccountsAndEmployersByTask() 
+	{
 		Task<Void> task = new Task<Void>() 
 		{ 
             @Override 
@@ -939,7 +951,8 @@ public class DataManager {
 	    }
 	}
  
-	public void updateEmployers() { 
+	public void updateEmployers() 
+	{ 
 		try { 
 			EmployerRequest request = new EmployerRequest(); 
 			request.setFetchInactive(true); 
@@ -963,7 +976,8 @@ public class DataManager {
 		    catch (Exception e) {  DataManager.i().logGenericException(e); }
 		} 
 	
-	public void updateUsers() { 
+	public void updateUsers() 
+	{ 
 		try { 
 			UserRequest request = new UserRequest(); 
 			mUsers = AdminPersistenceManager.getInstance().getAll(request); 
@@ -975,7 +989,8 @@ public class DataManager {
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	} 
  
-	public void updateTaxYearServiceLevels() { 
+	public void updateTaxYearServiceLevels() 
+	{ 
 		try { 
 			TaxYearServiceLevelRequest request = new TaxYearServiceLevelRequest(); 
 			mTaxYearServiceLevels = AdminPersistenceManager.getInstance().getAll(request); 
@@ -1000,13 +1015,15 @@ public class DataManager {
 //		 
 //	} 
 
-	public CoverageFile getCoverageFile(Long fileId) { 
+	public CoverageFile getCoverageFile(Long fileId) 
+	{ 
 		CoverageFile cFile = null; 
 		// magic happens here 
 		return cFile; 
 	} 
 	 
-	public EmployeeFile getEmployeeFile(EmployeeFile employeefile) { 
+	public EmployeeFile getEmployeeFile(EmployeeFile employeefile)
+	{ 
 /*		try { 
 			//retrieve from the server 
 			employeefile = mCoreManager.getEmployeeFile(employeefile); 
@@ -1023,59 +1040,65 @@ public class DataManager {
 	} 
  
 	// get the selected ParsePattern by name 
-	public PipelineParsePattern getParsePattern(String parsePatternName) { 
+	public PipelineParsePattern getParsePattern(String parsePatternName) 
+	{ 
 		if(parsePatternName.length() < 1) return null; 
 		 
-		if(mPipelineParsePatterns != null) { 
-			for (PipelineParsePattern pipelineParsePattern: mPipelineParsePatterns) { 
+		if(mPipelineParsePatterns != null) 
+		{ 
+			for(PipelineParsePattern pipelineParsePattern: mPipelineParsePatterns) 
+			{ 
 				if(pipelineParsePattern.getName().equals(parsePatternName)) 
 					return pipelineParsePattern; 
 			} 
 		} 
-		 
 		return null; 
 	}	 
  
 	// get the selected ParsePattern by ID 
-	public PipelineParsePattern getParsePattern(long patternID) { 
-		 
-		if(mPipelineParsePatterns != null) { 
-			for (PipelineParsePattern pipelineParsePattern: mPipelineParsePatterns) { 
+	public PipelineParsePattern getParsePattern(long patternID) 
+	{ 
+		if(mPipelineParsePatterns != null) 
+		{ 
+			for(PipelineParsePattern pipelineParsePattern: mPipelineParsePatterns) 
+			{ 
 				if(pipelineParsePattern.getId().equals(patternID)) 
 					return pipelineParsePattern; 
 			} 
 		} 
-		 
 		return null; 
 	}	 
 	 
 	// get the selected ParseDateFormat by name 
-	public PipelineParseDateFormat getParseDateFormat(String parseDateFormatName) { 
-		 
-		if(mPipelineParseDateFormats != null) { 
-			for (PipelineParseDateFormat pipelineParseDateFormat: mPipelineParseDateFormats) { 
+	public PipelineParseDateFormat getParseDateFormat(String parseDateFormatName) 
+	{ 
+		if(mPipelineParseDateFormats != null) 
+		{ 
+			for(PipelineParseDateFormat pipelineParseDateFormat: mPipelineParseDateFormats) 
+			{ 
 				if(pipelineParseDateFormat.getName().equals(parseDateFormatName)) 
 					return pipelineParseDateFormat; 
 			} 
 		} 
-		 
 		return null; 
 	}	 
  
 	//get the selected ParseDateFormat by ID 
-	public PipelineParseDateFormat getParseDateFormat(long formatID) { 
-		 
-		if(mPipelineParseDateFormats != null) { 
-			for (PipelineParseDateFormat pipelineParseDateFormat: mPipelineParseDateFormats) { 
+	public PipelineParseDateFormat getParseDateFormat(long formatID) 
+	{ 
+		if(mPipelineParseDateFormats != null) 
+		{ 
+			for(PipelineParseDateFormat pipelineParseDateFormat: mPipelineParseDateFormats) 
+			{ 
 				if(pipelineParseDateFormat.getId().equals(formatID)) 
 					return pipelineParseDateFormat; 
 			} 
 		} 
-		 
 		return null; 
 	}	 
 	 
-	public DynamicPayFilePayPeriodRule getDynamicPayFilePayPeriodRule(DynamicPayFilePayPeriodRule rule) { 
+	public DynamicPayFilePayPeriodRule getDynamicPayFilePayPeriodRule(DynamicPayFilePayPeriodRule rule)
+	{ 
 /*		try { 
 			if(rule == null) return rule; 
 			// try first to get it from the local store. We should return something here. 
@@ -1117,9 +1140,11 @@ public class DataManager {
 	} 
 	 
 	// gets an account by the account name 
-	public Account getAccount(String name) { 
-		for(Account acct : mAccounts) { 
-			if (acct.isActive() == false) continue;
+	public Account getAccount(String name) 
+	{ 
+		for(Account acct : mAccounts) 
+		{ 
+			if(acct.isActive() == false) continue;
 			if(acct.getName().equals(name)) 
 				return acct; 
 		}		 
@@ -1130,47 +1155,53 @@ public class DataManager {
 		
 	} 
 	 
-	public void insertLogEntry(String description, LogType logType) { 
-		if (logType != null) {
-			switch(logType) {
-			case INFO:
-				Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);	
-				break;
-			case DEBUG:
-				Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);	
-				break;
-			case WARNING:
-				Logger.getLogger(this.getClass().getCanonicalName()).log(Level.WARNING, description);	
-				break;
-			case CRITICAL:
-				Logger.getLogger(this.getClass().getCanonicalName()).log(Level.SEVERE, description);	
-				break;
-			case ERROR:
-				Logger.getLogger(this.getClass().getCanonicalName()).log(Level.SEVERE, description);	
-				break;
-			default:
-				Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);	
-				break;
+	public void insertLogEntry(String description, LogType logType) 
+	{ 
+		if(logType != null) 
+		{
+			switch(logType) 
+			{
+				case INFO:
+					Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);	
+					break;
+				case DEBUG:
+					Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);	
+					break;
+				case WARNING:
+					Logger.getLogger(this.getClass().getCanonicalName()).log(Level.WARNING, description);	
+					break;
+				case CRITICAL:
+					Logger.getLogger(this.getClass().getCanonicalName()).log(Level.SEVERE, description);	
+					break;
+				case ERROR:
+					Logger.getLogger(this.getClass().getCanonicalName()).log(Level.SEVERE, description);	
+					break;
+				default:
+					Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);	
+					break;
 			}	
 		} else
 			Logger.getLogger(this.getClass().getCanonicalName()).log(Level.INFO, description);
 	}
 	 
-	public void log(Level level, Exception e) { 
+	public void log(Level level, Exception e) 
+	{ 
 		Logger.getLogger(this.getClass().getCanonicalName()).log(level, "Exception", e);
 		
 		// check for a closed db file and reset if present
-		if (e == null || e.getMessage() == null) return;
-		if (e.getMessage().toLowerCase().contains("the object is already closed") == true ||
-			e.getMessage().toLowerCase().contains("the file is locked")	||
-			e.getMessage().toLowerCase().contains("unable to acquire jdbc connection")) {
+		if(e == null || e.getMessage() == null) return;
+		if(e.getMessage().toLowerCase().contains("the object is already closed") == true ||
+		   e.getMessage().toLowerCase().contains("the file is locked")	||
+		   e.getMessage().toLowerCase().contains("unable to acquire jdbc connection")) 
+		{
 			// houston, we have a problem. Reset the local DB connection
 			insertLogEntry("System Reset requested due to reported DB issue.",LogType.ERROR);
 			ResetLocalDatabase();
 			resetCounter++;
 
 			// alert the user if this keeps happening			
-			if (resetCounter > 2) {
+			if (resetCounter > 2) 
+			{
 				insertLogEntry("WARNING: Excessive System Resets requested due to reported closed DB.",LogType.ERROR);
 				Utils.alertUser("Excessive DB Reset Required", "The local DB has required repeated resets. Please check you system for errors.");
 				// reset the counter
@@ -1192,9 +1223,11 @@ public class DataManager {
 	} 
  
 	// function verifies that a given account is allowable to the current signed in user 
-	public boolean verifyAccountAllowed(long accountId) { 
+	public boolean verifyAccountAllowed(long accountId) 
+	{ 
 		// use this to check against accounts loaded 
-		for (Account account: mAccounts) { 
+		for(Account account: mAccounts) 
+		{ 
 			if(account.getId() == accountId) 
 				if(account.getOrganization() == mOrg) 
 					return true; 
@@ -1202,7 +1235,8 @@ public class DataManager {
 		return false; 
 	} 
 	 
-	public void setAccountContact(int nContactID){ 
+	public void setAccountContact(int nContactID)
+	{ 
 		//set the current employee from our account collection 
 		mAccountContact = mAccount.getContacts().get(nContactID);   
 		mContactType = 0; 
@@ -1216,6 +1250,7 @@ public class DataManager {
 		//set the current employee from our account collection 
 		EmployerContactRequest request = new EmployerContactRequest();
 		request.setId(mEmployer.getContactId());
+
 		try {
 			mEmployerContacts = AdminPersistenceManager.getInstance().getAll(request);
 		} catch (CoreException e) {
@@ -1226,16 +1261,18 @@ public class DataManager {
 		mContactType = 1; 
 	} 
  
-	public void setAccountDataProperty(int nAssociatedPropertyID){ 
+	public void setAccountDataProperty(int nAssociatedPropertyID)
+	{ 
 		//set the current employee from our account collection 
 		mDataProperty = mAccount.getProperties().get(nAssociatedPropertyID);   
 		mAssociatedPropertyType = 0; 
- 
+
 		//tell main to load the associated property screen 
 		EtcAdmin.i().setScreen(ScreenType.ACCOUNTASSOCIATEDPROPERTY, true); 
 	} 
  
-	public void setEmployerAssociatedProperty(int nAssociatedPropertyID){ 
+	public void setEmployerAssociatedProperty(int nAssociatedPropertyID)
+	{ 
 		//set the current associated property from our employer collection 
 		mDataProperty = mEmployer.getProperties().get(nAssociatedPropertyID);   
 		mAssociatedPropertyType = 1; 
@@ -1244,7 +1281,8 @@ public class DataManager {
 		//EtcAdmin.i().setScreen(ScreenType.EMPLOYERASSOCIATEDPROPERTY, true); 
 	} 
  
-	public void setDepartment(int nDepartmentID){ 
+	public void setDepartment(int nDepartmentID)
+	{ 
 		//set the current department from our employer collection 
 		mDepartment = mEmployer.getDepartments().get(nDepartmentID);   
  
@@ -1252,32 +1290,38 @@ public class DataManager {
 		//EtcAdmin.i().setScreen(ScreenType.DEPARTMENT, true); 
 	} 
  
-	public void setIrs1094b(int nID){ 
+	public void setIrs1094b(int nID)
+	{ 
 		//set from our collection using the ID 
 		mIrs1094b = mIrs1094bs.get(nID);   
 	} 
  
-	public void setIrs1095b(int nID){ 
+	public void setIrs1095b(int nID)
+	{ 
 		//set from our collection using the ID 
 		mIrs1095b = mIrs1095bs.get(nID);   
 	} 
  
-	public void setIrs1095bCoveredSecondary(int nID){ 
+	public void setIrs1095bCoveredSecondary(int nID)
+	{ 
 		//set from our collection using the ID 
 		mIrs1095bCI = mIrs1095bCIs.get(nID);   
 	} 
  
-	public void setIrs1095cCoveredSecondary(int nID){ 
+	public void setIrs1095cCoveredSecondary(int nID)
+	{ 
 		//set from our collection using the ID 
 		mIrs1095cCI = mIrs1095cCIs.get(nID);   
 	} 
  
-	public void setIrs1094Submission(int nID){ 
+	public void setIrs1094Submission(int nID)
+	{ 
 		//set from our collection using the ID 
 		mIrs1094Submission = mIrs1094Submissions.get(nID);   
 	} 
  
-	public void setEmploymentPeriod(int nEmploymentPeriodID){ 
+	public void setEmploymentPeriod(int nEmploymentPeriodID)
+	{ 
 		//set the current tax year from our employer collection 
 		mEmploymentPeriod = mEmployee.getEmploymentPeriods().get(nEmploymentPeriodID);   
  
@@ -1300,38 +1344,45 @@ public class DataManager {
 		mPipelineCoverageFile = coverageFile; 
 	} 
  
-	public void setDynamicCoverageFileSpecification(int nFileID) { 
+	public void setDynamicCoverageFileSpecification(int nFileID) 
+	{ 
 		if(mDynamicCoverageFileSpecifications != null) 
 			mDynamicCoverageFileSpecification = mDynamicCoverageFileSpecifications.get(nFileID);	 
 		mDynamicCoverageFileSpecificationIndex = nFileID; 
 	} 
 	 
-	public void setDynamicEmployeeFileSpecification(int nFileID) { 
+	public void setDynamicEmployeeFileSpecification(int nFileID) 
+	{ 
 		if(mDynamicEmployeeFileSpecifications != null) 
 			mDynamicEmployeeFileSpecification = mDynamicEmployeeFileSpecifications.get(nFileID);		 
 	} 
 	 
-	public void setDynamicPayFileSpecification(int nFileID) { 
+	public void setDynamicPayFileSpecification(int nFileID) 
+	{ 
 		if(mDynamicPayFileSpecifications != null) 
 			mDynamicPayFileSpecification = mDynamicPayFileSpecifications.get(nFileID);		 
 	} 
 	 
-	public void setDynamicPlanFileSpecification(int nFileID) { 
+	public void setDynamicPlanFileSpecification(int nFileID) 
+	{ 
 		if(mDynamicBenefitFileSpecifications != null) 
 			mDynamicBenefitFileSpecification = mDynamicBenefitFileSpecifications.get(nFileID);		 
 	} 
 	 
-	public void setDynamicPayPeriodFileSpecification(int nFileID) { 
+	public void setDynamicPayPeriodFileSpecification(int nFileID)
+	{ 
 		if(mDynamicPayPeriodFileSpecifications != null) 
 			mDynamicPayPeriodFileSpecification = mDynamicPayPeriodFileSpecifications.get(nFileID);		 
 	} 
 		 
-	public void setPipelineParsePattern(int nPatternID) { 
+	public void setPipelineParsePattern(int nPatternID) 
+	{ 
 		if(mPipelineParsePatterns != null && nPatternID > -1) 
 			mPipelineParsePattern = mPipelineParsePatterns.get(nPatternID);		 
 	} 
 		 
-	public void setPipelineParseDateFormat(int nFormatID) { 
+	public void setPipelineParseDateFormat(int nFormatID) 
+	{ 
 		if(mPipelineParseDateFormats != null) 
 			mPipelineParseDateFormat = mPipelineParseDateFormats.get(nFormatID);		 
 	} 
@@ -1340,7 +1391,8 @@ public class DataManager {
 		mPipelineEmployeeFile = pipelineEmployeeFile; 
 	} 
  
-	public void setPipelineQueueEntry(int queueID) { 
+	public void setPipelineQueueEntry(int queueID) 
+	{ 
 		if(mPipelineQueue != null) 
 			mPipelineQueueEntry = mPipelineQueue.get(queueID);		 
 	} 
@@ -1371,7 +1423,8 @@ public class DataManager {
 		loadUpdatedParseDateFormats(); 
  	} 
 	 
-	public void loadUpdatedPipelineChannels() { 
+	public void loadUpdatedPipelineChannels() 
+	{ 
 		try { 
 			PipelineChannelRequest request = new PipelineChannelRequest(); 
 			mPipelineChannels = AdminPersistenceManager.getInstance().getAll(request); 
@@ -1415,7 +1468,8 @@ public class DataManager {
 		mPipelineFileStepHandler = mPipelineFileStepHandlers.get(nHandlerID); 
 	} 
  
-	public void loadUpdatedPipelineSpecifications()  { 
+	public void loadUpdatedPipelineSpecifications()  
+	{ 
 		try { 
 			// get the most recent 
 			PipelineSpecificationRequest request = new PipelineSpecificationRequest(); 
@@ -1426,7 +1480,8 @@ public class DataManager {
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	} 
  
-	public void loadUpdatedPipelineFileStepHandlers() throws CoreException, InterruptedException, SQLException, ParseException { 
+	public void loadUpdatedPipelineFileStepHandlers() throws CoreException, InterruptedException, SQLException, ParseException 
+	{ 
 		try { 
 			// get the most recent 
 			PipelineFileStepHandlerRequest request = new PipelineFileStepHandlerRequest(); 
@@ -1436,10 +1491,11 @@ public class DataManager {
 		} 
 	}  
 	 
-	public void loadDynamicFileSpecification(long dynamicFileSpecificationID) { 
- 
+	public void loadDynamicFileSpecification(long dynamicFileSpecificationID) 
+	{ 
 		//we need to have a  pipeline channel at this point. This is a problem, but right now show a warning. 
-		if(mPipelineChannel == null) { 
+		if(mPipelineChannel == null) 
+		{ 
 			Utils.alertUser("Program Error", "No current Pipeline Channel. Returning to previous screen."); 
 			return; 
 		} 
@@ -1451,7 +1507,8 @@ public class DataManager {
 		 
 		// We need to load the correct DynamicFileSpecification object based 
 		// on the current pipeline selection 
-		switch(mPipelineChannel.getType()){ 
+		switch(mPipelineChannel.getType())
+		{ 
 			case COVERAGE: 
 				loadDynamicCoverageFileSpecification(dynamicFileSpecificationID); 
 				break; 
@@ -1546,7 +1603,8 @@ public class DataManager {
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	} 
  
-	public void getSubObjects(DynamicPayFileSpecification spec) { 
+	public void getSubObjects(DynamicPayFileSpecification spec)
+	{ 
 		//expand sub objects 
 		if(spec.getSsnParsePattern() != null) 
 			spec.setSsnParsePattern(getParsePattern(spec.getSsnParsePattern().getId())); 
@@ -1631,7 +1689,8 @@ public class DataManager {
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	} 
 	 
-	public void getSubObjects(DynamicCoverageFileSpecification spec) { 
+	public void getSubObjects(DynamicCoverageFileSpecification spec) 
+	{ 
 		// expand sub data objects 
 		if(spec.getAprSelTrueParsePattern() != null) 
 			spec.setAprSelTrueParsePattern(getParsePattern(spec.getAprSelTrueParsePattern().getId())); 
@@ -1749,7 +1808,8 @@ public class DataManager {
 	    catch (Exception e) {  DataManager.i().logGenericException(e); }
 	} 
  
-	public void getSubObjects(DynamicEmployeeFileSpecification spec) { 
+	public void getSubObjects(DynamicEmployeeFileSpecification spec) 
+	{ 
 		// expand data objects 
 		if(spec.getErRefParsePattern() != null) 
 			spec.setErRefParsePattern(getParsePattern(spec.getErRefParsePattern().getId())); 
@@ -1781,11 +1841,11 @@ public class DataManager {
 			spec.setCfld1ParsePattern(getParsePattern(spec.getCfld1ParsePattern().getId())); 
 		if(spec.getCfld2ParsePattern() != null) 
 			spec.setCfld2ParsePattern(getParsePattern(spec.getCfld2ParsePattern().getId())); 
-		 
 	} 
 	 
 	 
-	public void updatePayConversionCalculations() { 
+	public void updatePayConversionCalculations()
+	{ 
 		try { 
 			PayConversionCalculationRequest request = new PayConversionCalculationRequest(); 
 			mPayConversionCalculations = AdminPersistenceManager.getInstance().getAll(request); 
@@ -1799,30 +1859,33 @@ public class DataManager {
 		 
 	} 
  
-	public void saveCurrentUsername(String username) { 
+	public void saveCurrentUsername(String username) 
+	{ 
 		Properties props = new Properties();
 		try 
 		{ 
-			props.setProperty(AdminApp.CFG_LEML, username != null ? username : "");
-			AdminApp.getInstance().updateAppConfigProperties(props);
+			props.setProperty(EmsApp.CFG_LEML, username != null ? username : "");
+			EmsApp.getInstance().updateAppConfigProperties(props);
 		} catch (Exception e) { DataManager.i().log(Level.SEVERE, e);  } 
 	} 
  
-	public void persistString(String key, String value) {
+	public void persistString(String key, String value) 
+	{
 		Properties props = new Properties();
 		try 
 		{ 
 			props.setProperty(key, value != null ? value : "");
-			AdminApp.getInstance().updateAppConfigProperties(props);
+			EmsApp.getInstance().updateAppConfigProperties(props);
 		} catch (Exception e) { 
 			DataManager.i().log(Level.SEVERE, e);  
 		} 
 	}
 	
-	public String getPersistedString(String key) {
+	public String getPersistedString(String key) 
+	{
 		String value = "";
 		try { 
-			value = AdminApp.getInstance().getProperties().getProperty(key); 
+			value = EmsApp.getInstance().getProperties().getProperty(key); 
 		} catch (CoreException e) { 
 			logr.log(Level.SEVERE, "Exception.", e); 
 		}
@@ -1834,7 +1897,8 @@ public class DataManager {
 	// UPDATE Functions 
 	/////////////////////////////////////////////////////////////////////////// 
  
-	public void updateLocalUser(User user) { 
+	public void updateLocalUser(User user) 
+	{ 
 		//save the user 
 		//saveUser(user); 
 		 
@@ -1842,7 +1906,8 @@ public class DataManager {
 		EtcAdmin.i().updateLocalUserName(); 
 	} 
 	 
-	public boolean ping() { 
+	public boolean ping()
+	{ 
 		try { 
  			// use the ping function to test our connectin with the server 
 			return mCorvettoConnection.ping(); 

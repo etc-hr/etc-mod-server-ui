@@ -3,7 +3,7 @@ package com.etc.admin.ui.home;
 import java.util.List;
 import java.util.logging.Level;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
 import com.etc.admin.utils.Utils;
@@ -50,7 +50,7 @@ public class HomeController {
 	@FXML 
 	public void initialize() { 
 		try {
-			homeVersionLabel.setText("Admin App Version " + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); 
+			homeVersionLabel.setText("Admin App Version " + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); 
 			initUpdates(); 
 			addChanges(); 
 		} catch(Exception e) { 
@@ -286,7 +286,7 @@ public class HomeController {
 		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Export Queue is now an independent popup (ticket #461.)")); 
 		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Clearing employee coverage class changes Dates should now properly mark them as empty (task #349.)")); 
 		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Create IRS Error File button in TaxYear is now active.")); 
-		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Last used Account, Employer, and Employee quick links now persist across AdminApp restarts (ticket #459.)")); 
+		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Last used Account, Employer, and Employee quick links now persist across EmsApp restarts (ticket #459.)")); 
 		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Users can now add Employee Pay Periods with new button (ticket #447.)")); 
 		homeChangesList.getItems().add(new HBoxChangesCell("0.0.49","Added Union Type to Employee Pay View Popup (ticket #448.)")); 
 		// 0.0.48

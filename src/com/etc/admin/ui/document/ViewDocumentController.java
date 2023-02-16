@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -260,7 +260,7 @@ public class ViewDocumentController
 	                return null; 
 	            } 
 	        };
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 	        task.setOnSucceeded(e -> showData());
 	        task.setOnFailed(e -> showData());
 
@@ -324,7 +324,7 @@ public class ViewDocumentController
 	                return null; 
 	            } 
 	        };
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 	        task.setOnSucceeded(e -> loadFolders());
 	        task.setOnFailed(e -> loadFolders());
 
@@ -423,7 +423,7 @@ public class ViewDocumentController
 	                return null; 
 	            } 
 	        };
-			AdminApp.getInstance().getFxQueue().put(task);
+			EmsApp.getInstance().getFxQueue().put(task);
 	        task.setOnSucceeded(e -> loadFileTable());
 	        task.setOnFailed(e -> loadFileTable());
 

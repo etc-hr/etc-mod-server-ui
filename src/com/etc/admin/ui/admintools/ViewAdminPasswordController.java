@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.regex.Pattern;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -147,7 +147,7 @@ public class ViewAdminPasswordController {
 	    	task.setOnSucceeded(e ->  showUsers());
 	    	task.setOnFailed(e ->  showUsers());
 	    	
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			DataManager.i().log(Level.SEVERE, e); 

@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.utils.Logging;
 import com.etc.admin.utils.Utils;
@@ -55,7 +55,7 @@ public class ViewDebugLogController {
             File file = new File(userDir + pathSeparator +  
 					".xarriot" + pathSeparator +  
 					"apps"+ pathSeparator +  
-					AdminApp.getInstance().getApplicationHomeFolderName()  + pathSeparator +  
+					EmsApp.getInstance().getApplicationHomeFolderName()  + pathSeparator +  
 					"logs" + pathSeparator + 
             		"log0.txt");
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -66,7 +66,7 @@ public class ViewDebugLogController {
 				if (dbgIgnoreWarningCheck.isSelected() == true && line.contains("WARNING:") == true) continue;
 				if (dbgIgnoreInfoCheck.isSelected() == true) {
 					if (line.contains("INFO:") == true) continue;
-					if (line.contains("admin.AdminApp") == true) continue;
+					if (line.contains("admin.EmsApp") == true) continue;
 					if (line.contains("xarriot.Xarriot") == true) continue;
 					if (line.contains("updateCache") == true) continue;
 					if (line.contains("updateSecondTier") == true) continue;

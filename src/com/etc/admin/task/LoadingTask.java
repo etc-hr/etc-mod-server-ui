@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 import org.apache.commons.io.FileUtils;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -60,8 +60,8 @@ public class LoadingTask extends Task<Boolean> {
 		updateMessage("Configuring Client...");
 		updateProgress(3, steps);
 		
-		AdminManager.setCoreKey(AdminApp.getInstance().getCoreKey());
-		AdminManager.setKeyPair(AdminApp.getInstance().getKeyStore().getKeysByIdentifier("LOCALKEY"));
+		AdminManager.setCoreKey(EmsApp.getInstance().getCoreKey());
+		AdminManager.setKeyPair(EmsApp.getInstance().getKeyStore().getKeysByIdentifier("LOCALKEY"));
 		
 		updateMessage("Configuration Done...");
 		updateProgress(8, steps);

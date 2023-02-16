@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -1677,7 +1677,7 @@ public class ViewIRS1095cController
 	    		show1095c(); 
 	    	});
 	    	
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 	    	
 //		}catch(CoreException e) { DataManager.i().log(Level.SEVERE, e); }
 		}catch (Exception e) { DataManager.i().logGenericException(e); }

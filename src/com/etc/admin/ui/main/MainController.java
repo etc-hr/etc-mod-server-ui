@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import org.controlsfx.control.BreadCrumbBar;
 import org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -155,15 +155,15 @@ public class MainController
 	private Hyperlink documentsLink = new Hyperlink("Documents");
 	
 	// persist keys
-	String persistAccount1Key = "com.etc.admin.AdminApp.AccountId1";
-	String persistAccount2Key = "com.etc.admin.AdminApp.AccountId2";
-	String persistAccount3Key = "com.etc.admin.AdminApp.AccountId3";
-	String persistEmployer1Key = "com.etc.admin.AdminApp.EmployerId1";
-	String persistEmployer2Key = "com.etc.admin.AdminApp.EmployerId2";
-	String persistEmployer3Key = "com.etc.admin.AdminApp.EmployerId3";
-	String persistEmployee1Key = "com.etc.admin.AdminApp.EmployeeId1";
-	String persistEmployee2Key = "com.etc.admin.AdminApp.EmployeeId2";
-	String persistEmployee3Key = "com.etc.admin.AdminApp.EmployeeId3";
+	String persistAccount1Key = "com.etc.admin.EmsApp.AccountId1";
+	String persistAccount2Key = "com.etc.admin.EmsApp.AccountId2";
+	String persistAccount3Key = "com.etc.admin.EmsApp.AccountId3";
+	String persistEmployer1Key = "com.etc.admin.EmsApp.EmployerId1";
+	String persistEmployer2Key = "com.etc.admin.EmsApp.EmployerId2";
+	String persistEmployer3Key = "com.etc.admin.EmsApp.EmployerId3";
+	String persistEmployee1Key = "com.etc.admin.EmsApp.EmployeeId1";
+	String persistEmployee2Key = "com.etc.admin.EmsApp.EmployeeId2";
+	String persistEmployee3Key = "com.etc.admin.EmsApp.EmployeeId3";
 
 	// main screen
 	@FXML
@@ -2417,7 +2417,7 @@ public class MainController
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Core Admin App");
  
-        alert.setHeaderText("ETC\nCore Admin App \nv." + AdminApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
+        alert.setHeaderText("ETC\nCore Admin App \nv." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
         alert.setContentText("Feedback and bug reports are greatly appreciated. Please send any info or questions to Systems.\n\n");
 	    EtcAdmin.i().positionAlertCenter(alert);
         alert.showAndWait();

@@ -5,7 +5,7 @@ import java.util.logging.Level;
 
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -316,7 +316,7 @@ public class RawFieldData {
 			case EMPLOYEE:
 				EmployeeFileRequest efFreshRequest = new EmployeeFileRequest();
 				efFreshRequest.setId(queue.getEmployeeFile().getId());
-				EmployeeFile freshEmployeeFile = AdminApp.getInstance().getApiManager().get(efFreshRequest);// AdminPersistenceManager.getInstance().get .get .get(cfFreshRequest);
+				EmployeeFile freshEmployeeFile = EmsApp.getInstance().getApiManager().get(efFreshRequest);// AdminPersistenceManager.getInstance().get .get .get(cfFreshRequest);
 				if (freshEmployeeFile == null) return 0l;
 
 				EmployeeFile ef = new EmployeeFile();
@@ -334,7 +334,7 @@ public class RawFieldData {
 			case PAY:
 				PayFileRequest pfFreshRequest = new PayFileRequest();
 				pfFreshRequest.setId(queue.getPayFile().getId());
-				PayFile freshPayFile = AdminApp.getInstance().getApiManager().get(pfFreshRequest);// AdminPersistenceManager.getInstance().get .get .get(cfFreshRequest);
+				PayFile freshPayFile = EmsApp.getInstance().getApiManager().get(pfFreshRequest);// AdminPersistenceManager.getInstance().get .get .get(cfFreshRequest);
 				if (freshPayFile == null) return 0l;
 
 				PayFile pf = new PayFile();
@@ -353,7 +353,7 @@ public class RawFieldData {
 				//reload the file
 				CoverageFileRequest cfFreshRequest = new CoverageFileRequest();
 				cfFreshRequest.setId(queue.getCoverageFile().getId());
-				CoverageFile freshCovFile = AdminApp.getInstance().getApiManager().get(cfFreshRequest);// AdminPersistenceManager.getInstance().get .get .get(cfFreshRequest);
+				CoverageFile freshCovFile = EmsApp.getInstance().getApiManager().get(cfFreshRequest);// AdminPersistenceManager.getInstance().get .get .get(cfFreshRequest);
 				if (freshCovFile == null) return 0l;
 				
 				CoverageFile cf = new CoverageFile();

@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -556,7 +556,7 @@ public class ViewEmployeeController
 	    		showEmployee();
 	    	});
 	    	
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			logr.log(Level.SEVERE, "Exception.", e);
@@ -618,7 +618,7 @@ public class ViewEmployeeController
 	    		showEditHistory();
 	    	});
 	    	
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			logr.log(Level.SEVERE, "Exception.", e);
@@ -718,7 +718,7 @@ public class ViewEmployeeController
 	    		showEmploymentPeriods();
 	    	});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e)
 		{
 			logr.log(Level.SEVERE, "Exception.", e);
@@ -921,7 +921,7 @@ public class ViewEmployeeController
 	    		showNotes(); 
 	    	});
 	        
-	    	AdminApp.getInstance().getFxQueue().put(task);
+	    	EmsApp.getInstance().getFxQueue().put(task);
 		}catch(Exception e)
 		{
 			logr.log(Level.SEVERE, "Exception.", e);
@@ -1311,7 +1311,7 @@ public class ViewEmployeeController
 		    		finishSave();
 		    	});
 		    	
-		    	AdminApp.getInstance().getFxQueue().put(task);
+		    	EmsApp.getInstance().getFxQueue().put(task);
 			}catch(InterruptedException e)
 			{
 				logr.log(Level.SEVERE, "Exception.", e);

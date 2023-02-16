@@ -3,7 +3,7 @@ package com.etc.admin.ui.employer;
 import java.io.IOException;
 import java.util.logging.Level;
 
-import com.etc.admin.AdminApp;
+import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
@@ -224,7 +224,7 @@ public class ViewPayPeriodsController
 	    		showPayPeriods();
 	    	});
 	    	
-	        AdminApp.getInstance().getFxQueue().put(task);
+	        EmsApp.getInstance().getFxQueue().put(task);
 		}catch(InterruptedException e) { 
 			DataManager.i().log(Level.SEVERE, e);  
 		}

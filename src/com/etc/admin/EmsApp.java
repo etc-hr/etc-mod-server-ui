@@ -24,25 +24,18 @@ import java.util.logging.Logger;
 import javax.persistence.EntityManagerFactory;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import com.etc.CoreException;
-import com.etc.admin.utils.Utils;
 import com.etc.corvetto.CoreVersionException;
 import com.etc.corvetto.CorvettoConnection;
 import com.etc.utils.crypto.Cryptographer;
-import com.etc.utils.file.FileOperationException;
 import com.etc.utils.ws.CoreConnection;
 import com.etc.utils.xarriot.Xarriot;
 
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.Region;
+import src.com.etc.admin.utils.Utils;
 
-public class AdminApp extends Xarriot implements RejectedExecutionHandler {
+public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 
 	private static final long serialVersionUID = -4292301964138169951L;
 	
@@ -55,7 +48,7 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 	 * CFG_LEML						["CONFIG LAST EMAIL USED"]<br>
 	 * This is the property key for the last email if it was saved/used.</p>
 	 */
-	public static final String CFG_LEML = "com.etc.admin.AdminApp.lastEmail";
+	public static final String CFG_LEML = "com.etc.admin.EmsApp.lastEmail";
 	/**
 	 * <p>
 	 * JPA_HBM2DDL					["PERSISTENCE DDL SETTING FOR HIBERNATE"]<br>
@@ -133,8 +126,8 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 	
 	private Logger logr;
 	private PublicKey coreKey;
-	private EntityManagerFactory localEmFactory;
-	private static AdminApp instance;
+//	private EntityManagerFactory localEmFactory;
+	private static EmsApp instance;
 	private Properties appProperties;
 	private static String[] systemArgs;
 	private LinkedBlockingQueue<Runnable> mainQueue;
@@ -148,21 +141,21 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 		try
 		{
 			systemArgs = args;
-			(new AdminApp(Xarriot.argsToProperties(args))).start();
+			(new EmsApp(Xarriot.argsToProperties(args))).start();
 		}catch(Exception e)
 		{
 			if(e instanceof CoreVersionException)
 			{
-				String[] messageArg = new String[] {"Please update your AdminApp. Your version: " + VERSION + "\n" + e.getMessage()};
+				String[] messageArg = new String[] {"Please update your EmsApp. Your version: " + VERSION + "\n" + e.getMessage()};
 				Application.launch(UpdateApp.class, messageArg);
 			}
 			e.printStackTrace();
 		}
 	}
 
-	public AdminApp() { super(); }
+	public EmsApp() { super(); }
 	
-	public AdminApp(Properties props) throws CoreException { super(props); }
+	public EmsApp(Properties props) throws CoreException { super(props); }
 	
 	@Override
 	public void initApplication() throws CoreException 
@@ -172,13 +165,13 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 		//init logr
 		logr = Logger.getLogger(this.getClass().getCanonicalName());
 		
-		Logger.getLogger(this.getClass().getCanonicalName()).info("Initializing AdminApp...");
+		Logger.getLogger(this.getClass().getCanonicalName()).info("Initializing EmsApp...");
 	}
 
 	@Override
 	public void startApplication() throws CoreException 
 	{
-		Logger.getLogger(this.getClass().getCanonicalName()).info("Starting AdminApp...");
+		Logger.getLogger(this.getClass().getCanonicalName()).info("Starting EmsApp...");
 		Logger.getLogger(this.getClass().getCanonicalName()).warning("App Version: " + VERSION + ", DB Version: " + DB_VERSION);
 		//RELEASE PROPERTIES FROM INIT
 		appProperties = null;
@@ -188,8 +181,8 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 		{
 
 			try {
-				System.setOut(new PrintStream(new File(AdminApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.out"))));
-				//System.setErr(new PrintStream(new File(AdminApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.err"))));
+				System.setOut(new PrintStream(new File(EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.out"))));
+				//System.setErr(new PrintStream(new File(EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.err"))));
 			} catch (FileNotFoundException | CoreException e) {
 				logr.log(Level.SEVERE, "Exception.", e);
 			}
@@ -217,13 +210,13 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 	@Override
 	public void stopApplication() throws CoreException 
 	{
-		logr.warning("Stopping AdminApp...");
+		logr.warning("Stopping EmsApp...");
 	}
 
 	@Override
 	public void destroyApplication() 
 	{
-		logr.warning("Destroying AdminApp...");
+		logr.warning("Destroying EmsApp...");
 		instance = null;
 		if (queueCheckTimer != null)
 			queueCheckTimer.cancel();
@@ -307,7 +300,7 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 	 * 									 ADMINAPP METHODS											*
 	 ************************************************************************************************/
 	
-	public static AdminApp getInstance() { return instance; }
+	public static EmsApp getInstance() { return instance; }
 	
 	public boolean isServerInstance() { return false; }
 	
@@ -378,7 +371,7 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 		}
 		return false;
 	}
-	
+
 	public boolean updateAppConfigProperties(final Properties props) throws CoreException
 	{
 		File cfgFile = null;
@@ -520,12 +513,12 @@ public class AdminApp extends Xarriot implements RejectedExecutionHandler {
 				
 				logr.warning("Started Main Thread Pool. Threads: " + mainExecutor.prestartAllCoreThreads());
 				
-				queueCheckTimer = new Timer("AdminApp.QueueTimer");
+				queueCheckTimer = new Timer("EmsApp.QueueTimer");
 				queueCheckTimer.scheduleAtFixedRate((new TimerTask()
 				{
 					@Override public void run()
 					{
-						logr.info("AdminApp Queue slots available=[" + mainQueue.remainingCapacity() + "].");
+						logr.info("EmsApp Queue slots available=[" + mainQueue.remainingCapacity() + "].");
 					};
 				}), 30000L, 30000L);
 			}else
