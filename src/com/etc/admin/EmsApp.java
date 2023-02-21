@@ -33,7 +33,7 @@ import com.etc.utils.ws.CoreConnection;
 import com.etc.utils.xarriot.Xarriot;
 
 import javafx.application.Application;
-import src.com.etc.admin.utils.Utils;
+import com.etc.admin.utils.Utils;
 
 public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 

@@ -338,7 +338,6 @@ public class DataManager
 	public PipelineInformation mPipelineInformation; 
 	public PipelineParseDateFormat mPipelineParseDateFormat = null; 
 	public PipelineParsePattern mPipelineParsePattern = null; 
-	public PipelineQueue mPipelineQueueEntry = null; 
 	public PipelineRequest mPipelineRequest = null; 
 	public PipelineSpecification mPipelineSpecification = null; 
 	public PipelineSpecification mPipelineCoverageSpecification = null; 
@@ -375,7 +374,6 @@ public class DataManager
 	public List<PipelineParseDateFormat> mLUPipelineParseDateFormats = null; 
 	public List<PipelineParsePattern> mPipelineParsePatterns = null; 
 	public List<PipelineParsePattern> mLUPipelineParsePatterns = null; 
-	public List<PipelineQueue> mPipelineQueue = null; 
 	public List<PipelineRequest> mPipelineRequests = null; 
 	public List<PipelineRequest> mLUPipelineRequests = null; 
 	public List<PipelineSpecification> mPipelineSpecifications = null; 
@@ -404,7 +402,6 @@ public class DataManager
 	// Calculation members 
 	///////////////////////////////////////////// 
 	public CalculationRequest mCalculationRequest = null; 
-	public CalcQueue mCalcQueue = null; 
 	public CalculationChannel mCalculationChannel = null; 
 	public CalculationStepHandler mCalculationStepHandler = null; 
 	public CalculationSpecification mCalculationSpecification = null; 
@@ -554,11 +551,6 @@ public class DataManager
 	public int mAssociatedPropertyType = 0;  // 0 = account, 1 = employer 
 	public int mContactType = 0;  // 0 = account, 1 = employer 
 	public ScreenType mScreenType = null; 
-	 
-	///////////////////////////////////////////// 
-	// File History Queue 
-	///////////////////////////////////////////// 
-	public List<PipelineQueue> mFileHistoryQueue = null;	 
 	 
 	///////////////////////////////////////////// 
 	// boolean to track adds between dialogs 
@@ -1391,12 +1383,6 @@ public class DataManager
 		mPipelineEmployeeFile = pipelineEmployeeFile; 
 	} 
  
-	public void setPipelineQueueEntry(int queueID) 
-	{ 
-		if(mPipelineQueue != null) 
-			mPipelineQueueEntry = mPipelineQueue.get(queueID);		 
-	} 
-
 	//Uploader getters and setters
 	public UploadRequest getActiveUpload() { return mUploadRequest; }
 	public void setActiveUpload(UploadRequest rq, File file) { mUploadRequest = rq; setActiveUploadFile(file); }
