@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
 	version="2.2">
-	<persistence-unit name="adminapp_corvetto" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="emsapp_corvetto" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 	    <mapping-file>META-INF/CoreData.xml</mapping-file>
@@ -282,7 +282,8 @@
 		<class>com.etc.corvetto.ems.pipeline.entities.ins.DynamicInsuranceFileSpecification</class>
 		<class>com.etc.corvetto.ems.pipeline.entities.ins.DynamicInsuranceFileSpecificationSnapshot</class>
 		<class>com.etc.corvetto.ems.pipeline.entities.ins.InsuranceFile</class>
-		<class>com.etc.corvetto.ems.pipeline.entities.c95.DynamicIrs1095cFileSpecification</class><class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileAdditionalHoursSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.c95.DynamicIrs1095cFileSpecification</class>
+		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileAdditionalHoursSpecification</class>
 		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileCoverageGroupReference</class>
 		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileDepartmentReference</class>
 		<class>com.etc.corvetto.ems.pipeline.entities.pay.DynamicPayFileEmployerReference</class>
@@ -312,7 +313,9 @@
 
 			<!-- HIBERNATE-DATABASE CONFIGURATION -->
 			<property name="hibernate.connection.provider_class"	value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" />
-			<property name="hibernate.connection.driver_class"		value="org.h2.Driver" />
+			<!-- <property name="hibernate.connection.driver_class"		value="org.sqlite.JDBC" /> -->
+			<property name="javax.persistence.jdbc.driver"			value="jdbc:sqlite:sqlite_database_file_path" />
+			<property name="javax.persistence.jdbc.url"				value="jdbc:sqlite::memory:" />
 			<!-- 
 			<property name="hibernate.connection.url"				value="jdbc:h2:file:" />
 			<property name="hibernate.connection.username"			value="sa" />
@@ -320,7 +323,8 @@
 			<property name="hibernate.hbm2ddl.auto"					value="update" />
 	 		-->
 			<!-- HIBERNATE CONFIGURATION -->
-			<property name="hibernate.dialect"						value="org.hibernate.dialect.H2Dialect" />
+			<property name="dialect"								value="org.hibernate.dialect.SQLiteDialect" />
+			<!--<property name="hibernate.dialect"						value="org.hibernate.dialect.H2Dialect" />-->
 			<property name="hibernate.flushMode"					value="AUTO" />
 			<property name="hibernate.order_updates"				value="true" />
 			<property name="hibernate.show_sql"						value="false" />

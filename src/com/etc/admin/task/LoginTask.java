@@ -1,22 +1,22 @@
 package com.etc.admin.task;
 
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.etc.CoreException;
-import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.corvetto.entities.User;
 
 import javafx.concurrent.Task;
 
-public class LoginTask extends Task<Boolean> {
-
+public class LoginTask extends Task<Boolean> 
+{
 	@Override
-	protected Boolean call() throws Exception {
+	protected Boolean call() throws Exception 
+	{
 		boolean successful = false;
 
 		// AUTHENTICATE USER
@@ -66,26 +66,27 @@ public class LoginTask extends Task<Boolean> {
 //			DataManager.i().mCorvettoManager = corvettoConnection.getManager();
 			EtcAdmin.mLoginController.setProgress(0.3);
 
-			if (DataManager.i().getCorvettoManager() != null) {
+			if(DataManager.i().getCorvettoManager() != null) 
+			{
 				EtcAdmin.mLoginController.setProgress(0.4);
 				// SET APP LOCAL USER
 				DataManager.i().setLocalUser(((User)DataManager.i().getCorvettoManager().getIdentity().getUser()));
 				// update the app's cache
 				EtcAdmin.mLoginController.setProgress(0.5);
 				
-				Task<Void> updateCacheTask = new Task<Void>() {
-					@Override
-					protected Void call() throws Exception {
-						
-						DataManager.i().updateSecondTierCache();
-						return null;
-					}
-				};
+//				Task<Void> updateCacheTask = new Task<Void>() {
+//					@Override
+//					protected Void call() throws Exception {
+//						
+//						DataManager.i().updateSecondTierCache();
+//						return null;
+//					}
+//				};
 				
 				EtcAdmin.mLoginController.setProgress(0.7);
-				DataManager.i().updateCache();
+//				DataManager.i().updateCache();
 				EtcAdmin.mLoginController.setProgress(0.8);
-				EmsApp.getInstance().getFxQueue().put(updateCacheTask);
+//				EmsApp.getInstance().getFxQueue().put(updateCacheTask);
 				EtcAdmin.mLoginController.setProgress(0.9);
 				
 			} else {

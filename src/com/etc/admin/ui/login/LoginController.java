@@ -127,6 +127,7 @@ public class LoginController {
 			}
 			else
 				DataManager.i().saveCurrentUsername(null);
+			
 			//load main view
 			try {
 				FXMLLoader loader = new FXMLLoader();
@@ -143,6 +144,7 @@ public class LoginController {
 
 		loginTask.setOnFailed(fail -> {
 			Logger.getLogger(this.getClass().getCanonicalName()).log(Level.SEVERE, "Login Failed. Exception. ", loginTask.getException());
+			System.out.println(loginTask.getException() + " this is the actual exception");
 			setProgress(0.0);
 			Utils.showAlert("Login Failure", "Incorrect credentials or other login failure.");
 			passwordField.setDisable(false);

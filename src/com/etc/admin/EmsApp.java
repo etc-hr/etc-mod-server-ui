@@ -63,8 +63,9 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 	 * Set this property to override the default value in the persistence file<br>
 	 * for the database url. This may be necessary if using an engine such as h2.</p>
 	 */
-	public static final String JPA_HBCONN_URL = "hibernate.connection.url";
-	
+//	public static final String JPA_HBCONN_URL = "hibernate.connection.url";
+	public static final String JPA_HBCONN_URL = "xerial.connection.url";
+
 	/**
 	 * <p>
 	 * JPA_HBCONN_USR					[STRING]<br>
@@ -109,7 +110,7 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 	
 	private static final String DEFAULT_CFG_LEML = "";
 	private static final String PERSISTENCE_UNIT = "corvetto";
-	private static final String LOCAL_PERSISTENCE_UNIT = "adminapp_corvetto";
+	private static final String LOCAL_PERSISTENCE_UNIT = "emsapp_corvetto";
 	private static final String APP_CFG_FILENAME = "app.properties";
 	private static final String APP_LOG_CFG_FILENAME	= "logging.properties";		//THE APP'S DEFAULT LOGGER CONFIGURATION FILE
 	
@@ -117,7 +118,7 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 	 * 											MEMBERS												*
 	 ************************************************************************************************/
 	
-	private static final String HOMEFOLDER_NAME = "adminapp";
+	private static final String HOMEFOLDER_NAME = "emsapp";
 	private static final String SUBFOLDER_NAMES = "config;keys;tmp;logs;db";
 	private static final String SOFTWARE_ID = "a3980a6f-3c50-11ea-ac3a-0a6f9cb53658";
 	private static final String VERSION = "0.0.58";
@@ -180,12 +181,12 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 		if(isInitialized())
 		{
 
-			try {
-				System.setOut(new PrintStream(new File(EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.out"))));
-				//System.setErr(new PrintStream(new File(EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.err"))));
-			} catch (FileNotFoundException | CoreException e) {
-				logr.log(Level.SEVERE, "Exception.", e);
-			}
+//			try {
+//				System.setOut(new PrintStream(new File(EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.out"))));
+//				//System.setErr(new PrintStream(new File(EmsApp.getInstance().getHomeFolder().getSubFolder("logs", false).getAbsolutePath().concat(File.separator).concat("server.err"))));
+//			} catch (FileNotFoundException | CoreException e) {
+//				logr.log(Level.SEVERE, "Exception.", e);
+//			}
 			
 			File pubk;
 			try
@@ -253,19 +254,22 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 			appProperties.setProperty(MAX_QUEUE_SIZE, DEFAULT_QUEUES);
 			//SET VERSION
 			appProperties.setProperty(CorvettoConnection.APP_VSN, VERSION);
+
 			try
 			{
 				if(getHomeFolder() != null)
 					if(getHomeFolder().getSubFolder("db", false) != null)
 						//TODO: IF THE VERSION PREFIX MAJOR VERSION DOESN'T MATCH, RESET DB??
-						if(!(new File(getHomeFolder().getSubFolder("db", false).getAbsolutePath().concat(File.separator).concat("adminappdb").concat("_").concat(DB_VERSION).concat(".mv.db"))).isFile())
+						if(!(new File(getHomeFolder().getSubFolder("db", false).getAbsolutePath().concat(File.separator).concat("emsappdb").concat("_").concat(DB_VERSION).concat(".mv.db"))).isFile())
 						{
 							//delete db folder and reset
 							FileUtils.deleteDirectory(getHomeFolder().getSubFolder("db", false));
-							
+
 							appProperties.setProperty(JPA_HBM2DDL, "create");
-							appProperties.setProperty(JPA_HBCONN_URL, "jdbc:h2:file:".concat(getHomeFolder().getSubFolder("db", true)
-									.getAbsolutePath().concat(File.separator).concat("adminappdb").concat("_").concat(DB_VERSION)).concat(";").concat("DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE;CIPHER=AES;"));
+//							appProperties.setProperty(JPA_HBCONN_URL, "jdbc:h2:file:".concat(getHomeFolder().getSubFolder("db", true)
+							appProperties.setProperty(JPA_HBCONN_URL, "jdbc:sqlite:file".concat(getHomeFolder().getSubFolder("db", true)
+										 .getAbsolutePath().concat(File.separator).concat("emsappdb")
+										 .concat("_").concat(DB_VERSION)).concat(";").concat("DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE;CIPHER=AES;"));
 						}else
 						{
 							appProperties.setProperty(JPA_HBM2DDL, "update");
@@ -334,7 +338,6 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 		} 
 		return Path;
 	}
-	
 
 	/**
 	 * <p>
@@ -355,14 +358,16 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 			{
 				if(getProperties().getProperty(CorvettoConnection.USER_PWD) == null || getProperties().getProperty(CorvettoConnection.USER_EMAIL) == null)
 					throw new CoreException("Invalid Configuration Property. Failed to start local db context.");
-				localDbConfig.put(JPA_HBCONN_USR, "adminapp_dbusr");
+				localDbConfig.put(JPA_HBCONN_USR, "emsapp_dbusr");
 				localDbConfig.put(JPA_HBCONN_PW, Utils.localDecryptString("pQg7Tq/EtQFbdsQI6NSJPw=="));
 				logr.warning("hbm2ddl  ::" + getProperties().getProperty(JPA_HBM2DDL) + "::");
+
 				//database DLL defaults to create
 				localDbConfig.put(JPA_HBM2DDL, getProperties().getProperty(JPA_HBM2DDL, "create"));
-				localDbConfig.put(JPA_HBCONN_URL, getProperties().getProperty(JPA_HBCONN_URL, "jdbc:h2:file:".concat(getHomeFolder().getSubFolder("db", false).getAbsolutePath()).concat(File.separator)
-						.concat("adminappdb").concat("_").concat(DB_VERSION).concat(";").concat("DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE;CIPHER=AES;")));
-				
+				localDbConfig.put(JPA_HBCONN_URL, getProperties().getProperty(JPA_HBCONN_URL, "jdbc:sqlite::memory".concat(getHomeFolder().getSubFolder("db", false).getAbsolutePath())
+							 .concat(File.separator).concat("emsappdb").concat("_").concat(DB_VERSION).concat(";")
+							 .concat("DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE;CIPHER=AES;")));
+
 				return Xarriot.getInstance().enableJpa(true, localDbConfig);
 			}
 		}finally
@@ -376,7 +381,7 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 	{
 		File cfgFile = null;
 		Properties cfgProps = new Properties();
-		
+
 		try
 		{
 			if(props != null)
@@ -591,5 +596,4 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
 }

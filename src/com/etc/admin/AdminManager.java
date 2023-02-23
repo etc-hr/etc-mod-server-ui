@@ -9,9 +9,9 @@ public class AdminManager implements Serializable {
 	private static final long serialVersionUID = 4703265033117314687L;
 
 	// CONFIG FILE KEYS
-	public static final String CFG_UUID_KEY = "com.etc.sfta.AdminApp.uuid";
-	public static final String CFG_LEML_KEY = "com.etc.sfta.AdminApp.lastEmail";
-	public static final String CFG_LDIR_KEY = "com.etc.sfta.AdminApp.lastDirectory";
+	public static final String CFG_UUID_KEY = "com.etc.sfta.EmsApp.uuid";
+	public static final String CFG_LEML_KEY = "com.etc.sfta.EmsApp.lastEmail";
+	public static final String CFG_LDIR_KEY = "com.etc.sfta.EmsApp.lastDirectory";
 	//public static final String CFG_LDIR_KEY = "com.etc.sfta.SecureFileTransferAgent.lastDirectory";
 
 	private static String homeDirectory = null;

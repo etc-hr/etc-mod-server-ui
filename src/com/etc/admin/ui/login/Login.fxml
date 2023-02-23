@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="330.0" minHeight="330.0" minWidth="600.0" prefHeight="330.0" prefWidth="600.0" styleClass="container" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.login.LoginController">
+<AnchorPane maxHeight="330.0" minHeight="330.0" minWidth="600.0" prefHeight="330.0" prefWidth="600.0" style="-fx-background-color: #9AFEFF;" styleClass="container" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.login.LoginController">
 	<children>
       <GridPane>
         <columnConstraints>
@@ -54,7 +54,7 @@
 											</contextMenu>
 										</PasswordField>
             <CheckBox fx:id="saveUsernameCheckbox" mnemonicParsing="false" text="Save Username" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-										<Button fx:id="loginButton" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#login" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+										<Button fx:id="loginButton" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#login" style="-fx-background-color: lightsteelblue; -fx-border-color: navy blue;" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="8" />
 										<Label text="Password" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets right="10.0" />
@@ -77,14 +77,14 @@
                </GridPane.margin>
             </Label>
 				<Label fx:id="progressIndicatorLabel" styleClass="parent" visible="false" GridPane.rowIndex="8" />
-            <Label layoutX="201.0" layoutY="62.0" text="Admin App" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label layoutX="201.0" layoutY="62.0" text="Ems App" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
             <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <image>
-                  <Image url="img/ETCLogoSidebar.png" />
+                  <Image url="@../../../../../img/ETCLogoEmsApp.png" />
                </image>
             </ImageView>
          </children>

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>etc-admin-app</groupId>
-  <artifactId>etc-admin-app</artifactId>
+  <groupId>etc-mod-server-ui</groupId>
+  <artifactId>etc-mod-server-ui</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
   <repositories>
@@ -86,6 +86,12 @@
 	    <groupId>org.javassist</groupId>
 	    <artifactId>javassist</artifactId>
 	    <version>3.22.0-GA</version>
+	</dependency>
+	<!-- USED FOR SQLITE DB -->
+	<dependency>
+	    <groupId>org.xerial</groupId>
+	    <artifactId>sqlite-jdbc</artifactId>
+	    <version>3.36.0</version>
 	</dependency>
 	<!-- USED FOR OLD JSON -->
 	<dependency>

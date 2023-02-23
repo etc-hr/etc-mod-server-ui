@@ -3,30 +3,20 @@ package com.etc.admin;
 import java.awt.HeadlessException;
 import java.awt.MouseInfo;
 import java.awt.Point;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Properties;
-import java.util.Scanner;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
-import org.apache.commons.io.FileUtils;
-
-import com.etc.CoreException;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.ui.login.LoginController;
 import com.etc.admin.ui.main.MainController;
-import com.etc.admin.utils.ViewAppStatusController;
 import com.etc.admin.utils.Utils;
 import com.etc.admin.utils.Utils.ScreenType;
 import com.etc.admin.utils.Utils.StatusMessageType;
+import com.etc.admin.utils.ViewAppStatusController;
 import com.etc.corvetto.CorvettoConnection;
 import com.etc.utils.xarriot.Xarriot;
 
@@ -37,8 +27,8 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
 import javafx.stage.Modality;
@@ -177,14 +167,14 @@ public class EtcAdmin extends Application implements Serializable {
 		try {
 			if(Boolean.valueOf(Xarriot.getInstance().getProperties().getProperty(Xarriot.PROD_ENV, Boolean.TRUE.toString())))
 				if (mbDebug == true)
-					primaryStage.setTitle("Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***"); // + Test Only Version 20220919.1");
+					primaryStage.setTitle("Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***"); // + Test Only Version 20220919.1");
 				else
-					primaryStage.setTitle("Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); // + " Test Only Version 20220929.1");
+					primaryStage.setTitle("Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); // + " Test Only Version 20220929.1");
 			else
 				if (mbDebug == true)
-					primaryStage.setTitle("DEV Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***");
+					primaryStage.setTitle("DEV Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***");
 				else
-					primaryStage.setTitle("DEV Admin App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
+					primaryStage.setTitle("DEV Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
 		} catch (Exception e) {
 			//DataManager.i().log(Level.SEVERE, e); 
 		}
@@ -392,10 +382,6 @@ public class EtcAdmin extends Application implements Serializable {
 			mMainController.setStatusMessage(message, StatusMessageType.INFO);
 	}	
 
-	public void loadWOTrackingEmployers() {
-		mMainController.loadWOTrackingEmployers();
-	}	
-
 	public void setStatusMessage(String message, StatusMessageType type) {
 		mMainController.setStatusMessage(message, type);
 	}	
@@ -455,10 +441,6 @@ public class EtcAdmin extends Application implements Serializable {
 	///////////////////////////////////////////////////////////////////////////
 	// Pass through Functions
 	///////////////////////////////////////////////////////////////////////////
-	public void updateSearchAccounts() {
-		mMainController.loadSearchAccounts();
-	}
-	
 	public void updateLocalUserName() {
 		mMainController.setLocalUserName();
 	}

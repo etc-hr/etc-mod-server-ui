@@ -1,12 +1,7 @@
 package com.etc.admin.utils;
 
-import java.awt.FileDialog;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -29,11 +24,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Properties;
-import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
@@ -45,22 +37,12 @@ import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.etc.CoreException;
-import com.etc.admin.EmsApp;
 import com.etc.admin.AdminManager;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
-import com.etc.admin.ui.admintools.ViewAdminPayToolController.PayCell;
-import com.etc.admin.ui.coresysteminfo.ViewCoreSystemInfoController;
-import com.etc.admin.ui.uploader.UploadForm;
-import com.etc.admin.utils.Utils.SystemDataType;
-import com.etc.api.ActiveTransfer;
 import com.etc.api.Jsonable.ToJsonType;
 import com.etc.api.TransferRequest;
-import com.etc.corvetto.UploadException;
-import com.etc.corvetto.rqs.DownloadRequest;
-import com.etc.corvetto.rqs.UploadRequest;
 import com.etc.embeds.SSN;
-import com.etc.entities.CoreData;
 import com.etc.utils.crypto.Cryptographer;
 import com.etc.utils.crypto.CryptographyException;
 import com.etc.utils.crypto.EncryptedSSN;
@@ -74,10 +56,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.embed.swing.SwingFXUtils;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -98,10 +77,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import javafx.stage.Modality;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Utils {
 	

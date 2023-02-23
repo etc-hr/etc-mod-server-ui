@@ -88,28 +88,28 @@ public class HomeController {
 			setPipelineStatus(); 
 			setExporterStatus(); 
 			setModServerStatus(); 
-			updateCache();
+//			updateCache();
 		} catch(Exception e) { 
 			// future stub 
 			DataManager.i().log(Level.SEVERE, e); 
 		} 
 	}
 	
-	private void updateCache()
-	{
-		if (pauseCacheUpdate == true)
-			pauseCacheUpdate = false;
-		else
-			DataManager.i().updateAccountsAndEmployersByTask();	
-		
-		// accounts
-		homeAccountsField.setText("Acct: " + String.valueOf(DataManager.i().mAccounts.size()));
-		homeAccountsField.setStyle("-fx-background-color:#99ff99; -fx-border-color:#000000"); 
-
-		// employers
-		homeEmployersField.setText("Empr: " + String.valueOf(DataManager.i().mEmployersList.size()));
-		homeEmployersField.setStyle("-fx-background-color:#99ff99; -fx-border-color:#000000"); 
-	}
+//	private void updateCache()
+//	{
+//		if (pauseCacheUpdate == true)
+//			pauseCacheUpdate = false;
+//		else
+//			DataManager.i().updateAccountsAndEmployersByTask();	
+//		
+//		// accounts
+//		homeAccountsField.setText("Acct: " + String.valueOf(DataManager.i().mAccounts.size()));
+//		homeAccountsField.setStyle("-fx-background-color:#99ff99; -fx-border-color:#000000"); 
+//
+//		// employers
+//		homeEmployersField.setText("Empr: " + String.valueOf(DataManager.i().mEmployersList.size()));
+//		homeEmployersField.setStyle("-fx-background-color:#99ff99; -fx-border-color:#000000"); 
+//	}
 	 
 	private CoreSystemInstance getCoreSystemInstance(Long systemId) 
 	{ 
