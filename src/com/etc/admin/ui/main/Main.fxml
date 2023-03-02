@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,14 +15,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.BreadCrumbBar?>
 
-<AnchorPane fx:id="anchorPane" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.main.MainController">
+<AnchorPane fx:id="anchorPane" prefHeight="787.0" prefWidth="1010.0" stylesheets="@../SmplDocs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.etc.admin.ui.main.MainController">
 	<children>
-      <GridPane fx:id="mnGridPane">
+      <GridPane fx:id="mnGridPane" prefHeight="794.0" prefWidth="1010.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="210.0" prefWidth="210.0" />
           <ColumnConstraints hgrow="SOMETIMES" />
@@ -40,77 +33,6 @@
             <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="ALWAYS" />
         </rowConstraints>
          <children>
-            <VBox minHeight="200.0" minWidth="100.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" GridPane.rowIndex="3">
-               <children>
-                  <Label alignment="CENTER" maxWidth="210.0" minWidth="210.0" prefWidth="210.0" text="Quick Links" textFill="#0000007f" />
-                  <Button maxWidth="210.0" minWidth="210.0" mnemonicParsing="false" onAction="#onHREmployees" prefWidth="210.0" text="Employee Search" />
-                  <Button layoutX="10.0" layoutY="31.0" maxWidth="210.0" minWidth="210.0" mnemonicParsing="false" onAction="#onPipelineQueue" prefWidth="210.0" text="Pipeline Queue" />
-                  <Button fx:id="uploaderButton" mnemonicParsing="false" onAction="#onUploader" prefHeight="25.0" prefWidth="298.0" text="Uploader" />
-                  <Button fx:id="channelsButton" layoutX="10.0" layoutY="62.0" maxWidth="210.0" minWidth="210.0" mnemonicParsing="false" onAction="#onPipelineChannels" prefWidth="210.0" text="Channels" />
-                  <Button fx:id="dwiButton" layoutX="10.0" layoutY="93.0" maxWidth="210.0" minWidth="210.0" mnemonicParsing="false" onAction="#onDWIQueue" prefWidth="210.0" text="DWI" />
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="210.0" minWidth="210.0" prefWidth="210.0" text="Nav Menu" textFill="#0000007f" />
-                <TitledPane fx:id="hrTitledPane" animated="false" text="HR">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" />
-                  </content>
-                </TitledPane>
-                  <Accordion>
-                    <panes>
-                        <TitledPane fx:id="calculatorTitledPane" animated="false" layoutX="10.0" layoutY="41.0" text="Calculator">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" />
-                           </content>
-                        </TitledPane>
-                      <TitledPane fx:id="pipelineTitledPane" animated="false" text="Pipeline">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" />
-                        </content>
-                      </TitledPane>
-                        <TitledPane fx:id="exporterTitledPane" animated="false" layoutX="10.0" layoutY="41.0" text="Exporter">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="adminToolsTitledPane" animated="false" layoutX="10.0" layoutY="196.0" text="Admin Tools">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="reportsTitledPane" animated="false" layoutX="10.0" layoutY="118.0" text="Reports">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="documentTitledPane" animated="false" layoutX="10.0" layoutY="284.0" text="Document">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="hubTitledPane" animated="false" layoutX="10.0" layoutY="315.0" text="Hub">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" />
-                           </content>
-                        </TitledPane>
-                    </panes>
-                  </Accordion>
-                  <VBox fx:id="recentsVbox" minWidth="190.0" prefWidth="190.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label text="  Recent Accounts " />
-                        <Hyperlink fx:id="recentAccount1Link" layoutX="10.0" layoutY="68.0" onAction="#onRecentAccount1" text="-" />
-                        <Hyperlink fx:id="recentAccount2Link" onAction="#onRecentAccount2" text="-" />
-                        <Hyperlink fx:id="recentAccount3Link" layoutX="10.0" layoutY="39.0" onAction="#onRecentAccount3" text="-" />
-                        <Label layoutX="10.0" layoutY="10.0" text="  Recent Employers " />
-                        <Hyperlink fx:id="recentEmployer1Link" layoutX="10.0" layoutY="10.0" onAction="#onRecentEmployer1" text="-" />
-                        <Hyperlink fx:id="recentEmployer2Link" layoutX="10.0" layoutY="139.0" onAction="#onRecentEmployer2" text="-" />
-                        <Hyperlink fx:id="recentEmployer3Link" layoutX="10.0" layoutY="168.0" onAction="#onRecentEmployer3" text="-" />
-                        <Label layoutX="10.0" layoutY="118.0" text="  Recent Employees " />
-                        <Hyperlink fx:id="recentEmployee1Link" layoutX="10.0" layoutY="139.0" onAction="#onRecentEmployee1" text="-" />
-                        <Hyperlink fx:id="recentEmployee2Link" layoutX="10.0" layoutY="247.0" onAction="#onRecentEmployee2" text="-" />
-                        <Hyperlink fx:id="recentEmployee3Link" layoutX="10.0" layoutY="276.0" onAction="#onRecentEmployee3" text="-" />
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
             <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <GridPane maxHeight="35.0">
@@ -163,11 +85,6 @@
                       <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="WOTStartButton" maxHeight="25.0" maxWidth="85.0" minHeight="25.0" minWidth="85.0" mnemonicParsing="false" onAction="#onWOTrackingStart" prefHeight="25.0" prefWidth="85.0" text="Start" GridPane.columnIndex="2">
-                           <font>
-                              <Font size="12.0" />
-                           </font></Button>
-                        <TextField fx:id="WOTTimerField" alignment="CENTER_RIGHT" editable="false" maxHeight="25.0" maxWidth="80.0" minHeight="25.0" minWidth="80.0" prefHeight="25.0" prefWidth="80.0" GridPane.columnIndex="3" />
                         <ImageView fitHeight="22.0" fitWidth="22.0" onMouseReleased="#onUser" onTouchReleased="#onUser" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
                            <image>
                               <Image url="@../../../../../img/Figure1.png" />
@@ -179,10 +96,6 @@
                            </padding>
                         </Label>
                         <ComboBox fx:id="WOTEmployerBox" editable="true" maxHeight="25.0" maxWidth="275.0" minHeight="25.0" minWidth="275.0" prefHeight="25.0" prefWidth="275.0" GridPane.columnIndex="1" />
-                        <Button fx:id="WOTEnableButton" layoutX="365.0" layoutY="20.0" maxWidth="25.0" minHeight="25.0" minWidth="175.0" mnemonicParsing="false" onAction="#onWOTracking" prefHeight="25.0" prefWidth="150.0" text="Work Order Tracking &gt;">
-                           <font>
-                              <Font size="12.0" />
-                           </font></Button>
                      </children>
                   </GridPane>
                </children>

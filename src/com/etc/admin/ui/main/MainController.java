@@ -6,9 +6,9 @@ import java.util.logging.Level;
 
 import org.controlsfx.control.BreadCrumbBar;
 import org.controlsfx.control.BreadCrumbBar.BreadCrumbActionEvent;
-import org.controlsfx.tools.Utils;
 
 import com.etc.admin.AdminManager;
+import com.etc.admin.EmsApp;
 import com.etc.admin.EtcAdmin;
 import com.etc.admin.data.DataManager;
 import com.etc.admin.localData.AdminPersistenceManager;
@@ -20,7 +20,7 @@ import com.etc.admin.ui.user.ViewUserEditController;
 import com.etc.admin.utils.Utils.LogType;
 import com.etc.admin.utils.Utils.ScreenType;
 import com.etc.admin.utils.Utils.StatusMessageType;
-import com.etc.corvetto.ems.pipeline.entities.pay.PayFile;
+import com.etc.corvetto.CorvettoConnection;
 import com.etc.corvetto.entities.Account;
 import com.etc.corvetto.entities.Employee;
 import com.etc.corvetto.entities.Employer;
@@ -34,15 +34,14 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
@@ -954,6 +953,54 @@ public class MainController
 		//FIXME: DataManager.i().loadAllPlanCoverageClasses();
 		EtcAdmin.i().setScreen(ScreenType.PLANCOVERAGECLASS, true);
 	}
+
+	public void onAbout(ActionEvent event)
+	{
+		//reset the link
+		clearLinks();
+		
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Core Admin App");
+ 
+        alert.setHeaderText("ETC\nCore Admin App \nv." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
+        alert.setContentText("Feedback and bug reports are greatly appreciated. Please send any info or questions to Systems.\n\n");
+	    EtcAdmin.i().positionAlertCenter(alert);
+        alert.showAndWait();
+	}
+
+	public void onSearchHide() {
+			searchAccount();
+	}
+	
+	public void searchAccount() 
+	{
+//		String sSelection = searchBox.getValue();
+//		String sName;
+//		
+//		for (int i = 0; i < DataManager.i().mAccounts.size();i++) 
+//		{
+//			Account account = DataManager.i().mAccounts.get(i);
+//			if (account.isActive() == false) continue;
+//			sName = account.getName();
+//			if (sName.equals(sSelection))
+//			{
+//				// set the current account
+//				DataManager.i().mAccount = DataManager.i().mAccounts.get(i);
+//				EtcAdmin.i().setScreenType(ScreenType.ACCOUNT);
+//
+//				//and reload the account screen
+//				try {
+//					EtcAdmin.i().setScreen(ScreenType.ACCOUNT, true);
+//					//loadWOTrackingEmployers();
+//				//	WOTEnableButton.setVisible(true);
+//				} catch (Exception e) {
+//		        	DataManager.i().log(Level.SEVERE, e); 
+//				}
+//				setBreadCrumb();
+//				break;
+//			}
+//		}	
+	}	
 	
 	//clears the link from having a visited view
 	public void clearLinks() {

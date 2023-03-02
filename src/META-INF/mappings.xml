@@ -11,12 +11,12 @@
                  version="2.0">
     <package>com.etc.corvetto.ems.pipeline.entities</package>
     
-    <entity class="PipelineRequest">
+    <!-- <entity class="PipelineRequest">
     	<attributes>
     		<basic name="requestId">
     			<column name="request_id" insertable="true" updatable="true" nullable="true" />
     		</basic>
     		<transient name="request" />
     	</attributes>
-    </entity>
+    </entity> -->
 </entity-mappings>

@@ -28,7 +28,8 @@ public class UpdateApp extends Application implements Serializable {
     Label lblMessage = new Label();
 			
 	@Override
-	public void start(Stage stage) {
+	public void start(Stage stage) 
+	{
 		setPrimaryStage(stage);
 
 		try {
@@ -43,7 +44,7 @@ public class UpdateApp extends Application implements Serializable {
 
 	        Parameters params = this.getParameters();
 	        List<String> paramStrings = params.getUnnamed();
-	        if (paramStrings !=  null && paramStrings.size() > 0)
+	        if(paramStrings !=  null && paramStrings.size() > 0)
 	        	lblMessage.setText(paramStrings.get(0).toString());
 	        else
 	        	lblMessage.setText("This version is out of date. Please update to the latest version of the Admin App.");
@@ -82,18 +83,22 @@ public class UpdateApp extends Application implements Serializable {
 		primaryStage = stage;
 	}
 
-	public Point getCurrentScreenCenter() {
+	public Point getCurrentScreenCenter() 
+	{
 		// using the mouse position to determine current screen
 		Rectangle2D screenBounds = null;
 		Point p = null;
 		try {
             p = MouseInfo.getPointerInfo().getLocation();
             List<Screen> screens = Screen.getScreens();
-            if (p != null && screens != null) {
+            if(p != null && screens != null)
+            {
                 // check mouse position
-                for (Screen screen : screens) {
+                for(Screen screen : screens) 
+                {
                     screenBounds = screen.getVisualBounds();
-                    if (screenBounds.contains(p.x, p.y)) {
+                    if(screenBounds.contains(p.x, p.y)) 
+                    {
                     	p.x = (int) (screenBounds.getMinX() + screenBounds.getWidth() / 2.0);
                     	p.y = (int) (screenBounds.getMinY() + screenBounds.getHeight() / 2.0);
                     	return p;
@@ -108,17 +113,19 @@ public class UpdateApp extends Application implements Serializable {
 	
 	public void positionStageCenter(Stage stage)
 	{
-		
-		Platform.runLater(new Runnable() {
+		Platform.runLater(new Runnable() 
+		{
 		    @Override
-		    public void run() {
+		    public void run() 
+		    {
 		    	Point p = getCurrentScreenCenter();
 		        stage.setX(p.getX() - (stage.getWidth() / 2));
 		        stage.setY(p.getY() - (stage.getHeight() / 2));
 		    }
 		});
 	}
-	public void exitApp() {
+	public void exitApp()
+	{
         Platform.exit();
         EmsApp.getInstance().destroyApplication();
 	}

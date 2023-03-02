@@ -134,14 +134,15 @@ public class EtcAdmin extends Application implements Serializable {
 		}
 	}
 	
-	private boolean checkForRunningApp() {
+	private boolean checkForRunningApp() 
+	{
 		try {
 			File dbFile = new File(EmsApp.getInstance().getDbPath());
 			if(dbFile.exists() == true &&  dbFile.renameTo(dbFile) == false)
 			{
-		      	Alert alert = new Alert(AlertType.NONE, "The Admin App is already running or the local db file is locked. Please exit any other instances of the app before continuing. If problems persist, contact systems.", ButtonType.OK);
+		      	Alert alert = new Alert(AlertType.NONE, "The Ems App is already running or the local db file is locked. Please exit any other instances of the app before continuing. If problems persist, contact systems.", ButtonType.OK);
 		      	alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-		      	alert.setTitle("Admin App Already Running");
+		      	alert.setTitle("Ems App Already Running");
 		      	alert.showAndWait();
 			    exitApp();
 			} 
@@ -152,26 +153,28 @@ public class EtcAdmin extends Application implements Serializable {
 		return false;
 	}	
 	
-	public boolean stageOverlapsMain(Stage stage) {
+	public boolean stageOverlapsMain(Stage stage) 
+	{
 		// start overlaps
-		if (stage.getX() > primaryStage.getX() && stage.getX() < primaryStage.getX()) return true;
+		if(stage.getX() > primaryStage.getX() && stage.getX() < primaryStage.getX()) return true;
 		// width overlaps
-		if (stage.getX() + stage.getWidth() > primaryStage.getX() && stage.getX() < primaryStage.getX() + primaryStage.getWidth()) return true;
+		if(stage.getX() + stage.getWidth() > primaryStage.getX() && stage.getX() < primaryStage.getX() + primaryStage.getWidth()) return true;
 		
 		
 		return false;
 		
 	}
 	
-	private void setTitle() {
+	private void setTitle()
+	{
 		try {
 			if(Boolean.valueOf(Xarriot.getInstance().getProperties().getProperty(Xarriot.PROD_ENV, Boolean.TRUE.toString())))
-				if (mbDebug == true)
+				if(mbDebug == true)
 					primaryStage.setTitle("Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***"); // + Test Only Version 20220919.1");
 				else
 					primaryStage.setTitle("Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0")); // + " Test Only Version 20220929.1");
 			else
-				if (mbDebug == true)
+				if(mbDebug == true)
 					primaryStage.setTitle("DEV Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0") + "          *** DEBUG MODE***");
 				else
 					primaryStage.setTitle("DEV Ems App v." + EmsApp.getInstance().getApplicationProperties().getProperty(CorvettoConnection.APP_VSN, "0.0.0"));
@@ -181,8 +184,8 @@ public class EtcAdmin extends Application implements Serializable {
 	
 	}
 	
-	private void createAppStatus() {
-				
+	private void createAppStatus() 
+	{
 		try {
             // load the fxml
 	        FXMLLoader loader = new FXMLLoader(AdminManager.class.getResource("utils/ViewAppStatus.fxml"));
@@ -197,8 +200,9 @@ public class EtcAdmin extends Application implements Serializable {
 		}        			
 	}
 	
-	public void showAppStatus(String topLabel, String message, double progress, boolean show) {
-		if (show == true)
+	public void showAppStatus(String topLabel, String message, double progress, boolean show) 
+	{
+		if(show == true)
 			appStatusController.startUpdates();
 		appStatusMessage = message;
 		appStatusLabel = topLabel;
@@ -222,7 +226,8 @@ public class EtcAdmin extends Application implements Serializable {
 		primaryStage = stage;
 	}
 
-	public void setPrimaryStageMaximized() {
+	public void setPrimaryStageMaximized() 
+	{
 		// make it resizable for when it is not maximized
 		EtcAdmin.i().getPrimaryStage().setResizable(true);
 		
@@ -230,12 +235,15 @@ public class EtcAdmin extends Application implements Serializable {
 		try {
             Point p = MouseInfo.getPointerInfo().getLocation();
             List<Screen> screens = Screen.getScreens();
-            if (p != null && screens != null && screens.size() > 0) {
+            if(p != null && screens != null && screens.size() > 0) 
+            {
                 Rectangle2D screenBounds;
                 // Go through each screen to see if the mouse is currently on that screen
-                for (Screen screen : screens) {
+                for(Screen screen : screens) 
+                {
                     screenBounds = screen.getVisualBounds();
-                    if (screenBounds.contains(p.x, p.y)) {
+                    if(screenBounds.contains(p.x, p.y)) 
+                    {
                 		primaryStage.setX(screenBounds.getMinX() - 9);
                 		primaryStage.setY(screenBounds.getMinY());
                 		primaryStage.setWidth(screenBounds.getWidth() + 18);
@@ -251,18 +259,22 @@ public class EtcAdmin extends Application implements Serializable {
         }		
 	}
 	
-	public Point getCurrentScreenCenter() {
+	public Point getCurrentScreenCenter() 
+	{
 		Rectangle2D screenBounds = null;
 		Point p = new Point();
 		try {
             List<Screen> screens = Screen.getScreens();
-            if (screens != null) {
+            if(screens != null) 
+            {
             	// base it on the current screen of the primary stage
-                for (Screen screen : screens) {
+                for(Screen screen : screens) 
+                {
                     screenBounds = screen.getVisualBounds();
                     double psX =   primaryStage.getX() + (primaryStage.getWidth() / 2);
                     double psY =   primaryStage.getY() + (primaryStage.getHeight() / 2);
-                    if (screenBounds.contains(psX, psY)) {
+                    if(screenBounds.contains(psX, psY)) 
+                    {
                     	p.x = (int) (screenBounds.getMinX() + screenBounds.getWidth() / 2.0);
                     	p.y = (int) (screenBounds.getMinY() + screenBounds.getHeight() / 2.0);
                     	return p;
@@ -279,9 +291,11 @@ public class EtcAdmin extends Application implements Serializable {
 	public void positionStageCenter(Stage stage)
 	{
 		
-		Platform.runLater(new Runnable() {
+		Platform.runLater(new Runnable() 
+		{
 		    @Override
-		    public void run() {
+		    public void run() 
+		    {
 		    	Point p = getCurrentScreenCenter();
 		        stage.setX(p.getX() - (stage.getWidth() / 2));
 		        stage.setY(p.getY() - (stage.getHeight() / 2));
@@ -293,9 +307,11 @@ public class EtcAdmin extends Application implements Serializable {
 	public void positionAlertCenter(Alert alert)
 	{
 		
-		Platform.runLater(new Runnable() {
+		Platform.runLater(new Runnable() 
+		{
 		    @Override
-		    public void run() {
+		    public void run() 
+		    {
 		    	Point p = getCurrentScreenCenter();
 		    	alert.setX(p.getX() - (alert.getWidth() / 2));
 		    	alert.setY(p.getY() - (alert.getHeight() / 2));
@@ -304,7 +320,8 @@ public class EtcAdmin extends Application implements Serializable {
 		}); 
 	}
 	
-	public void showMain() {
+	public void showMain() 
+	{
 		primaryStage.setAlwaysOnTop(true);
 		primaryStage.setAlwaysOnTop(false);
 	}
@@ -312,22 +329,26 @@ public class EtcAdmin extends Application implements Serializable {
 	///////////////////////////////////////////////////////////////////////////
 	// utilities
 	///////////////////////////////////////////////////////////////////////////
-    public void updateTitle(final String title) {
-    	
-		Platform.runLater(new Runnable() {
+    public void updateTitle(final String title)
+    {
+		Platform.runLater(new Runnable() 
+		{
 	        @Override
-	        public void run() {
+	        public void run() 
+	        {
 	            primaryStage.setTitle(title);
 	        }
 	   });    		
     }
 
-	public void setDebug(boolean bDebug) {
+	public void setDebug(boolean bDebug)
+	{
 		mbDebug = bDebug;	
 		Properties props = new Properties();
 		try 
 		{ 
-			if (mbDebug == true) {
+			if(mbDebug == true) 
+			{
 				props.setProperty("com.etc.utils.ws.level", "FINER");
 				props.setProperty("java.util.logging.FileHandler.level", "FINER");
 				Utils.alertUser("WARNING", "Debug Mode can write very large log files. Please use only as needed and turn off accordingly. Debug mode will reset to off when restarting the EmsApp.");
@@ -348,19 +369,22 @@ public class EtcAdmin extends Application implements Serializable {
 			mMainController = pMainController;
 	}
 	
-	public void setLoginProgress(double position) {
-		if (mLoginController == null) return;
+	public void setLoginProgress(double position) 
+	{
+		if(mLoginController == null) return;
 		
 		mLoginController.setProgress(position);				
 	}
 	
-	public void setLoginController(LoginController pLoginController) {
+	public void setLoginController(LoginController pLoginController) 
+	{
 		// store the controller for access later
 		mLoginController = pLoginController;
 	}
 	
-	public void setProgress(double progress) {
-		if (progress > .99) progress = .99;
+	public void setProgress(double progress) 
+	{
+		if(progress > .99) progress = .99;
 		mMainController.setProgress(progress);
 	}	
 	
@@ -372,13 +396,15 @@ public class EtcAdmin extends Application implements Serializable {
 			return mMainController.getProgress();
 	}
 
-	public void updateStatus(double pos, String message) {
+	public void updateStatus(double pos, String message) 
+	{
 		setProgress(pos);
     	setStatusMessage(message);		
 	}
 
-	public void setStatusMessage(String message) {
-		if (mMainController != null)
+	public void setStatusMessage(String message)
+	{
+		if(mMainController != null)
 			mMainController.setStatusMessage(message, StatusMessageType.INFO);
 	}	
 
@@ -390,12 +416,14 @@ public class EtcAdmin extends Application implements Serializable {
 	//	mMainController.getAnchorPane().setDisable(disable);
 	//}
 
-	public void restartApp() {
+	public void restartApp()
+	{
 		primaryStage.close();
 		Platform.runLater( () -> new EtcAdmin().start( new Stage() ) );
 	}
 	
-	public void exitApp() {
+	public void exitApp()
+	{
         Platform.exit();
         EmsApp.getInstance().destroyApplication();
 	}
@@ -425,7 +453,8 @@ public class EtcAdmin extends Application implements Serializable {
 		setScreen(screenType, mRefreshScreen);
 	}
 	
-	public void setScreen(ScreenType screenType, boolean refresh) {
+	public void setScreen(ScreenType screenType, boolean refresh) 
+	{
 		mLastScreenType = mScreenType;
 		mScreenType = screenType;
 		mRefreshScreen = refresh;

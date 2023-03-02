@@ -46,8 +46,8 @@ public class ViewAppStatusController
 		timeline.play();
 	}
 	
-	private void setAction() {
-		
+	private void setAction() 
+	{
 		if (ran == true) return;
 		ran = true;
 		try {
@@ -107,5 +107,4 @@ public class ViewAppStatusController
 		Stage stage = (Stage) topLabel.getScene().getWindow();
 		stage.close();
 	}
-	
 }
