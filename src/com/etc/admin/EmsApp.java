@@ -59,8 +59,8 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 	 * Set this property to override the default value in the persistence file<br>
 	 * for the database url. This may be necessary if using an engine such as h2.</p>
 	 */
-	public static final String JPA_HBCONN_URL = "hibernate.connection.url";
-//	public static final String JPA_HBCONN_URL = "javax.persistence.jdbc.url";
+//	public static final String JPA_HBCONN_URL = "hibernate.connection.url";
+	public static final String JPA_HBCONN_URL = "javax.persistence.jdbc.url";
 
 	/**
 	 * <p>
@@ -196,12 +196,14 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 		}
 		//START THREADPOOL
 		startTheadPoolQueue();
+
 		//START FX THREADPOOL
 		startFxThreadPoolQueue();
+
 		//LAUNCH ON THE JAVAFX THREAD
 		Application.launch(EtcAdmin.class, systemArgs);
 	}
-	
+
 	@Override
 	public void stopApplication() throws CoreException 
 	{
@@ -258,9 +260,9 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 						{
 							//delete db folder and reset
 							FileUtils.deleteDirectory(getHomeFolder().getSubFolder("db", false));
-
+							System.out.println("middle of getAppProps");
 							appProperties.setProperty(JPA_HBM2DDL, "create");
-							appProperties.setProperty(JPA_HBCONN_URL, "jdbc:sqlite:".concat(getHomeFolder().getSubFolder("db", true)
+							appProperties.setProperty(JPA_HBCONN_URL, "jdbc:hsqldb:mem:".concat(getHomeFolder().getSubFolder("db", true)
 										 .getAbsolutePath().concat(File.separator).concat("emsappdb")
 										 .concat("_").concat(DB_VERSION)).concat(";").concat("DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE;CIPHER=AES;"));
 						}else
@@ -293,7 +295,7 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 
 
 	/************************************************************************************************
-	 * 									 EMSAPP METHODS											*
+	 * 									 EMSAPP METHODS												*
 	 ************************************************************************************************/
 	
 	public static EmsApp getInstance() { return instance; }
@@ -354,11 +356,12 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 				localDbConfig.put(JPA_HBCONN_USR, "emsapp_dbusr");
 				localDbConfig.put(JPA_HBCONN_PW, Utils.localDecryptString("pQg7Tq/EtQFbdsQI6NSJPw=="));
 
-				logr.warning("hbm2ddl  ::" + getProperties().getProperty(JPA_HBM2DDL) + "::");
-
+				logr.warning("hbm2ddl ::" + getProperties().getProperty(JPA_HBM2DDL) + "::");
+				System.out.println("in the middle of createLocalPersis");
+				
 				//database DLL defaults to create
 				localDbConfig.put(JPA_HBM2DDL, getProperties().getProperty(JPA_HBM2DDL, "create"));
-				localDbConfig.put(JPA_HBCONN_URL, getProperties().getProperty(JPA_HBCONN_URL, "jdbc:sqlite:"
+				localDbConfig.put(JPA_HBCONN_URL, getProperties().getProperty(JPA_HBCONN_URL, "jdbc:hsqldb:mem:"
 							 .concat(getHomeFolder().getSubFolder("db", false).getAbsolutePath())
 							 .concat(File.separator).concat("emsappdb").concat("_").concat(DB_VERSION).concat(";")
 							 .concat("DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE;CIPHER=AES;")));

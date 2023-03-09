@@ -1,6 +1,10 @@
 package com.etc.admin.ui.main;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -214,18 +218,18 @@ public class MainController
 			mnBlueLabel.setWidth(EtcAdmin.i().getPrimaryStage().getWidth());
 			
 			// set up the sidebar navigation controls
-			setNavigationControls();
+//			setNavigationControls();
 			
 			//reset the state indicators
 			setProgress(0);
 			setStatusMessage("Ready");
 	
 			// set up Work Order Tracking
-			WOTStartButton.setVisible(false);
-			WOTTimerField.setVisible(false);
-			WOTEmployerBox.setVisible(false);
-			WOTEnableButton.setVisible(false);
-			createWOTTimer();
+//			WOTStartButton.setVisible(false);
+//			WOTTimerField.setVisible(false);
+//			WOTEmployerBox.setVisible(false);
+//			WOTEnableButton.setVisible(false);
+//			createWOTTimer();
 	
 			// a listener to adjust things when resized
 			ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) ->
@@ -681,6 +685,20 @@ public class MainController
 	// loads the ui according to the selected screentype
 	public void setScreen(ScreenType screenType) 
 	{
+//		String db = "jdbc:hsqldb:file:db";
+//		String user = "SA";
+//		String password = null;
+//		Connection conn;
+//		try {
+//			conn = DriverManager.getConnection(db, user, password);
+//			String insertQuery = "INSERT INTO PLAYER VALUES (1,'McKenzie','password')";
+//			Statement stmt = conn.createStatement();
+//			stmt.execute(insertQuery);
+//		} catch (SQLException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		
 		String screenPath = "";
 		boolean refresh = EtcAdmin.i().isScreenRefresh();
 		// log it
@@ -1679,7 +1697,8 @@ public class MainController
 	}
 	
 	//left sidebar state
-	public enum sidebarState{
+	public enum sidebarState
+	{
 		HOME,
 		USERUTIL,
 		PLAN,

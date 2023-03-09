@@ -28,14 +28,12 @@ public class ViewAppStatusController
 	
 	private Stage stage = null;
 	private Timeline timeline = null;
-	
+
 	private boolean ran = false;
 
 	/**
 	 * initialize is called when the FXML is loaded
 	 */
-	
-	
 	@FXML
 	public void initialize() 
 	{

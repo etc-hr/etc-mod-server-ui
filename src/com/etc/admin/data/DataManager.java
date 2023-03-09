@@ -22,6 +22,7 @@ import com.etc.admin.utils.Utils.ScreenType;
 import com.etc.admin.utils.Utils.SystemDataType;
 import com.etc.api.WsManager;
 import com.etc.corvetto.CorvettoConnection;
+import com.etc.corvetto.ems.pipeline.entities.PipelineChannel;
 import com.etc.corvetto.entities.UploadType;
 import com.etc.corvetto.entities.User;
 import com.etc.corvetto.rqs.UploadRequest;
@@ -36,7 +37,7 @@ public class DataManager
 	///////////////////////////////////////////// 
 	// standard data members  
 	///////////////////////////////////////////// 
-	public CoreData mCoreData = null;
+//	public CoreData mCoreData = null;
 	 
 	///////////////////////////////////////////// 
 	// Logging and Debugging 
@@ -45,22 +46,14 @@ public class DataManager
 	private Logger logr;
 	private int resetCounter = 0;
 	 
-	///////////////////////////////////////////// 
-	// uploader members 
-	///////////////////////////////////////////// 
-	public static final String CFG_UUID_KEY = "com.etclite.core.upload.Uploader.uuidv2";
-	public static final String CFG_LDIR_KEY = "com.etclite.core.upload.Uploader.lastDirectory";
-	public static final String CFG_LEML_KEY = "com.etclite.core.upload.Uploader.lastEmail";
-	public static final String CFG_DEL_FILE = "delete config file and reload";
-
-	public static final String HOMEFOLDER_NAME = ".xarriot";
-	public static final String CFGFILE_NAME = "com.etc.utils.xarriot.app.config.filename";
-	public static final String LOGCFGFILE_NAME = "logging.properties";
-	public static final String LOGFILE_NAME = "log%g.txt";
-	public static final String VERSION = "1.2.0";
-	public static final String SOFTWARE_ID = "9647adb5-3c50-11ea-ac3a-0a6f9cb53658";
-	public static HashMap<Long,ArrayList<UploadType>> mEmployerUploadTypes = new HashMap<Long,ArrayList<UploadType>>(16,1);
-	public static HashMap<Long,ArrayList<DataProperty>> mUploadDataProperties = new HashMap<Long,ArrayList<DataProperty>>(16,1);
+//	public static final String HOMEFOLDER_NAME = ".xarriot";
+//	public static final String CFGFILE_NAME = "com.etc.utils.xarriot.app.config.filename";
+//	public static final String LOGCFGFILE_NAME = "logging.properties";
+//	public static final String LOGFILE_NAME = "log%g.txt";
+//	public static final String VERSION = "1.2.0";
+//	public static final String SOFTWARE_ID = "9647adb5-3c50-11ea-ac3a-0a6f9cb53658";
+//	public static HashMap<Long,ArrayList<UploadType>> mEmployerUploadTypes = new HashMap<Long,ArrayList<UploadType>>(16,1);
+//	public static HashMap<Long,ArrayList<DataProperty>> mUploadDataProperties = new HashMap<Long,ArrayList<DataProperty>>(16,1);
 
 	public UploadRequest mUploadRequest = null;
 	public KeyStore mKeyStore = null;

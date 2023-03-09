@@ -126,7 +126,7 @@ public class EtcAdmin extends Application implements Serializable {
 			primaryStage.getIcons().add(new Image("img/Icon.jpg"));
 			primaryStage.show();
 			
-			createAppStatus();
+//			createAppStatus();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
