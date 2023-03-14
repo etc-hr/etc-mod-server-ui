@@ -93,7 +93,7 @@
 			-->
 
 			<!-- CONFIGURATION FOR HSQLDB
-			<property name="javax.persistence.jdbc.driver"			value="org.hsqldb.jdbcDriver" /> --> 
+			<property name="javax.persistence.jdbc.driver"			value="org.hsqldb.jdbcDriver" /> -->
 			<property name="hibernate.dialect"						value="org.hibernate.dialect.HSQLDialect" />
       		<property name="hibernate.connection.driver_class" 		value="org.hsqldb.jdbc.JDBCDriver"/>
 

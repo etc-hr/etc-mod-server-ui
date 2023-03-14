@@ -215,11 +215,11 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 	{
 		logr.warning("Destroying EmsApp...");
 		instance = null;
-		if (queueCheckTimer != null)
+		if(queueCheckTimer != null)
 			queueCheckTimer.cancel();
-		if (mainExecutor != null)
+		if(mainExecutor != null)
 			mainExecutor.shutdown();
-		if (fxExecutor != null)
+		if(fxExecutor != null)
 			fxExecutor.shutdown();
 		System.exit(1);
 	}
@@ -391,8 +391,8 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 						cfgProps.load(fis);
 						for(String key : props.stringPropertyNames())
 							cfgProps.put(key, props.getProperty(key));
-						
 					}
+
 					try (FileOutputStream fos = new FileOutputStream(cfgFile))
 					{
 						cfgProps.store(fos, "APPLICATION CONFIGURATION FILE");
@@ -425,18 +425,19 @@ public class EmsApp extends Xarriot implements RejectedExecutionHandler
 						cfgProps.load(fis);
 						for(String key : props.stringPropertyNames())
 							cfgProps.put(key, props.getProperty(key));
-						
 					}
+
 					try (FileOutputStream fos = new FileOutputStream(cfgFile))
 					{
 						cfgProps.store(fos, "APPLICATION LOGGING CONFIGURATION FILE");
 					}
-					
+
 					cfgFile = new File(getHomeFolder().getSubFolder("config", false).getAbsolutePath().concat(File.separator).concat(APP_LOG_CFG_FILENAME));
 					try (FileInputStream fis = new FileInputStream(cfgFile))
 					{
 						LogManager.getLogManager().readConfiguration(fis);
 					}
+
 					return true;
 				}else
 					throw new CoreException("Invalid Logging Config File.");
